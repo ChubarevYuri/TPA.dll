@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{521E2243-82F4-4069-A6BC-60ABEA9BC453}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TPA</RootNamespace>
+    <AssemblyName>TPA</AssemblyName>
+    <ProjectTypeGuids>{68B1623D-7FB9-47D8-8664-7ECEA3297D4F};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <MyType>Windows</MyType>
+    <DeployDirSuffix>SystemTPA</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>$(PlatformFamilyName)=TRUE</DefineConstants>
+    <DocumentationFile>TPA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>$(PlatformFamilyName)=TRUE</DefineConstants>
+    <DocumentationFile>TPA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\ButtonNew.Designer.vb">
+      <DependentUpon>ButtonNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ButtonNew.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\DeviceValue.Designer.vb">
+      <DependentUpon>DeviceValue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DeviceValue.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\TimerPanel.Designer.vb">
+      <DependentUpon>TimerPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TimerPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComPort\ComPort.vb" />
+    <Compile Include="ComPort\DeviseInspection.vb" />
+    <Compile Include="ComPort\I7000.vb" />
+    <Compile Include="ComPort\I7011.vb" />
+    <Compile Include="ComPort\I7018.vb" />
+    <Compile Include="ComPort\KS8.vb" />
+    <Compile Include="DialogForms\DialogForms.vb" />
+    <Compile Include="DialogForms\Forms\MessageForm.Designer.vb">
+      <DependentUpon>MessageForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\Forms\MessageForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\Forms\ReportForm.Designer.vb">
+      <DependentUpon>ReportForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\Forms\ReportForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\Forms\SettingForm.Designer.vb">
+      <DependentUpon>SettingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\Forms\SettingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\Forms\SelectForm.Designer.vb">
+      <DependentUpon>SelectForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\Forms\SelectForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\Forms\WaitForm.Designer.vb">
+      <DependentUpon>WaitForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\Forms\WaitForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ini.vb" />
+    <Compile Include="Keyboards\Forms\KeyboardDoubleForm.designer.vb">
+      <DependentUpon>KeyboardDoubleForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardDoubleForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardIntegerForm.designer.vb">
+      <DependentUpon>KeyboardIntegerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardIntegerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardTextForm.designer.vb">
+      <DependentUpon>KeyboardTextForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardTextForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardUDoubleForm.designer.vb">
+      <DependentUpon>KeyboardUDoubleForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardUDoubleForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardUIntegerForm.designer.vb">
+      <DependentUpon>KeyboardUIntegerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardUIntegerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keyboards\Keyboard.vb" />
+    <Compile Include="Log.vb" />
+    <Compile Include="Main.vb" />
+    <Compile Include="Path.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Line.vb" />
+    <Compile Include="Report\Report.vb" />
+    <Compile Include="Resources\ResourceBMP.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceBMP.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourceWaitForm.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceWaitForm.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DialogForms\Forms\MessageForm.resx">
+      <DependentUpon>MessageForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keyboards\Forms\KeyboardDoubleForm.resx">
+      <DependentUpon>KeyboardDoubleForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keyboards\Forms\KeyboardIntegerForm.resx">
+      <DependentUpon>KeyboardIntegerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keyboards\Forms\KeyboardTextForm.resx">
+      <DependentUpon>KeyboardTextForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keyboards\Forms\KeyboardUDoubleForm.resx">
+      <DependentUpon>KeyboardUDoubleForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keyboards\Forms\KeyboardUIntegerForm.resx">
+      <DependentUpon>KeyboardUIntegerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Components\ButtonNew.resx">
+      <DependentUpon>ButtonNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\DeviceValue.resx">
+      <DependentUpon>DeviceValue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\TimerPanel.resx">
+      <DependentUpon>TimerPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\Forms\ReportForm.resx">
+      <DependentUpon>ReportForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\Forms\SettingForm.resx">
+      <DependentUpon>SettingForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\Forms\SelectForm.resx">
+      <DependentUpon>SelectForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\Forms\WaitForm.resx">
+      <DependentUpon>WaitForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceBMP.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceBMP.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceWaitForm.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceWaitForm.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\true.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\false.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\except.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addEnabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delDisabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delEnabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addDisabled.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\22.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{F184B08F-C81C-45F6-A57F-5ABD9991F28F}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
