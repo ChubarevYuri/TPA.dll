@@ -182,4 +182,7 @@
         End If
     End Sub
 
+    Private Sub PanelTimerBack_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PanelTimerBack.Resize
+        visibleElements()
+    End Sub
 End Class

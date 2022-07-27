@@ -229,6 +229,7 @@
                         Do While fr.Peek() >= 0 And s <> objEnd
                             s = fr.ReadLine
                         Loop
+                        If s = objEnd Then s = fr.ReadLine
                     End If
                     fw.WriteLine(s)
                 End If

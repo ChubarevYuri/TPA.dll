@@ -64,20 +64,6 @@ Namespace My.Resources
             End Set
         End Property
         
-        Public Shared ReadOnly Property _false() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("_false", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        Public Shared ReadOnly Property _true() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("_true", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
         Public Shared ReadOnly Property addDisabled() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("addDisabled", resourceCulture)
@@ -123,6 +109,20 @@ Namespace My.Resources
         Public Shared ReadOnly Property warning() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("warning", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public Shared ReadOnly Property истина() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("истина", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public Shared ReadOnly Property ложь() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ложь", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

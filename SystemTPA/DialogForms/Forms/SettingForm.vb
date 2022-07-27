@@ -603,9 +603,9 @@ Public Class SettingForm
             DirectCast(LabelB, Label).Visible = False
             DirectCast(Picture, PictureBox).Visible = True
             If text Then
-                DirectCast(Picture, PictureBox).Image = My.Resources.ResourceBMP._true
+                DirectCast(Picture, PictureBox).Image = My.Resources.ResourceBMP.истина
             Else
-                DirectCast(Picture, PictureBox).Image = My.Resources.ResourceBMP._false
+                DirectCast(Picture, PictureBox).Image = My.Resources.ResourceBMP.ложь
             End If
         Else
             DirectCast(Picture, PictureBox).Visible = False
@@ -646,22 +646,22 @@ Public Class SettingForm
         visibleObj()
     End Sub
 
-    Private Sub Panel1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.Click
+    Private Sub Panel1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.Click, PictureBox1.Click
         selectPanel(collVal(firstNum - 1), collType(firstNum - 1), collName(firstNum - 1))
         visibleObj()
     End Sub
 
-    Private Sub Panel2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel2.Click
+    Private Sub Panel2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel2.Click, PictureBox2.Click
         selectPanel(collVal(firstNum), collType(firstNum), collName(firstNum))
         visibleObj()
     End Sub
 
-    Private Sub Panel3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel3.Click
+    Private Sub Panel3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel3.Click, PictureBox3.Click
         selectPanel(collVal(firstNum + 1), collType(firstNum + 1), collName(firstNum + 1))
         visibleObj()
     End Sub
 
-    Private Sub Panel4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel4.Click
+    Private Sub Panel4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel4.Click, PictureBox4.Click
         selectPanel(collVal(firstNum + 2), collType(firstNum + 2), collName(firstNum + 2))
         visibleObj()
     End Sub

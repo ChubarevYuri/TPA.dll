@@ -22,8 +22,8 @@ Partial Public Class TimerPanel
         Me.LabelBody = New System.Windows.Forms.Label
         Me.LabelTimer = New System.Windows.Forms.Label
         Me.PanelTimerBack = New System.Windows.Forms.Panel
-        Me.Timer50ms = New System.Windows.Forms.Timer
         Me.PanelTimer = New System.Windows.Forms.Panel
+        Me.Timer50ms = New System.Windows.Forms.Timer
         Me.PanelTimerBack.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,11 +54,6 @@ Partial Public Class TimerPanel
         Me.PanelTimerBack.Name = "PanelTimerBack"
         Me.PanelTimerBack.Size = New System.Drawing.Size(182, 28)
         '
-        'Timer50ms
-        '
-        Me.Timer50ms.Enabled = True
-        Me.Timer50ms.Interval = 50
-        '
         'PanelTimer
         '
         Me.PanelTimer.BackColor = System.Drawing.Color.LimeGreen
@@ -66,6 +61,11 @@ Partial Public Class TimerPanel
         Me.PanelTimer.Location = New System.Drawing.Point(0, 0)
         Me.PanelTimer.Name = "PanelTimer"
         Me.PanelTimer.Size = New System.Drawing.Size(10, 28)
+        '
+        'Timer50ms
+        '
+        Me.Timer50ms.Enabled = True
+        Me.Timer50ms.Interval = 50
         '
         'TimerPanel
         '
