@@ -39,7 +39,11 @@ Public Class SettingForm
                 ElseIf TypeOf startVal Is Double Then
                     Return Convert.ToDouble(collVal(0))
                 ElseIf TypeOf startVal Is Double() Then
-                    Return collVal.Cast(Of Double).ToArray
+                    Dim res(collVal.Count - 1) As Double
+                    For i = 0 To collVal.Count - 1
+                        res(i) = collVal(i)
+                    Next
+                    Return res
                 ElseIf TypeOf startVal Is String Then
                     Return collVal(0).ToString
                 ElseIf TypeOf startVal Is String() Then
