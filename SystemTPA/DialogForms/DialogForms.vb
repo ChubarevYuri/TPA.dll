@@ -60,11 +60,8 @@
                             ByVal types As ValueType(), _
                             Optional ByVal head As String = "Параметры") As String()
         Using f = New SettingForm(values, names, types, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -72,22 +69,16 @@
                             ByRef names As String(), _
                             Optional ByVal head As String = "Параметры") As String()
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
     Public Function Setting(ByRef values As String(), _
                    Optional ByVal head As String = "Параметры") As String()
         Using f = New SettingForm(values, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -95,11 +86,8 @@
                             ByRef names As String, _
                             Optional ByVal head As String = "Параметры") As String
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -108,11 +96,8 @@
                             ByVal types As ValueType(), _
                             Optional ByVal head As String = "Параметры") As Integer()
         Using f = New SettingForm(values, names, types, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -120,11 +105,8 @@
                             ByRef names As String(), _
                             Optional ByVal head As String = "Параметры") As Integer()
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -133,11 +115,8 @@
                             ByVal types As ValueType, _
                             Optional ByVal head As String = "Параметры") As Integer
         Using f = New SettingForm(values, names, types, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -145,11 +124,8 @@
                             ByRef names As String, _
                             Optional ByVal head As String = "Параметры") As Integer
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -158,11 +134,8 @@
                             ByVal types As ValueType(), _
                             Optional ByVal head As String = "Параметры") As Double()
         Using f = New SettingForm(values, names, types, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -170,11 +143,8 @@
                             ByRef names As String(), _
                             Optional ByVal head As String = "Параметры") As Double()
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -183,11 +153,8 @@
                             ByVal types As ValueType, _
                             Optional ByVal head As String = "Параметры") As Double
         Using f = New SettingForm(values, names, types, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -195,11 +162,8 @@
                             ByRef names As String, _
                             Optional ByVal head As String = "Параметры") As Double
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -207,22 +171,16 @@
                             ByRef names As String(), _
                             Optional ByVal head As String = "Параметры") As Boolean()
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
     Public Function Setting(ByRef values As Boolean(), _
                             Optional ByVal head As String = "Параметры") As Boolean()
         Using f = New SettingForm(values, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -230,11 +188,8 @@
                             Optional ByRef names As String = "", _
                             Optional ByVal head As String = "Параметры") As Boolean
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -243,11 +198,8 @@
                             ByVal types As ValueType(), _
                             Optional ByVal head As String = "Параметры") As Collection
         Using f = New SettingForm(values, names, types, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -255,22 +207,16 @@
                             ByRef names As String(), _
                             Optional ByVal head As String = "Параметры") As Collection
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
     Public Function Setting(ByRef values As Collection, _
                             Optional ByVal head As String = "Параметры") As Collection
         Using f = New SettingForm(values, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -279,11 +225,8 @@
                             ByVal types As ValueType, _
                             Optional ByVal head As String = "Параметры") As Collection
         Using f = New SettingForm(values, names, types, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -292,11 +235,8 @@
                             ByVal types As ValueType(), _
                             Optional ByVal head As String = "Параметры") As ArrayList
         Using f = New SettingForm(values, names, types, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -304,22 +244,16 @@
                             ByRef names As String(), _
                             Optional ByVal head As String = "Параметры") As ArrayList
         Using f = New SettingForm(values, names, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
     Public Function Setting(ByRef values As ArrayList, _
                             Optional ByVal head As String = "Параметры") As ArrayList
         Using f = New SettingForm(values, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
@@ -328,11 +262,8 @@
                             ByVal types As ValueType, _
                             Optional ByVal head As String = "Параметры") As ArrayList
         Using f = New SettingForm(values, names, types, head)
-            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Setting = f.result
-            Else
-                Setting = Nothing
-            End If
+            f.ShowDialog()
+            Setting = f.result
         End Using
     End Function
 
