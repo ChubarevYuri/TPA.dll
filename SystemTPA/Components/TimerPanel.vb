@@ -91,9 +91,9 @@
         End Set
     End Property
 
-    Private _Time As Integer = 100
+    Private _Time As Integer = 60
     ''' <summary>
-    ''' Время работы таймера в мс
+    ''' Время работы таймера в с
     ''' </summary>
     ''' <value></value>
     ''' <returns></returns>
@@ -122,12 +122,12 @@
     ''' <remarks></remarks>
     Public ReadOnly Property finish() As Boolean
         Get
-            finish = (Now - startTime).TotalMilliseconds > Time
+            finish = (Now - startTime).TotalSeconds > Time
         End Get
     End Property
 
     Private startTime As DateTime = Now()
-    Private stopTime As DateTime = Now().AddMilliseconds(Time)
+    Private stopTime As DateTime = Now().AddSeconds(Time)
 
     ''' <summary>
     ''' Запуск таймера
@@ -143,7 +143,7 @@
 
     Public Sub Start()
         startTime = Now()
-        stopTime = startTime.AddMilliseconds(Time)
+        stopTime = startTime.AddSeconds(Time)
         Timer50ms.Enabled = True
     End Sub
 
@@ -155,15 +155,15 @@
     End Sub
 
     Private Sub visibleElements()
-        Dim timer As Integer = (Now - startTime).TotalMilliseconds
+        Dim timer As Integer = (Now - startTime).TotalSeconds
         If finish Then
             LabelTimer.Text = "00:00"
             PanelTimer.Width = PanelTimerBack.Width
         Else
             'Числовое
             Dim mmss As String = ""
-            Dim minutes As Integer = Math.Floor((Time - timer) / 60000)
-            Dim seconds As Integer = Math.Floor((Time - timer) / 1000) Mod 60
+            Dim minutes As Integer = Math.Floor((Time - timer) / 60)
+            Dim seconds As Integer = Math.Floor(Time - timer) Mod 60
             If minutes < 10 Then mmss &= "0"
             mmss &= minutes
             mmss &= ":"
