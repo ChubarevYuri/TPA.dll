@@ -18,10 +18,10 @@ Public Module DeviseInspection
         Dim device As I7000
     End Structure
 
-    Private _thread As Threading.Thread = New Threading.Thread(AddressOf _main)
+    Private _thread As Threading.Thread
 
 
-    Private inspection As Boolean = True
+    Private inspection As Boolean = False
     'список устройств
     Public devices As ArrayList = New ArrayList
 
@@ -126,17 +126,28 @@ Public Module DeviseInspection
     Public Sub addDevice(ByRef device As I7011)
         devices.Add(device)
     End Sub
-
+    Public Sub addDevice(ByRef device As КМФ_1115_омметр)
+        devices.Add(device)
+    End Sub
+    Public Sub addDevice(ByRef device As БФУ_GB106v2)
+        devices.Add(device)
+    End Sub
 #End Region
 
     Public Sub stopInspection()
-        inspection = False
+        If inspection Then
+            inspection = False
+            _thread.Abort()
+        End If
     End Sub
 
     Public Sub startInspection()
-        _thread.Priority = Threading.ThreadPriority.Normal
-        inspection = True
-        _thread.Start()
+        If Not inspection Then
+            _thread = New Threading.Thread(AddressOf _main)
+            _thread.Priority = Threading.ThreadPriority.Normal
+            inspection = True
+            _thread.Start()
+        End If
     End Sub
 
     Private Sub _main()
@@ -152,6 +163,10 @@ Public Module DeviseInspection
                     ReadI7011(dev)
                 ElseIf TypeOf dev Is I7018 Then
                     ReadI7018(dev)
+                ElseIf TypeOf dev Is КМФ_1115_омметр Then
+                    ReadКМФ_1115_омметр(dev)
+                ElseIf TypeOf dev Is БФУ_GB106v2 Then
+                    ReadБФУ_GB106v2(dev)
                 End If
             Next
             _endInspection = True
@@ -227,6 +242,61 @@ Public Module DeviseInspection
             Next
         End If
         _result = New KeyValuePair(Of Integer, ResultType)(dev.address, answerToResultType(answer, dimex))
+    End Sub
+
+    Private Sub ReadКМФ_1115_омметр(ByRef dev As КМФ_1115_омметр)
+        Dim answer As Double
+        Try
+            answer = result(dev.address).answer
+        Catch ex As Exception
+            answer = 0
+        End Try
+        Dim dimex = dev.val(1000)
+        If dimex <> Nothing Then
+            _result = New KeyValuePair(Of Integer, ResultType)(dev.address, answerToResultType(dimex, ""))
+        Else
+            _result = New KeyValuePair(Of Integer, ResultType)(dev.address, answerToResultType(answer, "Обнаружено напряжение (" & dev.port.PortName & ")"))
+        End If
+    End Sub
+
+    Private Sub ReadБФУ_GB106v2(ByRef dev As БФУ_GB106v2)
+        Dim err As String = ""
+        Dim time As DateTime = Now.AddMinutes(-10)
+        Dim answer As Dictionary(Of String, Object) = New Dictionary(Of String, Object)
+        Try
+            answer = result(dev.address).answer
+        Catch ex As Exception
+            answer.Add("Дискреты", _
+                       New KeyValuePair(Of Boolean(), Boolean())(New Boolean() {False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False}, _
+                                                                 New Boolean() {False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False, _
+                                                                                False}))
+            answer.Add("Ain1", 0.0)
+            answer.Add("Ain2", 0.0)
+            answer.Add("Ain3", 0.0)
+            answer.Add("Частота", 0)
+            answer.Add("Угол", 0)
+        End Try
+        For Each i In dev.val()
+            If i.Value.err.Length = 0 Then
+                answer(i.Key) = i.Value.answer
+            Else
+                err &= If(err.Length = 0, "", Chr(10)) & i.Value.err
+            End If
+        Next
+        _result = New KeyValuePair(Of Integer, ResultType)(dev.address, answerToResultType(answer, err))
     End Sub
 
 #End Region

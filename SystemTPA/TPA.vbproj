@@ -97,6 +97,7 @@
     <Compile Include="ComPort\I7011.vb" />
     <Compile Include="ComPort\I7018.vb" />
     <Compile Include="ComPort\KS8.vb" />
+    <Compile Include="ComPort\БФУ-GB106v2.vb" />
     <Compile Include="ComPort\КМФ_1115_омметр.vb" />
     <Compile Include="DialogForms\DialogForms.vb" />
     <Compile Include="DialogForms\Forms\MessageForm.Designer.vb">
