@@ -16,6 +16,103 @@
     End Sub
 
     ''' <summary>
+    ''' Фильтр списка протоколов по принципу: (if name>0 then name = Name), (if user>0 then user = User), DateStart ≤ Date ≤ dateStop
+    ''' </summary>
+    ''' <param name="user">фильтр по пользователю</param>
+    ''' <param name="name">фильтр по устройству</param>
+    ''' <param name="DateStart">фильтр по дате</param>
+    ''' <param name="dateStop">фильтр по дате</param>
+    ''' <param name="_name">подпись пользователя</param>
+    ''' <param name="_user">подпись устройства</param>
+    ''' <param name="_date">подпись </param>
+    ''' <param name="_text"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function ReadReportsFilter(ByVal user As String, _
+                                      ByVal name As String, _
+                                      ByVal DateStart As DateTime, _
+                                      ByVal dateStop As DateTime, _
+                                      Optional ByVal _name As String = "Name", _
+                                      Optional ByVal _user As String = "User", _
+                                      Optional ByVal _date As String = "Time", _
+                                      Optional ByVal _text As String = "заголовок") As Dictionary(Of String, String)
+        ReadReportsFilter = New Dictionary(Of String, String)
+        Dim line As KeyValuePair(Of String, String)
+        CreateFile()
+        Dim f = New System.IO.StreamReader(fileAddress)
+        Try
+            Do While f.Peek() >= 0
+                Dim s = f.ReadLine
+                If s.Length > 0 Then
+                    If s(0) = objStart Then
+                        Dim readText As Boolean = If(_text.Length = 0, True, False)
+                        Dim readUser As Boolean = If(user.Length = 0 Or _user.Length = 0, True, False)
+                        Dim readName As Boolean = If(name.Length = 0 Or _name.Length = 0, True, False)
+                        Dim readDate As Boolean = If(_date.Length = 0, True, False)
+                        Dim filter As Boolean = True
+                        Dim key = s.Substring(1)
+                        If _text.Length = 0 Then line = New KeyValuePair(Of String, String)(key, key)
+                        Do While f.Peek() >= 0 And s <> objEnd And filter
+                            s = f.ReadLine
+                            Try
+                                If Not readText Then
+                                    If Split(s, charSplit, 2)(0) = _text Then
+                                        line = New KeyValuePair(Of String, String)(key, Split(s, charSplit, 2)(1))
+                                        readText = True
+                                    End If
+                                End If
+                                If Not readUser Then
+                                    If Split(s, charSplit, 2)(0) = _user Then
+                                        If Split(s, charSplit, 2)(1).Contains(user) Then
+                                            filter = filter And True
+                                        Else
+                                            filter = False
+                                        End If
+                                        readUser = True
+                                    End If
+                                End If
+                                If Not readName Then
+                                    If Split(s, charSplit, 2)(0) = _name Then
+                                        If Split(s, charSplit, 2)(1).Contains(name) Then
+                                            filter = filter And True
+                                        Else
+                                            filter = False
+                                        End If
+                                        readName = True
+                                    End If
+                                End If
+                                If Not readDate Then
+                                    If Split(s, charSplit, 2)(0) = _date Then
+                                        Try
+                                            If DateStart <= Convert.ToDateTime(Split(s, charSplit, 2)(1)) And Convert.ToDateTime(Split(s, charSplit, 2)(1)) <= dateStop Then
+                                                filter = filter And True
+                                            Else
+                                                filter = False
+                                            End If
+                                        Catch ex As Exception
+                                            filter = False
+                                        End Try
+                                        readDate = True
+                                    End If
+                                End If
+                                If (readText Or Not filter) And readUser And readName And readDate Then
+                                    If filter Then ReadReportsFilter.Add(line.Key, line.Value)
+                                    Do While f.Peek() >= 0 And s <> objEnd
+                                        s = f.ReadLine
+                                    Loop
+                                End If
+                            Catch ex As Exception
+                            End Try
+                        Loop
+                    End If
+                End If
+            Loop
+        Catch ex As Exception
+        End Try
+        f.Close()
+    End Function
+
+    ''' <summary>
     ''' Возврат значения типа (obj, value)
     ''' </summary>
     ''' <param name="param"></param>
@@ -36,6 +133,9 @@
                             Try
                                 If Split(s, charSplit, 2)(0) = param Then
                                     ReadByParam.Add(key, Split(s, charSplit, 2)(1))
+                                    Do While f.Peek() >= 0 And s <> objEnd
+                                        s = f.ReadLine
+                                    Loop
                                 End If
                             Catch ex As Exception
                             End Try

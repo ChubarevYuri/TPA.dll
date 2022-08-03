@@ -21,9 +21,9 @@ Partial Public Class TimerPanel
     Private Sub InitializeComponent()
         Me.LabelBody = New System.Windows.Forms.Label
         Me.LabelTimer = New System.Windows.Forms.Label
-        Me.PanelTimerBack = New System.Windows.Forms.Panel
-        Me.PanelTimer = New System.Windows.Forms.Panel
         Me.Timer50ms = New System.Windows.Forms.Timer
+        Me.PanelTimer = New System.Windows.Forms.Panel
+        Me.PanelTimerBack = New System.Windows.Forms.Panel
         Me.PanelTimerBack.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -34,7 +34,7 @@ Partial Public Class TimerPanel
         Me.LabelBody.Location = New System.Drawing.Point(0, 0)
         Me.LabelBody.Name = "LabelBody"
         Me.LabelBody.Size = New System.Drawing.Size(292, 28)
-        Me.LabelBody.Text = "До конца операции осталось:"
+        Me.LabelBody.Text = "До конца операции осталось"
         '
         'LabelTimer
         '
@@ -45,14 +45,10 @@ Partial Public Class TimerPanel
         Me.LabelTimer.Size = New System.Drawing.Size(62, 28)
         Me.LabelTimer.Text = "00:00"
         '
-        'PanelTimerBack
+        'Timer50ms
         '
-        Me.PanelTimerBack.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.PanelTimerBack.Controls.Add(Me.PanelTimer)
-        Me.PanelTimerBack.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelTimerBack.Location = New System.Drawing.Point(354, 0)
-        Me.PanelTimerBack.Name = "PanelTimerBack"
-        Me.PanelTimerBack.Size = New System.Drawing.Size(182, 28)
+        Me.Timer50ms.Enabled = True
+        Me.Timer50ms.Interval = 50
         '
         'PanelTimer
         '
@@ -62,10 +58,14 @@ Partial Public Class TimerPanel
         Me.PanelTimer.Name = "PanelTimer"
         Me.PanelTimer.Size = New System.Drawing.Size(10, 28)
         '
-        'Timer50ms
+        'PanelTimerBack
         '
-        Me.Timer50ms.Enabled = True
-        Me.Timer50ms.Interval = 50
+        Me.PanelTimerBack.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.PanelTimerBack.Controls.Add(Me.PanelTimer)
+        Me.PanelTimerBack.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelTimerBack.Location = New System.Drawing.Point(354, 0)
+        Me.PanelTimerBack.Name = "PanelTimerBack"
+        Me.PanelTimerBack.Size = New System.Drawing.Size(182, 28)
         '
         'TimerPanel
         '
@@ -83,8 +83,8 @@ Partial Public Class TimerPanel
     End Sub
     Friend WithEvents LabelBody As System.Windows.Forms.Label
     Friend WithEvents LabelTimer As System.Windows.Forms.Label
-    Friend WithEvents PanelTimerBack As System.Windows.Forms.Panel
     Friend WithEvents Timer50ms As System.Windows.Forms.Timer
     Friend WithEvents PanelTimer As System.Windows.Forms.Panel
+    Friend WithEvents PanelTimerBack As System.Windows.Forms.Panel
 
 End Class

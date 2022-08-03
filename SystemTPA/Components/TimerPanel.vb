@@ -108,9 +108,6 @@
             Else
                 _Time = 0
             End If
-            startTime = Now()
-            stopTime = startTime.AddMilliseconds(Time)
-            visibleElements()
         End Set
     End Property
 
@@ -127,7 +124,6 @@
     End Property
 
     Private startTime As DateTime = Now()
-    Private stopTime As DateTime = Now().AddSeconds(Time)
 
     ''' <summary>
     ''' Запуск таймера
@@ -143,14 +139,13 @@
 
     Public Sub Start()
         startTime = Now()
-        stopTime = startTime.AddSeconds(Time)
         Timer50ms.Enabled = True
     End Sub
 
 #End Region
 
     Private Sub Timer50ms_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer50ms.Tick
-        If finish Then Timer50ms.Enabled = False
+        'If finish Then Timer50ms.Enabled = False
         visibleElements()
     End Sub
 
@@ -161,15 +156,7 @@
             PanelTimer.Width = PanelTimerBack.Width
         Else
             'Числовое
-            Dim mmss As String = ""
-            Dim minutes As Integer = Math.Floor((Time - timer) / 60)
-            Dim seconds As Integer = Math.Floor(Time - timer) Mod 60
-            If minutes < 10 Then mmss &= "0"
-            mmss &= minutes
-            mmss &= ":"
-            If seconds < 10 Then mmss &= "0"
-            mmss &= seconds
-            LabelTimer.Text = mmss
+            LabelTimer.Text = (Math.Floor((Time - timer) / 60)).ToString("00") & ":" & (Math.Floor(Time - timer) Mod 60).ToString("00")
             'полоса
             Dim _width As Integer = PanelTimerBack.Width / Time * timer
             If _width < PanelTimerBack.Width And _width > 5 Then
@@ -180,6 +167,8 @@
                 PanelTimer.Width = PanelTimerBack.Width
             End If
         End If
+        LabelTimer.Refresh()
+        PanelTimer.Refresh()
     End Sub
 
     Private Sub PanelTimerBack_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PanelTimerBack.Resize

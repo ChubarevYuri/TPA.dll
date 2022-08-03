@@ -594,6 +594,34 @@
 
 #End Region
 
+#Region "Filter"
+
+    Public Function FilterReport(ByVal file As Ini, _
+                                 ByVal users As Collection, _
+                                 ByVal names As Collection, _
+                                 Optional ByVal head As String = "Фильтр", _
+                                 Optional ByVal name As String = "Name", _
+                                 Optional ByVal user As String = "User", _
+                                 Optional ByVal time As String = "Time", _
+                                 Optional ByVal text As String = "заголовок") As Dictionary(Of String, String)
+        Dim _users(users.Count - 1) As String
+        For i As Integer = 0 To users.Count - 1
+            _users(i) = users(i + 1).ToString.ToString()
+        Next
+        Dim _names(users.Count - 1) As String
+        For i As Integer = 0 To names.Count - 1
+            _names(i) = names(i + 1).ToString.ToString()
+        Next
+        Using f = New FilterForm(file, _users, _names, head, name, user, time, text)
+            If f.ShowDialog = Windows.Forms.DialogResult.OK Then
+                Return f.result
+            Else
+                Return New Dictionary(Of String, String)
+            End If
+        End Using
+    End Function
+
+#End Region
 
 #Region "SaveAs"
     Public Function SaveAs(ByVal name As String, _
