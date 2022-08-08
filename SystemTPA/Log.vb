@@ -94,13 +94,13 @@
                 If rank >= printRank Then
                     SizeControl()
                     Dim text As String = rank.ToString().PadRight(8) & DateAndTime.Now.ToString("yyyyMMddHHmmss") & " " & message
-                    Using f As New System.IO.StreamWriter(fileAddress, True)
-                        Try
+                    Try
+                        Using f As New System.IO.StreamWriter(fileAddress, True)
                             f.WriteLine(text)
                             f.Close()
-                        Catch ex As Exception
-                        End Try
-                    End Using
+                        End Using
+                    Catch ex As Exception
+                    End Try
                 End If
             End If
         End If
