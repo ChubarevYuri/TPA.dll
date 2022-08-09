@@ -4,6 +4,7 @@
     Private _users As String() = New String() {}
     Private _names As String() = New String() {}
     Private _name As String = ""
+    Private _num As String = ""
     Private _user As String = ""
     Private _time As String = ""
     Private _text As String = ""
@@ -36,6 +37,7 @@
                    ByVal names As String(), _
                    Optional ByVal head As String = "Фильтр", _
                    Optional ByVal name As String = "Name", _
+                   Optional ByVal num As String = "Num", _
                    Optional ByVal user As String = "User", _
                    Optional ByVal time As String = "Time", _
                    Optional ByVal text As String = "заголовок")
@@ -43,6 +45,7 @@
         _users = users
         _names = names
         _name = name
+        _num = num
         _user = user
         _time = time
         _text = text
@@ -58,7 +61,7 @@
     End Sub
     Private Sub PictureBoxOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxOk.Click
         WaitFormStart()
-        result = _file.ReadReportsFilter(LabelUser.Text, LabelName.Text, _dateStart, _dateStop, _name, _user, _time, _text)
+        result = _file.ReadReportsFilter(LabelUser.Text, LabelName.Text, LabelNum.Text, _dateStart, _dateStop, _name, _num, _user, _time, _text)
         DialogResult = Windows.Forms.DialogResult.OK
         WaitFormStop()
         Close()

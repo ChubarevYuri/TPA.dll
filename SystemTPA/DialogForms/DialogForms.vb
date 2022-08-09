@@ -601,6 +601,7 @@
                                  ByVal names As Collection, _
                                  Optional ByVal head As String = "Фильтр", _
                                  Optional ByVal name As String = "Name", _
+                                 Optional ByVal num As String = "Num", _
                                  Optional ByVal user As String = "User", _
                                  Optional ByVal time As String = "Time", _
                                  Optional ByVal text As String = "заголовок") As Dictionary(Of String, String)
@@ -612,7 +613,7 @@
         For i As Integer = 0 To names.Count - 1
             _names(i) = names(i + 1).ToString.ToString()
         Next
-        Using f = New FilterForm(file, _users, _names, head, name, user, time, text)
+        Using f = New FilterForm(file, _users, _names, head, name, num, user, time, text)
             If f.ShowDialog = Windows.Forms.DialogResult.OK Then
                 Return f.result
             Else

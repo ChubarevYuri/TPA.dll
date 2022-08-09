@@ -30,9 +30,11 @@
     ''' <remarks></remarks>
     Public Function ReadReportsFilter(ByVal user As String, _
                                       ByVal name As String, _
+                                      ByVal num As String, _
                                       ByVal DateStart As DateTime, _
                                       ByVal dateStop As DateTime, _
                                       Optional ByVal _name As String = "Name", _
+                                      Optional ByVal _num As String = "Num", _
                                       Optional ByVal _user As String = "User", _
                                       Optional ByVal _date As String = "Time", _
                                       Optional ByVal _text As String = "заголовок") As Dictionary(Of String, String)
@@ -48,6 +50,7 @@
                         Dim readText As Boolean = If(_text.Length = 0, True, False)
                         Dim readUser As Boolean = If(user.Length = 0 Or _user.Length = 0, True, False)
                         Dim readName As Boolean = If(name.Length = 0 Or _name.Length = 0, True, False)
+                        Dim readNum As Boolean = If(num.Length = 0 Or _num.Length = 0, True, False)
                         Dim readDate As Boolean = If(_date.Length = 0, True, False)
                         Dim filter As Boolean = True
                         Dim key = s.Substring(1)
@@ -81,6 +84,16 @@
                                         readName = True
                                     End If
                                 End If
+                                If Not readNum Then
+                                    If Split(s, charSplit, 2)(0) = _num Then
+                                        If Split(s, charSplit, 2)(1).Contains(num) Then
+                                            filter = filter And True
+                                        Else
+                                            filter = False
+                                        End If
+                                        readName = True
+                                    End If
+                                End If
                                 If Not readDate Then
                                     If Split(s, charSplit, 2)(0) = _date Then
                                         Try
@@ -95,7 +108,7 @@
                                         readDate = True
                                     End If
                                 End If
-                                If (readText Or Not filter) And readUser And readName And readDate Then
+                                If (readText Or Not filter) And readUser And readName And readNum And readDate Then
                                     If filter Then ReadReportsFilter.Add(line.Key, line.Value)
                                     Do While f.Peek() >= 0 And s <> objEnd
                                         s = f.ReadLine
