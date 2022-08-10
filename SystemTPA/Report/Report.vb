@@ -790,6 +790,7 @@ Public Class Report
                                     pageWidth - _borderRight - borderRight, _ystart)
         End Using
         For Each row In text
+            _ystart = Y
             If read Then
                 _vertlines = Line(row, size, _borderLeft, _borderRight)
                 read = False
@@ -800,14 +801,20 @@ Public Class Report
                 _graph.DrawLine(New Pen(Color.Black), _
                                 _borderLeft + borderLeft, Y - 1, _
                                 pageWidth - _borderRight - borderRight, Y - 1)
+                If _ystart > Y Then
+                    _ystart = borderTop
+                    _graph.DrawLine(New Pen(Color.Black), _
+                                    _borderLeft + borderLeft, _ystart, _
+                                    pageWidth - _borderRight - borderRight, _ystart)
+                End If
+                For Each col In _vertlines
+                    _graph.DrawLine(New Pen(Color.Black), _
+                                    col, _ystart, _
+                                    col, Y - 1)
+                Next
             End Using
         Next
         Using _graph As Drawing.Graphics = Graphics.FromImage(selectPage)
-            For Each col In _vertlines
-                _graph.DrawLine(New Pen(Color.Black), _
-                                col, _ystart, _
-                                col, Y - 1)
-            Next
         End Using
     End Sub
 
