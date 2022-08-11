@@ -281,7 +281,11 @@
     Public Function Report(ByRef protocol As Report, _
                              Optional ByVal head As String = "Протокол") As Boolean
         Using f = New ReportForm(protocol, head)
-            If f.ShowDialog = Windows.Forms.DialogResult.OK Then Return True
+            If f.ShowDialog = Windows.Forms.DialogResult.OK Then
+                Return True
+            Else
+                Return False
+            End If
         End Using
         Return False
     End Function
@@ -609,7 +613,7 @@
         For i As Integer = 0 To users.Count - 1
             _users(i) = users(i + 1).ToString.ToString()
         Next
-        Dim _names(users.Count - 1) As String
+        Dim _names(names.Count - 1) As String
         For i As Integer = 0 To names.Count - 1
             _names(i) = names(i + 1).ToString.ToString()
         Next
@@ -655,6 +659,7 @@
 
 #Region "wait"
 
+    Private wf As Boolean = False
     Private WaitFormThread As Threading.Thread
     Private Sub WaitFormShow()
         Dim f = New WaitForm
@@ -662,12 +667,19 @@
     End Sub
 
     Public Sub WaitFormStart()
+        If wf Then
+            WaitFormStop()
+        End If
+        wf = True
         WaitFormThread = New Threading.Thread(New Threading.ThreadStart(AddressOf WaitFormShow))
         WaitFormThread.Start()
     End Sub
 
     Public Sub WaitFormStop()
-        WaitFormThread.Abort()
+        If wf Then
+            WaitFormThread.Abort()
+            wf = False
+        End If
     End Sub
 
 #End Region

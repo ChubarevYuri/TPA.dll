@@ -7,6 +7,12 @@ Imports TPA.Line
 ''' <remarks></remarks>
 Public Class Report
 
+    Public Sub ReserveLines(ByVal count As Integer)
+        If count > (pageHeight - borderBoth - Y) / 25 Then
+            CreatePage()
+        End If
+    End Sub
+
 #Region "global val"
 
     Private pages As New Collection
@@ -15,6 +21,11 @@ Public Class Report
     Private selectPage As Bitmap = New Drawing.Bitmap(1, _
                                                       1, _
                                                       Imaging.PixelFormat.Format16bppRgb555)
+    Public ReadOnly Property ClearZoneLines() As Integer
+        Get
+            Return Math.Floor((pageHeight - borderBoth - Y) / 25)
+        End Get
+    End Property
     Private Y As Integer = 0
     Private pageWidth As Integer = 759
     Private pageHeight As Integer = 1089
@@ -531,7 +542,7 @@ Public Class Report
             Dim w As Integer = _WriteMultiLine(text(i - 1).text, _
                                                _size(i - 1) + mmToPix(text(i - 1).indentLeft) + 1, _
                                                Y, _
-                                               _size(i) - _size(i - 1) - mmToPix(text(i - 1).indentRight - 2), _
+                                               _size(i) - _size(i - 1) - mmToPix(text(i - 1).indentRight) - 2, _
                                                text(i - 1).indentTop, _
                                                text(i - 1).interval, _
                                                text(i - 1).textAlign, _
@@ -598,7 +609,18 @@ Public Class Report
                 str(1) = ""
             End Try
             str(0) = text.Substring(0, i)
-            If Not (str(0).EndsWith(" ") Or _
+            If Not (str(0).EndsWith("0") Or _
+                    str(0).EndsWith("1") Or _
+                    str(0).EndsWith("2") Or _
+                    str(0).EndsWith("3") Or _
+                    str(0).EndsWith("4") Or _
+                    str(0).EndsWith("5") Or _
+                    str(0).EndsWith("6") Or _
+                    str(0).EndsWith("7") Or _
+                    str(0).EndsWith("8") Or _
+                    str(0).EndsWith("9") Or _
+                    str(0).EndsWith("   ") Or _
+                    str(0).EndsWith(" ") Or _
                     str(0).EndsWith(".") Or _
                     str(0).EndsWith(",") Or _
                     str(0).EndsWith("!") Or _
@@ -619,8 +641,15 @@ Public Class Report
                 _w = _graph.MeasureString(str(0), font).Width
             End Using
         Loop While _w > _width And i >= 0
-        _y = _WriteOneLine(str(0), _x, _y, _width, interval, textAlign, fontLine, fontSize, fontBold)
-        If str(1).Length > 0 Then _y = _WriteMultiLine(str(1), _x, _y, _width, 0, interval, textAlign, fontLine, fontSize, fontBold)
+        Dim _y0 As Integer = 0
+        Dim _y1 As Integer = 0
+        _y0 = Math.Max(_y, _WriteOneLine(str(0), _x, _y, _width, interval, textAlign, fontLine, fontSize, fontBold))
+        If str(1).Length > 0 Then _y1 = Math.Max(_y, _WriteMultiLine(str(1), _x, _y0, _width, 0, interval, textAlign, fontLine, fontSize, fontBold))
+        _y = Math.Max(_y0, _y1)
+        If _y + interval * _heights + fontSize > pageHeight - borderBoth Then
+            CreatePage()
+            _y = Y
+        End If
         Return _y
     End Function
 
@@ -792,6 +821,7 @@ Public Class Report
         For Each row In text
             _ystart = Y
             If read Then
+
                 _vertlines = Line(row, size, _borderLeft, _borderRight)
                 read = False
             Else
