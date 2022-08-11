@@ -61,7 +61,7 @@
                             Optional ByVal head As String = "Параметры") As String()
         Using f = New SettingForm(values, names, types, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -70,7 +70,7 @@
                             Optional ByVal head As String = "Параметры") As String()
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -78,7 +78,7 @@
                    Optional ByVal head As String = "Параметры") As String()
         Using f = New SettingForm(values, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -87,7 +87,7 @@
                             Optional ByVal head As String = "Параметры") As String
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -97,7 +97,7 @@
                             Optional ByVal head As String = "Параметры") As Integer()
         Using f = New SettingForm(values, names, types, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -106,7 +106,7 @@
                             Optional ByVal head As String = "Параметры") As Integer()
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -116,7 +116,7 @@
                             Optional ByVal head As String = "Параметры") As Integer
         Using f = New SettingForm(values, names, types, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -125,7 +125,7 @@
                             Optional ByVal head As String = "Параметры") As Integer
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -135,7 +135,7 @@
                             Optional ByVal head As String = "Параметры") As Double()
         Using f = New SettingForm(values, names, types, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -144,7 +144,7 @@
                             Optional ByVal head As String = "Параметры") As Double()
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -154,7 +154,7 @@
                             Optional ByVal head As String = "Параметры") As Double
         Using f = New SettingForm(values, names, types, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -163,7 +163,7 @@
                             Optional ByVal head As String = "Параметры") As Double
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -172,7 +172,7 @@
                             Optional ByVal head As String = "Параметры") As Boolean()
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -180,7 +180,7 @@
                             Optional ByVal head As String = "Параметры") As Boolean()
         Using f = New SettingForm(values, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -189,7 +189,7 @@
                             Optional ByVal head As String = "Параметры") As Boolean
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -199,7 +199,7 @@
                             Optional ByVal head As String = "Параметры") As Collection
         Using f = New SettingForm(values, names, types, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -208,7 +208,7 @@
                             Optional ByVal head As String = "Параметры") As Collection
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -216,7 +216,7 @@
                             Optional ByVal head As String = "Параметры") As Collection
         Using f = New SettingForm(values, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -226,7 +226,7 @@
                             Optional ByVal head As String = "Параметры") As Collection
         Using f = New SettingForm(values, names, types, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -236,7 +236,7 @@
                             Optional ByVal head As String = "Параметры") As ArrayList
         Using f = New SettingForm(values, names, types, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -245,7 +245,7 @@
                             Optional ByVal head As String = "Параметры") As ArrayList
         Using f = New SettingForm(values, names, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -253,7 +253,7 @@
                             Optional ByVal head As String = "Параметры") As ArrayList
         Using f = New SettingForm(values, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 
@@ -263,7 +263,7 @@
                             Optional ByVal head As String = "Параметры") As ArrayList
         Using f = New SettingForm(values, names, types, head)
             f.ShowDialog()
-            Setting = f.result
+            Return f.result
         End Using
     End Function
 

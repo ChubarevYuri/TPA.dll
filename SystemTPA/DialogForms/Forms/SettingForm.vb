@@ -35,19 +35,27 @@ Public Class SettingForm
                 ElseIf TypeOf startVal Is Integer Then
                     Return Convert.ToInt32(collVal(0))
                 ElseIf TypeOf startVal Is Integer() Then
-                    Return collVal.Cast(Of Int32).ToArray
+                    Dim res(collVal.Count - 1) As Integer
+                    For i = 0 To collVal.Count - 1
+                        res(i) = Convert.ToInt32(collVal(i))
+                    Next
+                    Return res
                 ElseIf TypeOf startVal Is Double Then
                     Return Convert.ToDouble(collVal(0))
                 ElseIf TypeOf startVal Is Double() Then
                     Dim res(collVal.Count - 1) As Double
                     For i = 0 To collVal.Count - 1
-                        res(i) = collVal(i)
+                        res(i) = Convert.ToDouble(collVal(i))
                     Next
                     Return res
                 ElseIf TypeOf startVal Is String Then
                     Return collVal(0).ToString
                 ElseIf TypeOf startVal Is String() Then
-                    Return collVal.Cast(Of String).ToArray
+                    Dim res(collVal.Count - 1) As String
+                    For i = 0 To collVal.Count - 1
+                        res(i) = collVal(i)
+                    Next
+                    Return res
                 ElseIf TypeOf startVal Is Collection Then
                     Dim col As Collection = New Collection
                     For Each i In collVal
