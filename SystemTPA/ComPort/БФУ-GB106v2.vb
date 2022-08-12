@@ -97,8 +97,8 @@
             Dim answer As String = ""
             Dim err = ReadWriteCommand(NewCommand("@", "", True, True, ">"), answer)
             If err.Length = 0 Then
-                Dim resI = Convert.ToUInt32(answer.Substring(2), 16)
-                Dim resO = Convert.ToUInt32(answer.Substring(0, 2), 16)
+                Dim resI = Convert.ToUInt32(answer.Substring(0, 2), 16)
+                Dim resO = Convert.ToUInt32(answer.Substring(2), 16)
                 For i As Integer = 0 To statI.Length - 1
                     statI(i) = (resI \ RangTwo(i)) Mod 2
                     statO(i) = (resO \ RangTwo(i)) Mod 2
@@ -201,11 +201,11 @@
 #End Region
 
     Public Function out7(ByVal stat As Boolean) As DeviseInspection.CommandType
-        Return NewCommand("#", "A7O" & If(stat, "1", "0"), contain:=">")
+        Return NewCommand("#", "A60" & If(stat, "1", "0"), contain:=">")
     End Function
 
     Public Function out8(ByVal stat As Boolean) As DeviseInspection.CommandType
-        Return NewCommand("#", "A8O" & If(stat, "1", "0"), contain:=">")
+        Return NewCommand("#", "A70" & If(stat, "1", "0"), contain:=">")
     End Function
 
     Public Function Регулятор(ByVal val As Integer) As DeviseInspection.CommandType

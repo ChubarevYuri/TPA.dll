@@ -76,15 +76,15 @@
                                       Optional ByVal CheckSum As Boolean = True, _
                                       Optional ByVal RemoveCS As Boolean = True) As String
         If port IsNot Nothing Then
-            If Not port.IsOpen Then Open()
+            Open()
             Dim TimeStart As Integer = Environment.TickCount
             If CheckSum Then Send = AddCRC(Send)
-            If port.IsOpen Then
-                port.DiscardOutBuffer()
-                port.DiscardInBuffer()
+            If UsingPorts.Ports(port.PortName).IsOpen Then
+                UsingPorts.Ports(port.PortName).DiscardOutBuffer()
+                UsingPorts.Ports(port.PortName).DiscardInBuffer()
                 Send &= vbCr
-                port.Write(Send)
-                Do While port.BytesToWrite > 0
+                UsingPorts.Ports(port.PortName).Write(Send)
+                Do While UsingPorts.Ports(port.PortName).BytesToWrite > 0
                     Threading.Thread.Sleep(1)
                 Loop
                 TimeStart = Environment.TickCount
@@ -92,7 +92,7 @@
                 'reception
                 If isRead Then
                     Do While (Environment.TickCount - TimeStart) < TimeOut
-                        Dim rbuf As String = port.ReadExisting()
+                        Dim rbuf As String = UsingPorts.Ports(port.PortName).ReadExisting()
                         For Each recchar In rbuf
                             If (recchar = vbCr) OrElse (recchar = vbLf) Then
                                 'пришел CRLF проверяем на наличие ответа
@@ -150,12 +150,29 @@
     ''' <returns>сообение ошибки</returns>
     ''' <remarks></remarks>
     Friend Function Open() As String
+        Open = ""
         Try
-            If port.IsOpen Then
-                port.Close()
+            If UsingPorts.Ports.Keys.Contains(port.PortName) Then
+                If Not UsingPorts.Ports(port.PortName).IsOpen _
+                Or UsingPorts.Ports(port.PortName).BaudRate <> port.BaudRate _
+                Or UsingPorts.Ports(port.PortName).Parity <> port.Parity _
+                Or UsingPorts.Ports(port.PortName).DataBits <> port.DataBits _
+                Or UsingPorts.Ports(port.PortName).StopBits <> port.StopBits _
+                Or UsingPorts.Ports(port.PortName).ReadTimeout <> port.ReadTimeout _
+                Or UsingPorts.Ports(port.PortName).WriteTimeout <> port.WriteTimeout Then
+                    UsingPorts.Ports(port.PortName).Close()
+                    UsingPorts.Ports(port.PortName).BaudRate = port.BaudRate
+                    UsingPorts.Ports(port.PortName).Parity = port.Parity
+                    UsingPorts.Ports(port.PortName).DataBits = port.DataBits
+                    UsingPorts.Ports(port.PortName).StopBits = port.StopBits
+                    UsingPorts.Ports(port.PortName).ReadTimeout = port.ReadTimeout
+                    UsingPorts.Ports(port.PortName).WriteTimeout = port.WriteTimeout
+                    UsingPorts.Ports(port.PortName).Open()
+                End If
+            Else
+                UsingPorts.Ports(port.PortName) = port
+                UsingPorts.Ports(port.PortName).Open()
             End If
-            port.Open()
-            Open = ""
         Catch ex As Exception
             Open = "Открытие порта " & port.PortName & " невозможно (" & ex.Message & ")"
         End Try

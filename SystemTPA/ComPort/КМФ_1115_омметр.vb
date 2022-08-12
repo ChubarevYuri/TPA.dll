@@ -40,55 +40,53 @@
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public ReadOnly Property val(Optional ByVal ms As Integer = 100) As Double
+    Public ReadOnly Property val(Optional ByVal ms As Integer = 500) As Double
         Get
             Dim answer As String = ""
-            If ReadWriteCommand(NewCommand("$", "S1", True, True, ">"), answer).Length = 0 Then
-                Dim sost As Integer = 1
-                Dim start As DateTime = Now
-                Do While (0 < sost And sost < 3 And start.AddMilliseconds(ms) < Now)
-                    answer = ""
-                    If ReadWriteCommand(NewCommand("$", "F", True, True, ">"), answer).Length = 0 Then
+            ReadWriteCommand(NewCommand("$", "S1", True, True, ">"), answer)
+            Dim sost As Integer = 1
+            Dim start As DateTime = Now
+            Do While (sost = 1 And start.AddMilliseconds(ms) >= Now)
+                answer = ""
+                If ReadWriteCommand(NewCommand("$", "F", True, True, ">"), answer).Length = 0 Then
+                    Try
+                        sost = Convert.ToInt32(answer)
+                    Catch ex As Exception
+                        sost = 1
+                    End Try
+                End If
+            Loop
+            Select Case sost
+                Case 0
+                    Return Integer.MinValue
+                Case 1
+                    Return Integer.MinValue
+                Case 2
+                    If ReadWriteCommand(NewCommand("$", "U", True, True, ">"), answer).Length = 0 Then
+                        Dim d As Integer
+                        Dim u As Double
                         Try
-                            sost = Convert.ToInt32(answer)
+                            d = Convert.ToInt32(Split(answer, ":")(0)) - 1
                         Catch ex As Exception
-                            sost = 1
+                            Return val
+                        End Try
+                        Try
+                            u = Convert.ToDouble(Split(answer, ":")(1))
+                        Catch ex As Exception
+                            Return val
+                        End Try
+                        Try
+                            Return u * Rобр(d) / (10 - u)
+                        Catch ex As Exception
                         End Try
                     End If
-                Loop
-                Select Case sost
-                    Case 0
-                        If ReadWriteCommand(NewCommand("$", "U", True, True, ">"), answer).Length = 0 Then
-                            Dim d As Integer
-                            Dim u As Double
-                            Try
-                                d = Convert.ToInt32(Split(answer, ":")(0)) - 1
-                            Catch ex As Exception
-                                Return val
-                            End Try
-                            Try
-                                u = Convert.ToDouble(Split(answer, ":")(1))
-                            Catch ex As Exception
-                                Return val
-                            End Try
-                            Try
-                                Return u * Rобр(d) / (10 - u)
-                            Catch ex As Exception
-                            End Try
-                        End If
-                    Case 1
-                        Return Integer.MinValue
-                    Case 2
-                        Return Integer.MinValue
-                    Case 3
-                        Return Integer.MaxValue
-                    Case 4
-                        Return Nothing
-                    Case 5
-                        Return 0
-                End Select
-            End If
-            Return Integer.MinValue
+                Case 3
+                    Return Integer.MaxValue
+                Case 4
+                    Return Nothing
+                Case 5
+                    Return 0
+            End Select
         End Get
     End Property
 
