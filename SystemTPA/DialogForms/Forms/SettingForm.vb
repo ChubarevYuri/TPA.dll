@@ -99,6 +99,7 @@ Public Class SettingForm
             End If
         Loop
         visibleObj()
+        DialogForms.WaitFormStop()
     End Sub
 
 #Region "strings"

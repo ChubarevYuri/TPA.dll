@@ -14,6 +14,7 @@
         _picture = _protocol.Show
         PictureBoxProtocol.Size = _picture.Size
         PictureBoxProtocol.Image = _picture
+        DialogForms.WaitFormStop()
     End Sub
 
     Private Sub PictureBoxCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxCancel.Click

@@ -51,6 +51,7 @@ Public Class SelectForm
         End If
         _correctMode = correctMode
         visibleObj()
+        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -75,6 +76,7 @@ Public Class SelectForm
         End If
         _correctMode = correctMode
         visibleObj()
+        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -99,6 +101,7 @@ Public Class SelectForm
         End If
         _correctMode = correctMode
         visibleObj()
+        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -121,6 +124,7 @@ Public Class SelectForm
         End If
         _correctMode = correctMode
         visibleObj()
+        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -145,6 +149,7 @@ Public Class SelectForm
         End If
         _correctMode = correctMode
         visibleObj()
+        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -167,6 +172,7 @@ Public Class SelectForm
         End If
         _correctMode = correctMode
         visibleObj()
+        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -191,6 +197,7 @@ Public Class SelectForm
         End If
         _correctMode = correctMode
         visibleObj()
+        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -213,6 +220,7 @@ Public Class SelectForm
         End If
         _correctMode = correctMode
         visibleObj()
+        DialogForms.WaitFormStop()
     End Sub
 
 #End Region

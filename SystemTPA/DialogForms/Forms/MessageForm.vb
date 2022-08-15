@@ -19,6 +19,7 @@
             Case DialogForms.MsgType.except
                 PictureBox1.Image = My.Resources.ResourceBMP.except
         End Select
+        DialogForms.WaitFormStop()
     End Sub
 
     Private Sub PictureOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxOk.Click

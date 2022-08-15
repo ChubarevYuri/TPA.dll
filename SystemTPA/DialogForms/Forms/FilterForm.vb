@@ -53,6 +53,7 @@
         DeviceValueDateStop.Value = _dateStop.ToString(dateformat)
         LabelHead.Text = head
         _file = file
+        DialogForms.WaitFormStop()
     End Sub
 
     Private Sub PictureBoxCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxCancel.Click
