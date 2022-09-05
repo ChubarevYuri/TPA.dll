@@ -31,19 +31,6 @@
     End Function
 
 #End Region
-
-    ''' <summary>
-    ''' Тип переменной
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Enum ValueType
-        text
-        uint
-        int
-        ureal
-        real
-        bool
-    End Enum
     ''' <summary>
     ''' открывает форму со списком значений и возвращает список измененных значений
     ''' </summary>
@@ -672,6 +659,7 @@
         End If
         wf = True
         WaitFormThread = New Threading.Thread(New Threading.ThreadStart(AddressOf WaitFormShow))
+        WaitFormThread.Priority = Threading.ThreadPriority.BelowNormal
         WaitFormThread.Start()
     End Sub
 

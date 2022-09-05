@@ -108,12 +108,12 @@
         DeviceValueDateStop.Value = _dateStop.ToString(dateformat)
     End Sub
 
-    Private Sub PanelUser_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PanelUser.Click
+    Private Sub PanelUser_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PanelUser.Click, PanelUserW.Click
         Keyboard.Text(LabelUser.Text, "Оператор")
     End Sub
 
-    Private Sub PanelName_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PanelName.Click
-        Keyboard.Text(LabelName.Text, "Устройство")
+    Private Sub PanelName_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PanelName.Click, PanelNameW.Click
+        Keyboard.Text(LabelName.Text, "Аппарат")
     End Sub
 
     Private Sub ButtonUser_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonUser.Click
@@ -121,6 +121,10 @@
     End Sub
 
     Private Sub ButtonNewName_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonNewName.Click
-        LabelName.Text = DialogForms.Selection(_names, "Устройство")
+        LabelName.Text = DialogForms.Selection(_names, "Аппарат")
+    End Sub
+
+    Private Sub PanelNum_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PanelNum.Click, PanelNumW.Click
+        Keyboard.Text(LabelNum.Text, "Номер аппарата")
     End Sub
 End Class

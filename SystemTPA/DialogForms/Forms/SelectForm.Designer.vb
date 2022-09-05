@@ -39,6 +39,22 @@ Partial Public Class SelectForm
         Me.PictureBoxAdd = New System.Windows.Forms.PictureBox
         Me.PanelControlRight = New System.Windows.Forms.Panel
         Me.PictureBoxDel = New System.Windows.Forms.PictureBox
+        Me.Panel1t = New System.Windows.Forms.Panel
+        Me.Panel1b = New System.Windows.Forms.Panel
+        Me.Panel1l = New System.Windows.Forms.Panel
+        Me.Panel1r = New System.Windows.Forms.Panel
+        Me.Panel2r = New System.Windows.Forms.Panel
+        Me.Panel2l = New System.Windows.Forms.Panel
+        Me.Panel2b = New System.Windows.Forms.Panel
+        Me.Panel2t = New System.Windows.Forms.Panel
+        Me.Panel3r = New System.Windows.Forms.Panel
+        Me.Panel3l = New System.Windows.Forms.Panel
+        Me.Panel3b = New System.Windows.Forms.Panel
+        Me.Panel3t = New System.Windows.Forms.Panel
+        Me.Panel4r = New System.Windows.Forms.Panel
+        Me.Panel4l = New System.Windows.Forms.Panel
+        Me.Panel4b = New System.Windows.Forms.Panel
+        Me.Panel4t = New System.Windows.Forms.Panel
         Me.PanelHead.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -96,6 +112,10 @@ Partial Public Class SelectForm
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel1.Controls.Add(Me.Panel1r)
+        Me.Panel1.Controls.Add(Me.Panel1l)
+        Me.Panel1.Controls.Add(Me.Panel1b)
+        Me.Panel1.Controls.Add(Me.Panel1t)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -104,10 +124,11 @@ Partial Public Class SelectForm
         '
         'Label1
         '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(10, 37)
+        Me.Label1.Location = New System.Drawing.Point(10, 32)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(530, 52)
         Me.Label1.Text = "Label1"
@@ -116,6 +137,10 @@ Partial Public Class SelectForm
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel2.Controls.Add(Me.Panel2r)
+        Me.Panel2.Controls.Add(Me.Panel2l)
+        Me.Panel2.Controls.Add(Me.Panel2b)
+        Me.Panel2.Controls.Add(Me.Panel2t)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 95)
@@ -124,10 +149,11 @@ Partial Public Class SelectForm
         '
         'Label2
         '
-        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(10, 37)
+        Me.Label2.Location = New System.Drawing.Point(10, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(530, 52)
         Me.Label2.Text = "Label2"
@@ -136,6 +162,10 @@ Partial Public Class SelectForm
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel3.Controls.Add(Me.Panel3r)
+        Me.Panel3.Controls.Add(Me.Panel3l)
+        Me.Panel3.Controls.Add(Me.Panel3b)
+        Me.Panel3.Controls.Add(Me.Panel3t)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 190)
@@ -144,10 +174,11 @@ Partial Public Class SelectForm
         '
         'Label3
         '
-        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(10, 37)
+        Me.Label3.Location = New System.Drawing.Point(10, 32)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(530, 52)
         Me.Label3.Text = "Label3"
@@ -174,6 +205,10 @@ Partial Public Class SelectForm
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel4.Controls.Add(Me.Panel4r)
+        Me.Panel4.Controls.Add(Me.Panel4l)
+        Me.Panel4.Controls.Add(Me.Panel4b)
+        Me.Panel4.Controls.Add(Me.Panel4t)
         Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 285)
@@ -182,10 +217,11 @@ Partial Public Class SelectForm
         '
         'Label4
         '
-        Me.Label4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(10, 37)
+        Me.Label4.Location = New System.Drawing.Point(10, 32)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(530, 52)
         Me.Label4.Text = "Label4"
@@ -241,6 +277,150 @@ Partial Public Class SelectForm
         Me.PictureBoxDel.Size = New System.Drawing.Size(125, 100)
         Me.PictureBoxDel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         '
+        'Panel1t
+        '
+        Me.Panel1t.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1t.BackColor = System.Drawing.Color.Black
+        Me.Panel1t.Location = New System.Drawing.Point(5, 5)
+        Me.Panel1t.Name = "Panel1t"
+        Me.Panel1t.Size = New System.Drawing.Size(540, 2)
+        '
+        'Panel1b
+        '
+        Me.Panel1b.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1b.BackColor = System.Drawing.Color.Black
+        Me.Panel1b.Location = New System.Drawing.Point(5, 88)
+        Me.Panel1b.Name = "Panel1b"
+        Me.Panel1b.Size = New System.Drawing.Size(540, 2)
+        '
+        'Panel1l
+        '
+        Me.Panel1l.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel1l.BackColor = System.Drawing.Color.Black
+        Me.Panel1l.Location = New System.Drawing.Point(5, 7)
+        Me.Panel1l.Name = "Panel1l"
+        Me.Panel1l.Size = New System.Drawing.Size(2, 81)
+        '
+        'Panel1r
+        '
+        Me.Panel1r.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1r.BackColor = System.Drawing.Color.Black
+        Me.Panel1r.Location = New System.Drawing.Point(543, 7)
+        Me.Panel1r.Name = "Panel1r"
+        Me.Panel1r.Size = New System.Drawing.Size(2, 81)
+        '
+        'Panel2r
+        '
+        Me.Panel2r.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2r.BackColor = System.Drawing.Color.Black
+        Me.Panel2r.Location = New System.Drawing.Point(543, 7)
+        Me.Panel2r.Name = "Panel2r"
+        Me.Panel2r.Size = New System.Drawing.Size(2, 81)
+        '
+        'Panel2l
+        '
+        Me.Panel2l.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel2l.BackColor = System.Drawing.Color.Black
+        Me.Panel2l.Location = New System.Drawing.Point(5, 7)
+        Me.Panel2l.Name = "Panel2l"
+        Me.Panel2l.Size = New System.Drawing.Size(2, 81)
+        '
+        'Panel2b
+        '
+        Me.Panel2b.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2b.BackColor = System.Drawing.Color.Black
+        Me.Panel2b.Location = New System.Drawing.Point(5, 88)
+        Me.Panel2b.Name = "Panel2b"
+        Me.Panel2b.Size = New System.Drawing.Size(540, 2)
+        '
+        'Panel2t
+        '
+        Me.Panel2t.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2t.BackColor = System.Drawing.Color.Black
+        Me.Panel2t.Location = New System.Drawing.Point(5, 5)
+        Me.Panel2t.Name = "Panel2t"
+        Me.Panel2t.Size = New System.Drawing.Size(540, 2)
+        '
+        'Panel3r
+        '
+        Me.Panel3r.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3r.BackColor = System.Drawing.Color.Black
+        Me.Panel3r.Location = New System.Drawing.Point(543, 7)
+        Me.Panel3r.Name = "Panel3r"
+        Me.Panel3r.Size = New System.Drawing.Size(2, 81)
+        '
+        'Panel3l
+        '
+        Me.Panel3l.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel3l.BackColor = System.Drawing.Color.Black
+        Me.Panel3l.Location = New System.Drawing.Point(5, 7)
+        Me.Panel3l.Name = "Panel3l"
+        Me.Panel3l.Size = New System.Drawing.Size(2, 81)
+        '
+        'Panel3b
+        '
+        Me.Panel3b.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3b.BackColor = System.Drawing.Color.Black
+        Me.Panel3b.Location = New System.Drawing.Point(5, 88)
+        Me.Panel3b.Name = "Panel3b"
+        Me.Panel3b.Size = New System.Drawing.Size(540, 2)
+        '
+        'Panel3t
+        '
+        Me.Panel3t.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3t.BackColor = System.Drawing.Color.Black
+        Me.Panel3t.Location = New System.Drawing.Point(5, 5)
+        Me.Panel3t.Name = "Panel3t"
+        Me.Panel3t.Size = New System.Drawing.Size(540, 2)
+        '
+        'Panel4r
+        '
+        Me.Panel4r.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4r.BackColor = System.Drawing.Color.Black
+        Me.Panel4r.Location = New System.Drawing.Point(543, 7)
+        Me.Panel4r.Name = "Panel4r"
+        Me.Panel4r.Size = New System.Drawing.Size(2, 81)
+        '
+        'Panel4l
+        '
+        Me.Panel4l.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel4l.BackColor = System.Drawing.Color.Black
+        Me.Panel4l.Location = New System.Drawing.Point(5, 7)
+        Me.Panel4l.Name = "Panel4l"
+        Me.Panel4l.Size = New System.Drawing.Size(2, 81)
+        '
+        'Panel4b
+        '
+        Me.Panel4b.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4b.BackColor = System.Drawing.Color.Black
+        Me.Panel4b.Location = New System.Drawing.Point(5, 88)
+        Me.Panel4b.Name = "Panel4b"
+        Me.Panel4b.Size = New System.Drawing.Size(540, 2)
+        '
+        'Panel4t
+        '
+        Me.Panel4t.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4t.BackColor = System.Drawing.Color.Black
+        Me.Panel4t.Location = New System.Drawing.Point(5, 5)
+        Me.Panel4t.Name = "Panel4t"
+        Me.Panel4t.Size = New System.Drawing.Size(540, 2)
+        '
         'SelectForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -288,4 +468,20 @@ Partial Public Class SelectForm
     Friend WithEvents PictureBoxAdd As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBoxDel As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBoxOk As System.Windows.Forms.PictureBox
+    Friend WithEvents Panel1b As System.Windows.Forms.Panel
+    Friend WithEvents Panel1t As System.Windows.Forms.Panel
+    Friend WithEvents Panel1r As System.Windows.Forms.Panel
+    Friend WithEvents Panel1l As System.Windows.Forms.Panel
+    Friend WithEvents Panel2r As System.Windows.Forms.Panel
+    Friend WithEvents Panel2l As System.Windows.Forms.Panel
+    Friend WithEvents Panel2b As System.Windows.Forms.Panel
+    Friend WithEvents Panel2t As System.Windows.Forms.Panel
+    Friend WithEvents Panel3r As System.Windows.Forms.Panel
+    Friend WithEvents Panel3l As System.Windows.Forms.Panel
+    Friend WithEvents Panel3b As System.Windows.Forms.Panel
+    Friend WithEvents Panel3t As System.Windows.Forms.Panel
+    Friend WithEvents Panel4r As System.Windows.Forms.Panel
+    Friend WithEvents Panel4l As System.Windows.Forms.Panel
+    Friend WithEvents Panel4b As System.Windows.Forms.Panel
+    Friend WithEvents Panel4t As System.Windows.Forms.Panel
 End Class

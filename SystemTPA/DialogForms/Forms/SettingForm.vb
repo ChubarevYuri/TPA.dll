@@ -73,7 +73,7 @@ Public Class SettingForm
 
 #Region "new"
 
-    Private Sub start(ByRef _values As ArrayList, ByRef _names As String(), ByVal _types As DialogForms.ValueType(), ByVal head As String)
+    Private Sub start(ByRef _values As ArrayList, ByRef _names As String(), ByVal _types As ValueType(), ByVal head As String)
         LabelHead.Text = head
         collVal = _values
         For Each i In _names
@@ -89,13 +89,13 @@ Public Class SettingForm
         Next
         Do While collType.Count < collVal.Count
             If TypeOf collVal.Item(collType.Count) Is Boolean Then
-                collType.Add(DialogForms.ValueType.bool)
+                collType.Add(ValueType.bool)
             ElseIf TypeOf collVal.Item(collType.Count) Is Integer Then
-                collType.Add(DialogForms.ValueType.int)
+                collType.Add(ValueType.int)
             ElseIf TypeOf collVal.Item(collType.Count) Is Double Then
-                collType.Add(DialogForms.ValueType.real)
+                collType.Add(ValueType.real)
             Else
-                collType.Add(DialogForms.ValueType.text)
+                collType.Add(ValueType.text)
             End If
         Loop
         visibleObj()
@@ -114,7 +114,7 @@ Public Class SettingForm
     ''' <remarks></remarks>
     Public Sub New(ByRef _values As String(), _
                    ByRef _names As String(), _
-                   ByVal _types As DialogForms.ValueType(), _
+                   ByVal _types As ValueType(), _
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         startVal = _values
@@ -140,7 +140,7 @@ Public Class SettingForm
         For Each i In _values
             col.Add(i)
         Next
-        start(col, _names, New DialogForms.ValueType() {}, head)
+        start(col, _names, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -156,7 +156,7 @@ Public Class SettingForm
         For Each i In _values
             col.Add(i)
         Next
-        start(col, New String() {}, New DialogForms.ValueType() {}, head)
+        start(col, New String() {}, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -172,7 +172,7 @@ Public Class SettingForm
         startVal = _values
         Dim col As New ArrayList
         col.Add(_values)
-        start(col, New String() {_names}, New DialogForms.ValueType() {DialogForms.ValueType.text}, head)
+        start(col, New String() {_names}, New ValueType() {ValueType.text}, head)
     End Sub
 
 #End Region
@@ -189,7 +189,7 @@ Public Class SettingForm
     ''' <remarks></remarks>
     Public Sub New(ByRef _values As Integer(), _
                    ByRef _names As String(), _
-                   ByVal _types As DialogForms.ValueType(), _
+                   ByVal _types As ValueType(), _
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         startVal = _values
@@ -215,7 +215,7 @@ Public Class SettingForm
         For Each i In _values
             col.Add(i)
         Next
-        start(col, _names, New DialogForms.ValueType() {}, head)
+        start(col, _names, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -227,13 +227,13 @@ Public Class SettingForm
     ''' <remarks></remarks>
     Public Sub New(ByRef _values As Integer, _
                    ByRef _names As String, _
-                   ByVal _types As DialogForms.ValueType, _
+                   ByVal _types As ValueType, _
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         startVal = _values
         Dim col As New ArrayList
         col.Add(_values)
-        start(col, New String() {_names}, New DialogForms.ValueType() {_types}, head)
+        start(col, New String() {_names}, New ValueType() {_types}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -249,7 +249,7 @@ Public Class SettingForm
         startVal = _values
         Dim col As New ArrayList
         col.Add(_values)
-        start(col, New String() {_names}, New DialogForms.ValueType() {DialogForms.ValueType.text}, head)
+        start(col, New String() {_names}, New ValueType() {ValueType.text}, head)
     End Sub
 
 #End Region
@@ -266,7 +266,7 @@ Public Class SettingForm
     ''' <remarks></remarks>
     Public Sub New(ByRef _values As Double(), _
                    ByRef _names As String(), _
-                   ByVal _types As DialogForms.ValueType(), _
+                   ByVal _types As ValueType(), _
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         startVal = _values
@@ -292,7 +292,7 @@ Public Class SettingForm
         For Each i In _values
             col.Add(i)
         Next
-        start(col, _names, New DialogForms.ValueType() {}, head)
+        start(col, _names, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -304,13 +304,13 @@ Public Class SettingForm
     ''' <remarks></remarks>
     Public Sub New(ByRef _values As Double, _
                    ByRef _names As String, _
-                   ByVal _types As DialogForms.ValueType, _
+                   ByVal _types As ValueType, _
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         startVal = _values
         Dim col As New ArrayList
         col.Add(_values)
-        start(col, New String() {_names}, New DialogForms.ValueType() {_types}, head)
+        start(col, New String() {_names}, New ValueType() {_types}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -326,7 +326,7 @@ Public Class SettingForm
         startVal = _values
         Dim col As New ArrayList
         col.Add(_values)
-        start(col, New String() {_names}, New DialogForms.ValueType() {DialogForms.ValueType.text}, head)
+        start(col, New String() {_names}, New ValueType() {ValueType.text}, head)
     End Sub
 
 #End Region
@@ -348,7 +348,7 @@ Public Class SettingForm
         For Each i In _values
             col.Add(i)
         Next
-        start(col, _names, New DialogForms.ValueType() {}, head)
+        start(col, _names, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -364,7 +364,7 @@ Public Class SettingForm
         For Each i In _values
             col.Add(i)
         Next
-        start(col, New String() {}, New DialogForms.ValueType() {}, head)
+        start(col, New String() {}, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -380,7 +380,7 @@ Public Class SettingForm
         startVal = _values
         Dim col As New ArrayList
         col.Add(_values)
-        start(col, New String() {_names}, New DialogForms.ValueType() {DialogForms.ValueType.text}, head)
+        start(col, New String() {_names}, New ValueType() {ValueType.text}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -392,7 +392,7 @@ Public Class SettingForm
         startVal = _values
         Dim col As New ArrayList
         col.Add(_values)
-        start(col, New String() {}, New DialogForms.ValueType() {DialogForms.ValueType.text}, "")
+        start(col, New String() {}, New ValueType() {ValueType.text}, "")
     End Sub
 
 #End Region
@@ -409,7 +409,7 @@ Public Class SettingForm
     ''' <remarks></remarks>
     Public Sub New(ByRef _values As Collection, _
                    ByRef _names As String(), _
-                   ByVal _types As DialogForms.ValueType(), _
+                   ByVal _types As ValueType(), _
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         Dim col As ArrayList = New ArrayList
@@ -435,7 +435,7 @@ Public Class SettingForm
             col.Add(i)
         Next
         startVal = _values
-        start(col, _names, New DialogForms.ValueType() {}, head)
+        start(col, _names, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -451,7 +451,7 @@ Public Class SettingForm
             col.Add(i)
         Next
         startVal = _values
-        start(col, New String() {}, New DialogForms.ValueType() {}, head)
+        start(col, New String() {}, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -463,7 +463,7 @@ Public Class SettingForm
     ''' <remarks></remarks>
     Public Sub New(ByRef _values As Collection, _
                    ByRef _names As String, _
-                   ByVal _types As DialogForms.ValueType, _
+                   ByVal _types As ValueType, _
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         Dim col As ArrayList = New ArrayList
@@ -471,7 +471,7 @@ Public Class SettingForm
             col.Add(i)
         Next
         startVal = _values
-        start(col, New String() {_names}, New DialogForms.ValueType() {_types}, head)
+        start(col, New String() {_names}, New ValueType() {_types}, head)
     End Sub
 
 #End Region
@@ -488,7 +488,7 @@ Public Class SettingForm
     ''' <remarks></remarks>
     Public Sub New(ByRef _values As ArrayList, _
                    ByRef _names As String(), _
-                   ByVal _types As DialogForms.ValueType(), _
+                   ByVal _types As ValueType(), _
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         startVal = _values
@@ -506,7 +506,7 @@ Public Class SettingForm
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         startVal = _values
-        start(_values, _names, New DialogForms.ValueType() {}, head)
+        start(_values, _names, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -518,7 +518,7 @@ Public Class SettingForm
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         startVal = _values
-        start(_values, New String() {}, New DialogForms.ValueType() {}, head)
+        start(_values, New String() {}, New ValueType() {}, head)
     End Sub
     ''' <summary>
     ''' Сохраняет в result измененные значения
@@ -530,11 +530,11 @@ Public Class SettingForm
     ''' <remarks></remarks>
     Public Sub New(ByRef _values As ArrayList, _
                    ByRef _names As String, _
-                   ByVal _types As DialogForms.ValueType, _
+                   ByVal _types As ValueType, _
                    Optional ByVal head As String = "Параметры")
         InitializeComponent()
         startVal = _values
-        start(_values, New String() {_names}, New DialogForms.ValueType() {_types}, head)
+        start(_values, New String() {_names}, New ValueType() {_types}, head)
     End Sub
 
 #End Region
@@ -609,39 +609,47 @@ Public Class SettingForm
                       ByRef Picture As System.Object, _
                       ByRef head As String, _
                       ByRef text As Object, _
-                      ByRef type As DialogForms.ValueType)
+                      ByRef type As ValueType)
         DirectCast(LabelH, Label).Text = head
         If head <> "" Then DirectCast(LabelH, Label).Text &= ":"
-        If type = DialogForms.ValueType.bool Then
-            DirectCast(LabelB, Label).Visible = False
-            DirectCast(Picture, PictureBox).Visible = True
+        DirectCast(LabelH, Label).Height = If(type = ValueType.text, 26, 75)
+        DirectCast(Picture, PictureBox).Visible = type = ValueType.bool
+        DirectCast(LabelB, Label).Visible = type <> ValueType.bool
+        DirectCast(LabelB, Label).TextAlign = If(type = ValueType.text, Drawing.ContentAlignment.TopLeft, Drawing.ContentAlignment.TopCenter)
+        DirectCast(LabelB, Label).Dock = If(type = ValueType.text, DockStyle.Bottom, DockStyle.Right)
+        DirectCast(LabelB, Label).Font = New Drawing.Font("Arial", If(type = ValueType.text, 26, 42), Drawing.FontStyle.Bold)
+        If type = ValueType.text Then
+            DirectCast(LabelB, Label).Height = 45
+        Else
+            DirectCast(LabelB, Label).Width = 200
+        End If
+
+        If type = ValueType.bool Then
             If text Then
                 DirectCast(Picture, PictureBox).Image = My.Resources.ResourceBMP.истина
             Else
                 DirectCast(Picture, PictureBox).Image = My.Resources.ResourceBMP.ложь
             End If
         Else
-            DirectCast(Picture, PictureBox).Visible = False
-            DirectCast(LabelB, Label).Visible = True
             DirectCast(LabelB, Label).Text = text
         End If
     End Sub
 
-    Private Function selectPanel(ByRef value As Object, ByVal type As DialogForms.ValueType, ByVal name As String) As Object
+    Private Function selectPanel(ByRef value As Object, ByVal type As ValueType, ByVal name As String) As Object
         Select Case type
-            Case DialogForms.ValueType.bool
+            Case ValueType.bool
                 Try
                     value = Not value
                 Catch ex As Exception
                     value = value
                 End Try
-            Case DialogForms.ValueType.int
+            Case ValueType.int
                 Keyboard.Int(value, name)
-            Case DialogForms.ValueType.uint
+            Case ValueType.uint
                 Keyboard.UInt(value, name)
-            Case DialogForms.ValueType.real
+            Case ValueType.real
                 Keyboard.Real(value, name)
-            Case DialogForms.ValueType.ureal
+            Case ValueType.ureal
                 Keyboard.UReal(value, name)
             Case Else
                 Keyboard.Text(value, name)

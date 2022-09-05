@@ -26,9 +26,9 @@
 #Region "Что опрашиваем"
 
     Public ОПРОСдискреты As Boolean = False
-    Public ОПРОСAin1 As Boolean = False
     Public ОПРОСAin2 As Boolean = False
     Public ОПРОСAin3 As Boolean = False
+    Public ОПРОСAin4 As Boolean = False
     Public ОПРОСчастота As Boolean = False
     Public ОПРОСугол As Boolean = False
 
@@ -45,13 +45,6 @@
                 answer.answer = res.Value
                 val.Add("Дискреты", answer)
             End If
-            If ОПРОСAin1 Then
-                Dim res As KeyValuePair(Of String, Double) = Ain1
-                Dim answer As DeviseInspection.ResultType = New DeviseInspection.ResultType
-                answer.err = res.Key
-                answer.answer = res.Value
-                val.Add("Ain1", answer)
-            End If
             If ОПРОСAin2 Then
                 Dim res As KeyValuePair(Of String, Double) = Ain2
                 Dim answer As DeviseInspection.ResultType = New DeviseInspection.ResultType
@@ -65,6 +58,13 @@
                 answer.err = res.Key
                 answer.answer = res.Value
                 val.Add("Ain3", answer)
+            End If
+            If ОПРОСAin4 Then
+                Dim res As KeyValuePair(Of String, Double) = Ain4
+                Dim answer As DeviseInspection.ResultType = New DeviseInspection.ResultType
+                answer.err = res.Key
+                answer.answer = res.Value
+                val.Add("Ain4", answer)
             End If
             If ОПРОСчастота Then
                 Dim res As KeyValuePair(Of String, Integer) = Частота
@@ -115,18 +115,6 @@
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public ReadOnly Property Ain1() As KeyValuePair(Of String, Double)
-        Get
-            Return Ain(1)
-        End Get
-    End Property
-
-    ''' <summary>
-    ''' (ошибка,    val)
-    ''' </summary>
-    ''' <value></value>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public ReadOnly Property Ain2() As KeyValuePair(Of String, Double)
         Get
             Return Ain(2)
@@ -151,11 +139,24 @@
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
+    Public ReadOnly Property Ain4() As KeyValuePair(Of String, Double)
+        Get
+            Return Ain(4)
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' каналы с 1 по 4
+    ''' (ошибка,    val)
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public ReadOnly Property Ain(ByVal канал As Integer) As KeyValuePair(Of String, Double)
         Get
             Dim answer As String = ""
             Dim res As Double = 0
-            Dim err = ReadWriteCommand(NewCommand("#", канал.ToString(), True, True, ">"), answer)
+            Dim err = ReadWriteCommand(NewCommand("#", (канал - 1).ToString(), True, True, ">"), answer)
             If err.Length = 0 Then
                 res = Convert.ToDouble(answer)
             End If
@@ -209,7 +210,7 @@
     End Function
 
     Public Function Регулятор(ByVal val As Integer) As DeviseInspection.CommandType
-        Return NewCommand("$", "P" & val.ToString(), contain:="!>")
+        Return NewCommand("$", "P" & val.ToString(), contain:="!")
     End Function
 
     Public Function УголОткрытияПлавно(ByVal угол As Integer) As DeviseInspection.CommandType
@@ -227,5 +228,50 @@
     Public Function Сброс() As DeviseInspection.CommandType
         Return NewCommand("$", "R", contain:="!")
     End Function
+
+#Region "Local Контактора, I"
+    ''' <summary>
+    ''' Задаёт время регулирования от текущего до заданного U в секундах
+    ''' </summary>
+    ''' <param name="time">сек</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function ВремяРегулирования(ByVal time As Integer) As DeviseInspection.CommandType
+        Return NewCommand("$", "PT" & time.ToString(), contain:="!")
+    End Function
+    ''' <summary>
+    ''' Приступить к выполнению регулирования
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function СтартРегулирования() As DeviseInspection.CommandType
+        Return NewCommand("$", "PS1", contain:="!")
+    End Function
+    ''' <summary>
+    ''' Остановить регулирование
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function СтопРегулирования() As DeviseInspection.CommandType
+        Return NewCommand("$", "PS0", contain:="!")
+    End Function
+    ''' <summary>
+    ''' Остановить регулирование, сбросить U на 0
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function СбросРегулирования() As DeviseInspection.CommandType
+        Return NewCommand("$", "PR", contain:="!")
+    End Function
+    ''' <summary>
+    ''' Задает предел регулирования U
+    ''' </summary>
+    ''' <param name="val"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function ПределРегулирования(ByVal val As Integer) As DeviseInspection.CommandType
+        Return NewCommand("$", "PO" & val.ToString(), contain:="!")
+    End Function
+#End Region
 
 End Class

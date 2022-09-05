@@ -32,7 +32,7 @@
         Do While test
             Dim saveas As String = ""
             Try
-                saveas = DialogForms.SaveAs("Протокол", _
+                saveas = DialogForms.SaveAs(LabelHead.Text, _
                                                           "", _
                                                           "/", _
                                                           New String() {"/Application Data", _

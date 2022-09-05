@@ -91,6 +91,12 @@
     <Compile Include="Components\TimerPanel.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Components\ValSetting.Designer.vb">
+      <DependentUpon>ValSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ValSetting.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ComPort\ComPort.vb" />
     <Compile Include="ComPort\DeviseInspection.vb" />
     <Compile Include="ComPort\I7000.vb" />
@@ -168,9 +174,16 @@
     <Compile Include="Keyboards\Forms\KeyboardUIntegerForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardFormSerialNum.designer.vb">
+      <DependentUpon>KeyboardFormSerialNum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keyboards\Forms\KeyboardFormSerialNum.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Keyboards\Keyboard.vb" />
     <Compile Include="Log.vb" />
     <Compile Include="Main.vb" />
+    <Compile Include="ParamValue.vb" />
     <Compile Include="Path.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
@@ -226,6 +239,9 @@
     <EmbeddedResource Include="Components\TimerPanel.resx">
       <DependentUpon>TimerPanel.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\ValSetting.resx">
+      <DependentUpon>ValSetting.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogForms\Forms\FilterForm.resx">
       <DependentUpon>FilterForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DialogForms\Forms\WaitForm.resx">
       <DependentUpon>WaitForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keyboards\Forms\KeyboardFormSerialNum.resx">
+      <DependentUpon>KeyboardFormSerialNum.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ResourceBMP.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>

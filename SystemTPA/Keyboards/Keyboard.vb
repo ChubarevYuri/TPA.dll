@@ -37,4 +37,10 @@
         End Using
     End Sub
 
+    Public Sub SerialNum(ByRef value As String, Optional ByRef head As String = "")
+        Using f = New KeyboardSerialNumForm(value, head)
+            If f.ShowDialog() = Windows.Forms.DialogResult.OK Then value = f.result
+        End Using
+    End Sub
+
 End Module

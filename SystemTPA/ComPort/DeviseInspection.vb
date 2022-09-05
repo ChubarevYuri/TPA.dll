@@ -144,7 +144,7 @@ Public Module DeviseInspection
     Public Sub startInspection()
         If Not inspection Then
             _thread = New Threading.Thread(AddressOf _main)
-            _thread.Priority = Threading.ThreadPriority.Normal
+            _thread.Priority = Threading.ThreadPriority.BelowNormal
             inspection = True
             _thread.Start()
         End If
@@ -286,6 +286,7 @@ Public Module DeviseInspection
             answer.Add("Ain1", 0.0)
             answer.Add("Ain2", 0.0)
             answer.Add("Ain3", 0.0)
+            answer.Add("Ain4", 0.0)
             answer.Add("Частота", 0)
             answer.Add("Угол", 0)
         End Try

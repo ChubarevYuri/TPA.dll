@@ -31,8 +31,8 @@
 
     ''' <summary>
     ''' Измерение сопротивления
-    ''' res = minvalue - не получен ответ
-    ''' res = Nothing  - обнаружено напряжение
+    ''' res = -1 - не получен ответ
+    ''' res = minvalue  - обнаружено напряжение
     ''' res = 0        - КЗ
     ''' res = maxvalue - обрыв
     ''' </summary>
@@ -43,10 +43,11 @@
     Public ReadOnly Property val(Optional ByVal ms As Integer = 500) As Double
         Get
             Dim answer As String = ""
+            ReadWriteCommand(NewCommand("$", "S0", True, True, ">"), "")
             ReadWriteCommand(NewCommand("$", "S1", True, True, ">"), answer)
             Dim sost As Integer = 1
             Dim start As DateTime = Now
-            Do While (sost = 1 And start.AddMilliseconds(ms) >= Now)
+            Do While (sost <= 1 And start.AddMilliseconds(ms) >= Now)
                 answer = ""
                 If ReadWriteCommand(NewCommand("$", "F", True, True, ">"), answer).Length = 0 Then
                     Try
@@ -58,9 +59,9 @@
             Loop
             Select Case sost
                 Case 0
-                    Return Integer.MinValue
+                    Return -1
                 Case 1
-                    Return Integer.MinValue
+                    Return -1
                 Case 2
                     If ReadWriteCommand(NewCommand("$", "U", True, True, ">"), answer).Length = 0 Then
                         Dim d As Integer
@@ -81,9 +82,9 @@
                         End Try
                     End If
                 Case 3
-                    Return Integer.MaxValue
+                    Return Double.MaxValue
                 Case 4
-                    Return Nothing
+                    Return Double.MinValue
                 Case 5
                     Return 0
             End Select

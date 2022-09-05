@@ -119,6 +119,7 @@ Public Class KeyboardTextForm
         Else
             _isShift = True
         End If
+        DialogForms.WaitFormStop()
     End Sub
 
     ''' <summary>
@@ -140,6 +141,7 @@ Public Class KeyboardTextForm
         Else
             _isShift = True
         End If
+        DialogForms.WaitFormStop()
     End Sub
 
     Private Sub VisibleText()

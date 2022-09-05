@@ -45,3 +45,17 @@ Public Module Main
         EnableWindow(hid, True)
     End Sub
 End Module
+
+''' <summary>
+''' Тип переменной
+''' </summary>
+''' <remarks></remarks>
+Public Enum ValueType
+    text
+    uint
+    int
+    ureal
+    real
+    bool
+    count
+End Enum

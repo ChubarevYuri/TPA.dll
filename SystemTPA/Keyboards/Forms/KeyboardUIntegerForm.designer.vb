@@ -42,15 +42,15 @@ Partial Public Class KeyboardUIntegerForm
         Me.LabelText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelText.BackColor = System.Drawing.Color.White
-        Me.LabelText.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelText.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
         Me.LabelText.Location = New System.Drawing.Point(200, 70)
         Me.LabelText.Name = "LabelText"
-        Me.LabelText.Size = New System.Drawing.Size(400, 35)
+        Me.LabelText.Size = New System.Drawing.Size(400, 43)
         Me.LabelText.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button1.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button1.Location = New System.Drawing.Point(200, 120)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 75)
@@ -59,7 +59,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         'Button2
         '
-        Me.Button2.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button2.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button2.Location = New System.Drawing.Point(280, 120)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 75)
@@ -68,7 +68,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         'Button3
         '
-        Me.Button3.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button3.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button3.Location = New System.Drawing.Point(360, 120)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 75)
@@ -77,7 +77,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         'Button5
         '
-        Me.Button5.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button5.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button5.Location = New System.Drawing.Point(280, 200)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 75)
@@ -86,7 +86,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         'Button6
         '
-        Me.Button6.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button6.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button6.Location = New System.Drawing.Point(360, 200)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 75)
@@ -95,7 +95,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         'Button7
         '
-        Me.Button7.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button7.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button7.Location = New System.Drawing.Point(200, 280)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(75, 75)
@@ -104,7 +104,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         'Button8
         '
-        Me.Button8.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button8.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button8.Location = New System.Drawing.Point(280, 280)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(75, 75)
@@ -113,7 +113,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         'Button9
         '
-        Me.Button9.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button9.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button9.Location = New System.Drawing.Point(360, 280)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(75, 75)
@@ -122,7 +122,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         'Button4
         '
-        Me.Button4.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button4.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button4.Location = New System.Drawing.Point(200, 200)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 75)
@@ -131,7 +131,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         'Button0
         '
-        Me.Button0.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.Button0.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
         Me.Button0.Location = New System.Drawing.Point(200, 360)
         Me.Button0.Name = "Button0"
         Me.Button0.Size = New System.Drawing.Size(235, 75)
@@ -142,7 +142,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         Me.ButtonBackspace.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonBackspace.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonBackspace.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonBackspace.Location = New System.Drawing.Point(440, 200)
         Me.ButtonBackspace.Name = "ButtonBackspace"
         Me.ButtonBackspace.Size = New System.Drawing.Size(160, 75)
@@ -154,7 +154,7 @@ Partial Public Class KeyboardUIntegerForm
         Me.ButtonEnter.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonEnter.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.ButtonEnter.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonEnter.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonEnter.Location = New System.Drawing.Point(440, 120)
         Me.ButtonEnter.Name = "ButtonEnter"
         Me.ButtonEnter.Size = New System.Drawing.Size(160, 75)
@@ -177,7 +177,7 @@ Partial Public Class KeyboardUIntegerForm
         Me.ButtonEsc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonEsc.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.ButtonEsc.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonEsc.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonEsc.Location = New System.Drawing.Point(440, 360)
         Me.ButtonEsc.Name = "ButtonEsc"
         Me.ButtonEsc.Size = New System.Drawing.Size(160, 75)
@@ -188,7 +188,7 @@ Partial Public Class KeyboardUIntegerForm
         '
         Me.ButtonClear.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonClear.Font = New System.Drawing.Font("Arial", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonClear.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonClear.Location = New System.Drawing.Point(440, 280)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(160, 75)

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Public Class KeyboardDoubleForm
+Partial Public Class KeyboardSerialNumForm
     Inherits System.Windows.Forms.Form
 
     'Форма переопределяет метод Dispose для очистки списка компонентов.
@@ -215,7 +215,7 @@ Partial Public Class KeyboardDoubleForm
         Me.ButtonMinus.TabIndex = 75
         Me.ButtonMinus.Text = "-"
         '
-        'KeyboardDoubleForm
+        'KeyboardSerialNumForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
@@ -244,7 +244,7 @@ Partial Public Class KeyboardDoubleForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "KeyboardDoubleForm"
+        Me.Name = "KeyboardSerialNumForm"
         Me.Text = "Клавиатура"
         Me.ResumeLayout(False)
 

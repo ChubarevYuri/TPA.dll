@@ -91,7 +91,7 @@
                                         Else
                                             filter = False
                                         End If
-                                        readName = True
+                                        readNum = True
                                     End If
                                 End If
                                 If Not readDate Then

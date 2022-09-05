@@ -36,6 +36,7 @@ Public Class KeyboardDoubleForm
         End If
         VisibleText()
         LabelHead.Text = head
+        DialogForms.WaitFormStop()
     End Sub
 
     Private Sub VisibleText()
@@ -79,7 +80,11 @@ Public Class KeyboardDoubleForm
                 Button0.Click, ButtonPoint.Click
         If Not (_result.Contains(".") And DirectCast(sender, Button).Text = "." And _result.Length > 0) Then
             If _result = "0" Then
-                _result = DirectCast(sender, Button).Text
+                If DirectCast(sender, Button).Text = "." Then
+                    _result = "0."
+                Else
+                    _result = DirectCast(sender, Button).Text
+                End If
             ElseIf _result.Length < 10 Then
                 _result &= DirectCast(sender, Button).Text
             End If

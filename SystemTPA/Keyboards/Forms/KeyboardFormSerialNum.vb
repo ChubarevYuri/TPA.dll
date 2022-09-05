@@ -1,17 +1,17 @@
 ﻿Imports System.Windows.Forms
 
-Public Class KeyboardUDoubleForm
+Public Class KeyboardSerialNumForm
     Private _startText As String = ""
     Private _result As String = ""
-    Public Property result() As Double
+    Public Property result() As String
         Get
             Try
-                Return Convert.ToDouble(_result)
+                Return _result
             Catch ex As Exception
                 Return 0
             End Try
         End Get
-        Set(ByVal value As Double)
+        Set(ByVal value As String)
         End Set
     End Property
 
@@ -58,18 +58,8 @@ Public Class KeyboardUDoubleForm
     Private Sub ButtonCh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) _
                 Handles Button9.Click, Button8.Click, Button7.Click, Button6.Click, _
                 Button5.Click, Button4.Click, Button3.Click, Button2.Click, Button1.Click, _
-                Button0.Click, ButtonPoint.Click
-        If Not (_result.Contains(".") And DirectCast(sender, Button).Text = "." And _result.Length > 0) Then
-            If _result = "0" Then
-                If DirectCast(sender, Button).Text = "." Then
-                    _result = "0."
-                Else
-                    _result = DirectCast(sender, Button).Text
-                End If
-            ElseIf _result.Length < 10 Then
-                _result &= DirectCast(sender, Button).Text
-            End If
-            VisibleText()
-        End If
+                Button0.Click, ButtonPoint.Click, ButtonMinus.Click
+        _result &= DirectCast(sender, Button).Text
+        VisibleText()
     End Sub
 End Class

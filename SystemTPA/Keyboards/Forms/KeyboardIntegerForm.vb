@@ -36,6 +36,7 @@ Public Class KeyboardIntegerForm
         End If
         VisibleText()
         LabelHead.Text = head
+        DialogForms.WaitFormStop()
     End Sub
 
     Private Sub VisibleText()
