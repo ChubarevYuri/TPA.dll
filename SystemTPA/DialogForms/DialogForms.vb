@@ -396,7 +396,7 @@
                               Optional ByVal canAdd As Boolean = True, _
                               Optional ByVal lastPage As Boolean = False) As CorrectAnswer
         Using f = New SelectForm(collection, head, True, lastPage)
-            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addDisabled
+            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addNone
             Select Case f.ShowDialog
                 Case Windows.Forms.DialogResult.OK
                     Correct.FormResult = resultOfCorrect.OK
@@ -420,7 +420,7 @@
                               Optional ByVal canAdd As Boolean = True, _
                               Optional ByVal lastPage As Boolean = False) As CorrectAnswer
         Using f = New SelectForm(collection, head, True, lastPage)
-            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addDisabled
+            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addNone
             Select Case f.ShowDialog
                 Case Windows.Forms.DialogResult.OK
                     Correct.FormResult = resultOfCorrect.OK
@@ -444,7 +444,7 @@
                               Optional ByVal canAdd As Boolean = True, _
                               Optional ByVal lastPage As Boolean = False) As CorrectAnswer
         Using f = New SelectForm(collection, head, True, lastPage)
-            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addDisabled
+            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addNone
             Select Case f.ShowDialog
                 Case Windows.Forms.DialogResult.OK
                     Correct.FormResult = resultOfCorrect.OK
@@ -468,7 +468,7 @@
                               Optional ByVal canAdd As Boolean = True, _
                               Optional ByVal lastPage As Boolean = False) As CorrectAnswer
         Using f = New SelectForm(collection, head, True, lastPage)
-            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addDisabled
+            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addNone
             Select Case f.ShowDialog
                 Case Windows.Forms.DialogResult.OK
                     Correct.FormResult = resultOfCorrect.OK
@@ -492,7 +492,7 @@
                               Optional ByVal canAdd As Boolean = True, _
                               Optional ByVal lastPage As Boolean = False) As CorrectAnswer
         Using f = New SelectForm(collection, head, True, lastPage)
-            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addDisabled
+            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addNone
             Select Case f.ShowDialog
                 Case Windows.Forms.DialogResult.OK
                     Correct.FormResult = resultOfCorrect.OK
@@ -516,7 +516,7 @@
                               Optional ByVal canAdd As Boolean = True, _
                               Optional ByVal lastPage As Boolean = False) As CorrectAnswer
         Using f = New SelectForm(collection, head, True, lastPage)
-            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addDisabled
+            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addNone
             Select Case f.ShowDialog
                 Case Windows.Forms.DialogResult.OK
                     Correct.FormResult = resultOfCorrect.OK
@@ -540,7 +540,7 @@
                               Optional ByVal canAdd As Boolean = True, _
                               Optional ByVal lastPage As Boolean = False) As CorrectAnswer
         Using f = New SelectForm(collection, head, True, lastPage)
-            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addDisabled
+            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addNone
             Select Case f.ShowDialog
                 Case Windows.Forms.DialogResult.OK
                     Correct.FormResult = resultOfCorrect.OK
@@ -564,7 +564,7 @@
                               Optional ByVal canAdd As Boolean = True, _
                               Optional ByVal lastPage As Boolean = False) As CorrectAnswer
         Using f = New SelectForm(collection, head, True, lastPage)
-            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addDisabled
+            If Not canAdd Then f.PictureBoxAdd.Image = My.Resources.ResourceBMP.addNone
             Select Case f.ShowDialog
                 Case Windows.Forms.DialogResult.OK
                     Correct.FormResult = resultOfCorrect.OK
@@ -622,25 +622,30 @@
                             ByVal notUsePaths() As String, _
                             ByVal createName As Boolean) As String
         SaveAs = ""
-        Dim dir = New IO.DirectoryInfo(startPath)
-        Dim p = dir.GetDirectories
         Dim sp As ArrayList = New ArrayList
-        For Each f In p
-            If Not notUsePaths.Contains(startPath & f.Name) Then sp.Add(f.Name)
-        Next
-        Using f = New SelectForm(sp, startPath, True)
-            f.PictureBoxAdd.Visible = False
-            f.PictureBoxDel.Visible = False
-            Select Case f.ShowDialog
-                Case Windows.Forms.DialogResult.OK
-                    If createName Then Keyboard.Text(name, "Название файла")
-                    Return startPath & name & format
-                Case Windows.Forms.DialogResult.Yes
-                    Return SaveAs(name, format, startPath & f.result & "/", notUsePaths, createName)
-                Case Windows.Forms.DialogResult.Cancel
-                    Return ""
-            End Select
-        End Using
+        Try
+            Dim dir = New IO.DirectoryInfo(startPath)
+            Dim p = dir.GetDirectories
+            For Each f In p
+                If Not notUsePaths.Contains(startPath & f.Name) Then sp.Add(f.Name)
+            Next
+            Using f = New SelectForm(sp, startPath, True)
+                f.PictureBoxAdd.Visible = False
+                f.PictureBoxDel.Visible = False
+                f.saveForm = True
+                Select Case f.ShowDialog
+                    Case Windows.Forms.DialogResult.OK
+                        If createName Then Keyboard.Text(name, "Название файла")
+                        Return startPath & name & format
+                    Case Windows.Forms.DialogResult.Yes
+                        Return SaveAs(name, format, startPath & f.result & "/", notUsePaths, createName)
+                    Case Windows.Forms.DialogResult.Cancel
+                        Return ""
+                End Select
+            End Using
+        Catch ex As Exception
+            DialogForms.Message("ПОДКЛЮЧИТЕ НАКОПИТЕЛЬ." & Chr(13) & Chr(10) & "(Если вы видите это сообщение при подключенном накопителе, значит устройство не может его опознать. Используйте другой накопитель.)", "Ошибка", DialogForms.MsgType.except)
+        End Try
     End Function
 #End Region
 

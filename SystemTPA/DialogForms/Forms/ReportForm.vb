@@ -34,7 +34,7 @@
             Try
                 saveas = DialogForms.SaveAs(LabelHead.Text, _
                                                           "", _
-                                                          "/", _
+                                                          "/HardDisk/", _
                                                           New String() {"/Application Data", _
                                                                         "/My Documents", _
                                                                         "/My Recent Documents", _

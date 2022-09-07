@@ -78,6 +78,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Public Shared ReadOnly Property addNone() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("addNone", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Public Shared ReadOnly Property delDisabled() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("delDisabled", resourceCulture)

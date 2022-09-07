@@ -2,6 +2,7 @@
 
 Public Class SelectForm
     Private _correctMode As Boolean = False
+    Friend saveForm As Boolean = False
     Private _firstNum As Integer = 1
     Private Property firstNum() As Integer
         Get
@@ -231,8 +232,18 @@ Public Class SelectForm
     End Sub
 
     Private Sub PictureBoxOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxOk.Click
-        DialogResult = Windows.Forms.DialogResult.OK
-        Close()
+        If _correctMode Then
+            If _result <> Nothing Then
+                DialogResult = Windows.Forms.DialogResult.Yes
+                Close()
+            ElseIf saveForm Then
+                DialogResult = Windows.Forms.DialogResult.OK
+                Close()
+            End If
+        Else
+            DialogResult = Windows.Forms.DialogResult.OK
+            Close()
+        End If
     End Sub
 
     Private Sub visibleObj()
