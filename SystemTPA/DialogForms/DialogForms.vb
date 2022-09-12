@@ -669,10 +669,8 @@
     End Sub
 
     Public Sub WaitFormStop()
-        If wf Then
-            WaitFormThread.Abort()
-            wf = False
-        End If
+        WaitFormThread.Abort()
+        wf = False
     End Sub
 
 #End Region

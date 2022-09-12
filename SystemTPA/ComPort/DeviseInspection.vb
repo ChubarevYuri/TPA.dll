@@ -214,7 +214,9 @@ Public Module DeviseInspection
         Catch ex As Exception
             answer = 0
         End Try
-        Dim dimex = dev.ReadValue(answer)
+        Dim val As Double = 0
+        Dim dimex = dev.ReadValue(val)
+        If dimex.Length = 0 Then answer = val
         _result = New KeyValuePair(Of Integer, ResultType)(dev.address, answerToResultType(answer, dimex))
     End Sub
 
