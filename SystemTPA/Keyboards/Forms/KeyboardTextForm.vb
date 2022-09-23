@@ -2,7 +2,7 @@
 Imports System.Windows.Forms
 
 Public Class KeyboardTextForm
-    Private language As Integer = 3
+    Friend language As Integer = 3
     Private _passwordMode As Boolean = False
     Private _result As String = ""
     Private _startText As String = ""
@@ -128,7 +128,6 @@ Public Class KeyboardTextForm
     ''' <remarks></remarks>
     Public Sub New()
         _passwordMode = True
-        language = 0
         ' Этот вызов необходим конструктору форм Windows.
         InitializeComponent()
 

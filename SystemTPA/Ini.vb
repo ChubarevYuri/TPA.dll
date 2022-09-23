@@ -14,6 +14,27 @@
         fileName = name & ".ini"
         fileAddress = filePath & fileName
     End Sub
+    Public Sub New(ByVal path As String, ByVal name As String)
+        Dim res = ""
+        For Each ch In path
+            If Not (ch = "\" And _
+                    ch = "|" And _
+                    ch = "#" And _
+                    ch = "<" And _
+                    ch = ">" And _
+                    ch = "=" And _
+                    ch = ":" And _
+                    ch = "?" And _
+                    ch = Chr(10) And _
+                    ch = Chr(13)) Then res &= ch
+            If ch = "/" Then res &= "\"
+        Next
+        res = res.Trim("\")
+        res &= "\"
+        filePath = res
+        fileName = name & ".ini"
+        fileAddress = filePath & fileName
+    End Sub
 
     ''' <summary>
     ''' Фильтр списка протоколов по принципу: (if name>0 then name = Name), (if user>0 then user = User), DateStart ≤ Date ≤ dateStop
@@ -66,7 +87,7 @@
                                 End If
                                 If Not readUser Then
                                     If Split(s, charSplit, 2)(0) = _user Then
-                                        If Split(s, charSplit, 2)(1).Contains(user) Then
+                                        If Split(s, charSplit, 2)(1).ToUpper().Contains(user.ToUpper()) Then
                                             filter = filter And True
                                         Else
                                             filter = False
@@ -76,7 +97,7 @@
                                 End If
                                 If Not readName Then
                                     If Split(s, charSplit, 2)(0) = _name Then
-                                        If Split(s, charSplit, 2)(1).Contains(name) Then
+                                        If Split(s, charSplit, 2)(1).ToUpper().Contains(name.ToUpper()) Then
                                             filter = filter And True
                                         Else
                                             filter = False
@@ -86,7 +107,7 @@
                                 End If
                                 If Not readNum Then
                                     If Split(s, charSplit, 2)(0) = _num Then
-                                        If Split(s, charSplit, 2)(1).Contains(num) Then
+                                        If Split(s, charSplit, 2)(1).ToUpper().Contains(num.ToUpper()) Then
                                             filter = filter And True
                                         Else
                                             filter = False
