@@ -42,7 +42,7 @@
             Return _fact
         End Get
         Set(ByVal value As Double)
-            If value <> Nothing Then _fact = value
+            _fact = If(value <> Nothing, value, 0)
         End Set
     End Property
     ''' <summary>

@@ -42,6 +42,7 @@
                    Optional ByVal time As String = "Time", _
                    Optional ByVal text As String = "заголовок")
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         _users = users
         _names = names
         _name = name

@@ -9,6 +9,7 @@
 
     Public Sub New(ByRef protocol As Report, Optional ByVal head As String = "Протокол")
         InitializeComponent()
+        PictureBoxCancel
         LabelHead.Text = head
         _protocol = protocol
         _picture = _protocol.Show

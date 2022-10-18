@@ -23,6 +23,7 @@ Public Class KeyboardIntegerForm
 
         ' Добавьте все инициализирующие действия после вызова InitializeComponent().
 
+        TPA.GAMEMODE_FORM(Me)
         _startText = value
         If value = "" Then
             _minus = False
@@ -89,5 +90,10 @@ Public Class KeyboardIntegerForm
     Private Sub ButtonMinus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonMinus.Click
         _minus = Not _minus
         VisibleText()
+    End Sub
+
+    Private Sub KeyboardIntegerForm_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Resize
+        Panel1.Left = (Me.Width - Panel1.Width) / 2
+        Panel1.Top = (Me.Height - Panel1.Height - LabelHead.Top - LabelHead.Height) / 2 + LabelHead.Top + LabelHead.Height
     End Sub
 End Class

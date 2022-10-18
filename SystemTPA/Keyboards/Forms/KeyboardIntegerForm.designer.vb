@@ -36,15 +36,15 @@ Partial Public Class KeyboardIntegerForm
         Me.ButtonEsc = New System.Windows.Forms.Button
         Me.ButtonClear = New System.Windows.Forms.Button
         Me.ButtonMinus = New System.Windows.Forms.Button
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'LabelText
         '
-        Me.LabelText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelText.BackColor = System.Drawing.Color.White
         Me.LabelText.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
-        Me.LabelText.Location = New System.Drawing.Point(200, 70)
+        Me.LabelText.Location = New System.Drawing.Point(3, 3)
         Me.LabelText.Name = "LabelText"
         Me.LabelText.Size = New System.Drawing.Size(400, 43)
         Me.LabelText.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -52,7 +52,7 @@ Partial Public Class KeyboardIntegerForm
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button1.Location = New System.Drawing.Point(200, 120)
+        Me.Button1.Location = New System.Drawing.Point(3, 53)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 75)
         Me.Button1.TabIndex = 1
@@ -61,7 +61,7 @@ Partial Public Class KeyboardIntegerForm
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.Location = New System.Drawing.Point(280, 120)
+        Me.Button2.Location = New System.Drawing.Point(83, 53)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 75)
         Me.Button2.TabIndex = 2
@@ -70,7 +70,7 @@ Partial Public Class KeyboardIntegerForm
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button3.Location = New System.Drawing.Point(360, 120)
+        Me.Button3.Location = New System.Drawing.Point(163, 53)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 75)
         Me.Button3.TabIndex = 3
@@ -79,7 +79,7 @@ Partial Public Class KeyboardIntegerForm
         'Button5
         '
         Me.Button5.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button5.Location = New System.Drawing.Point(280, 200)
+        Me.Button5.Location = New System.Drawing.Point(83, 133)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 75)
         Me.Button5.TabIndex = 5
@@ -88,7 +88,7 @@ Partial Public Class KeyboardIntegerForm
         'Button6
         '
         Me.Button6.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button6.Location = New System.Drawing.Point(360, 200)
+        Me.Button6.Location = New System.Drawing.Point(163, 133)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 75)
         Me.Button6.TabIndex = 6
@@ -97,7 +97,7 @@ Partial Public Class KeyboardIntegerForm
         'Button7
         '
         Me.Button7.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button7.Location = New System.Drawing.Point(200, 280)
+        Me.Button7.Location = New System.Drawing.Point(3, 213)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(75, 75)
         Me.Button7.TabIndex = 7
@@ -106,7 +106,7 @@ Partial Public Class KeyboardIntegerForm
         'Button8
         '
         Me.Button8.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button8.Location = New System.Drawing.Point(280, 280)
+        Me.Button8.Location = New System.Drawing.Point(83, 213)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(75, 75)
         Me.Button8.TabIndex = 8
@@ -115,7 +115,7 @@ Partial Public Class KeyboardIntegerForm
         'Button9
         '
         Me.Button9.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button9.Location = New System.Drawing.Point(360, 280)
+        Me.Button9.Location = New System.Drawing.Point(163, 213)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(75, 75)
         Me.Button9.TabIndex = 9
@@ -124,7 +124,7 @@ Partial Public Class KeyboardIntegerForm
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button4.Location = New System.Drawing.Point(200, 200)
+        Me.Button4.Location = New System.Drawing.Point(3, 133)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 75)
         Me.Button4.TabIndex = 4
@@ -133,7 +133,7 @@ Partial Public Class KeyboardIntegerForm
         'Button0
         '
         Me.Button0.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.Button0.Location = New System.Drawing.Point(280, 360)
+        Me.Button0.Location = New System.Drawing.Point(83, 293)
         Me.Button0.Name = "Button0"
         Me.Button0.Size = New System.Drawing.Size(154, 75)
         Me.Button0.TabIndex = 10
@@ -141,10 +141,8 @@ Partial Public Class KeyboardIntegerForm
         '
         'ButtonBackspace
         '
-        Me.ButtonBackspace.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonBackspace.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonBackspace.Location = New System.Drawing.Point(440, 200)
+        Me.ButtonBackspace.Location = New System.Drawing.Point(243, 133)
         Me.ButtonBackspace.Name = "ButtonBackspace"
         Me.ButtonBackspace.Size = New System.Drawing.Size(160, 75)
         Me.ButtonBackspace.TabIndex = 55
@@ -152,11 +150,9 @@ Partial Public Class KeyboardIntegerForm
         '
         'ButtonEnter
         '
-        Me.ButtonEnter.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonEnter.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.ButtonEnter.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonEnter.Location = New System.Drawing.Point(440, 120)
+        Me.ButtonEnter.Location = New System.Drawing.Point(243, 53)
         Me.ButtonEnter.Name = "ButtonEnter"
         Me.ButtonEnter.Size = New System.Drawing.Size(160, 75)
         Me.ButtonEnter.TabIndex = 54
@@ -169,17 +165,15 @@ Partial Public Class KeyboardIntegerForm
         Me.LabelHead.Font = New System.Drawing.Font("Arial", 26.0!, System.Drawing.FontStyle.Bold)
         Me.LabelHead.Location = New System.Drawing.Point(20, 20)
         Me.LabelHead.Name = "LabelHead"
-        Me.LabelHead.Size = New System.Drawing.Size(760, 40)
+        Me.LabelHead.Size = New System.Drawing.Size(600, 40)
         Me.LabelHead.Text = "head"
         Me.LabelHead.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'ButtonEsc
         '
-        Me.ButtonEsc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonEsc.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.ButtonEsc.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonEsc.Location = New System.Drawing.Point(440, 360)
+        Me.ButtonEsc.Location = New System.Drawing.Point(243, 293)
         Me.ButtonEsc.Name = "ButtonEsc"
         Me.ButtonEsc.Size = New System.Drawing.Size(160, 75)
         Me.ButtonEsc.TabIndex = 58
@@ -187,10 +181,8 @@ Partial Public Class KeyboardIntegerForm
         '
         'ButtonClear
         '
-        Me.ButtonClear.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonClear.Font = New System.Drawing.Font("Arial", 28.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonClear.Location = New System.Drawing.Point(440, 280)
+        Me.ButtonClear.Location = New System.Drawing.Point(243, 213)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(160, 75)
         Me.ButtonClear.TabIndex = 70
@@ -199,11 +191,34 @@ Partial Public Class KeyboardIntegerForm
         'ButtonMinus
         '
         Me.ButtonMinus.Font = New System.Drawing.Font("Arial", 48.0!, System.Drawing.FontStyle.Bold)
-        Me.ButtonMinus.Location = New System.Drawing.Point(200, 360)
+        Me.ButtonMinus.Location = New System.Drawing.Point(3, 293)
         Me.ButtonMinus.Name = "ButtonMinus"
         Me.ButtonMinus.Size = New System.Drawing.Size(75, 75)
         Me.ButtonMinus.TabIndex = 75
         Me.ButtonMinus.Text = "-"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel1.Controls.Add(Me.LabelText)
+        Me.Panel1.Controls.Add(Me.ButtonMinus)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.ButtonClear)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.ButtonEsc)
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Button5)
+        Me.Panel1.Controls.Add(Me.ButtonEnter)
+        Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Controls.Add(Me.ButtonBackspace)
+        Me.Panel1.Controls.Add(Me.Button7)
+        Me.Panel1.Controls.Add(Me.Button0)
+        Me.Panel1.Controls.Add(Me.Button8)
+        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.Button9)
+        Me.Panel1.Location = New System.Drawing.Point(117, 84)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(406, 371)
         '
         'KeyboardIntegerForm
         '
@@ -211,30 +226,17 @@ Partial Public Class KeyboardIntegerForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(800, 480)
+        Me.ClientSize = New System.Drawing.Size(640, 480)
         Me.ControlBox = False
-        Me.Controls.Add(Me.ButtonMinus)
-        Me.Controls.Add(Me.ButtonClear)
-        Me.Controls.Add(Me.ButtonEsc)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LabelHead)
-        Me.Controls.Add(Me.ButtonEnter)
-        Me.Controls.Add(Me.ButtonBackspace)
-        Me.Controls.Add(Me.Button0)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button9)
-        Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.LabelText)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "KeyboardIntegerForm"
         Me.Text = "Клавиатура"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -255,4 +257,5 @@ Partial Public Class KeyboardIntegerForm
     Friend WithEvents ButtonEsc As System.Windows.Forms.Button
     Friend WithEvents ButtonClear As System.Windows.Forms.Button
     Friend WithEvents ButtonMinus As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

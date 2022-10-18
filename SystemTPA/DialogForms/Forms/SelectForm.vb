@@ -42,6 +42,7 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         coll = _coll
         If lastPage Then
@@ -65,6 +66,7 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         For Each i In _coll
             coll.Add(i)
@@ -90,6 +92,7 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         For Each i In _coll
             coll.Add(i)
@@ -115,6 +118,7 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         coll.Add(_coll)
         If lastPage Then
@@ -138,6 +142,7 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         For Each i In _coll
             coll.Add(i)
@@ -163,6 +168,7 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         coll.Add(_coll)
         If lastPage Then
@@ -186,6 +192,7 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         For Each i In _coll
             coll.Add(i)
@@ -211,6 +218,7 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         coll.Add(_coll)
         If lastPage Then

@@ -5,6 +5,7 @@
         InitializeComponent()
 
         ' Добавьте все инициализирующие действия после вызова InitializeComponent().
+        TPA.GAMEMODE_FORM(Me)
         DialogResult = Windows.Forms.DialogResult.OK
     End Sub
 

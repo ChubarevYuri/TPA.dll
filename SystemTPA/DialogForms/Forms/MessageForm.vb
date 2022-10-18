@@ -6,6 +6,7 @@
                    Optional ByVal type As DialogForms.MsgType = DialogForms.MsgType.message, _
                    Optional ByVal cancelVisible As Boolean = False)
         InitializeComponent()
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         LabelBody.Text = message
         If Not cancelVisible Then
@@ -30,5 +31,9 @@
     Private Sub PictureCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxCancel.Click
         DialogResult = Windows.Forms.DialogResult.Cancel
         Close()
+    End Sub
+
+    Private Sub MessageForm_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Resize
+        PictureBoxCancel.Width = Me.Width / 2
     End Sub
 End Class

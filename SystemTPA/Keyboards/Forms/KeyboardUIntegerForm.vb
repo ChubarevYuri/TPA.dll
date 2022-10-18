@@ -22,6 +22,7 @@ Public Class KeyboardUIntegerForm
 
         ' Добавьте все инициализирующие действия после вызова InitializeComponent().
 
+        TPA.GAMEMODE_FORM(Me)
         _startText = value
         _result = value
         VisibleText()
@@ -65,5 +66,10 @@ Public Class KeyboardUIntegerForm
             _result &= DirectCast(sender, Button).Text
         End If
         VisibleText()
+    End Sub
+
+    Private Sub KeyboardUIntegerForm_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Resize
+        Panel1.Left = (Me.Width - Panel1.Width) / 2
+        Panel1.Top = (Me.Height - Panel1.Height - LabelHead.Top - LabelHead.Height) / 2 + LabelHead.Top + LabelHead.Height
     End Sub
 End Class

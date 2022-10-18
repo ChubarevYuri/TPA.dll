@@ -63,12 +63,14 @@ Partial Public Class ReportForm
         '
         'LabelHead
         '
+        Me.LabelHead.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelHead.BackColor = System.Drawing.Color.Black
         Me.LabelHead.Font = New System.Drawing.Font("Arial", 26.0!, System.Drawing.FontStyle.Bold)
         Me.LabelHead.ForeColor = System.Drawing.Color.White
-        Me.LabelHead.Location = New System.Drawing.Point(210, 20)
+        Me.LabelHead.Location = New System.Drawing.Point(86, 20)
         Me.LabelHead.Name = "LabelHead"
-        Me.LabelHead.Size = New System.Drawing.Size(380, 40)
+        Me.LabelHead.Size = New System.Drawing.Size(628, 40)
         Me.LabelHead.Text = "Протокол"
         Me.LabelHead.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '

@@ -35,16 +35,6 @@ Partial Public Class FilterForm
         Me.Label4 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.PanelNameBoth = New System.Windows.Forms.Panel
-        Me.PanelName = New System.Windows.Forms.Panel
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.PanelNameW = New System.Windows.Forms.Panel
-        Me.LabelName = New System.Windows.Forms.Label
-        Me.PanelUserBoth = New System.Windows.Forms.Panel
-        Me.PanelUser = New System.Windows.Forms.Panel
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.PanelUserW = New System.Windows.Forms.Panel
-        Me.LabelUser = New System.Windows.Forms.Label
         Me.ButtonDateStopDimMonth = New TPA.ButtonNew
         Me.ButtonDateStopAddMonth = New TPA.ButtonNew
         Me.ButtonDateStopDimDay = New TPA.ButtonNew
@@ -55,7 +45,17 @@ Partial Public Class FilterForm
         Me.ButtonDateStartAddDay = New TPA.ButtonNew
         Me.DeviceValueDateStop = New TPA.DeviceValue
         Me.DeviceValueDateStart = New TPA.DeviceValue
+        Me.PanelNameBoth = New System.Windows.Forms.Panel
+        Me.PanelName = New System.Windows.Forms.Panel
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.PanelNameW = New System.Windows.Forms.Panel
+        Me.LabelName = New System.Windows.Forms.Label
         Me.ButtonNewName = New TPA.ButtonNew
+        Me.PanelUserBoth = New System.Windows.Forms.Panel
+        Me.PanelUser = New System.Windows.Forms.Panel
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.PanelUserW = New System.Windows.Forms.Panel
+        Me.LabelUser = New System.Windows.Forms.Label
         Me.ButtonUser = New TPA.ButtonNew
         Me.PanelHead.SuspendLayout()
         Me.PanelBody.SuspendLayout()
@@ -87,9 +87,9 @@ Partial Public Class FilterForm
         Me.LabelHead.BackColor = System.Drawing.Color.Black
         Me.LabelHead.Font = New System.Drawing.Font("Arial", 26.0!, System.Drawing.FontStyle.Bold)
         Me.LabelHead.ForeColor = System.Drawing.Color.White
-        Me.LabelHead.Location = New System.Drawing.Point(170, 20)
+        Me.LabelHead.Location = New System.Drawing.Point(86, 20)
         Me.LabelHead.Name = "LabelHead"
-        Me.LabelHead.Size = New System.Drawing.Size(460, 40)
+        Me.LabelHead.Size = New System.Drawing.Size(468, 40)
         Me.LabelHead.Text = "head"
         Me.LabelHead.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
@@ -98,7 +98,7 @@ Partial Public Class FilterForm
         Me.PictureBoxCancel.BackColor = System.Drawing.Color.Black
         Me.PictureBoxCancel.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBoxCancel.Image = CType(resources.GetObject("PictureBoxCancel.Image"), System.Drawing.Image)
-        Me.PictureBoxCancel.Location = New System.Drawing.Point(720, 0)
+        Me.PictureBoxCancel.Location = New System.Drawing.Point(560, 0)
         Me.PictureBoxCancel.Name = "PictureBoxCancel"
         Me.PictureBoxCancel.Size = New System.Drawing.Size(80, 80)
         Me.PictureBoxCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -112,7 +112,7 @@ Partial Public Class FilterForm
         Me.PanelHead.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelHead.Location = New System.Drawing.Point(0, 0)
         Me.PanelHead.Name = "PanelHead"
-        Me.PanelHead.Size = New System.Drawing.Size(800, 80)
+        Me.PanelHead.Size = New System.Drawing.Size(640, 80)
         '
         'PanelBody
         '
@@ -137,7 +137,7 @@ Partial Public Class FilterForm
         Me.PanelBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelBody.Location = New System.Drawing.Point(0, 80)
         Me.PanelBody.Name = "PanelBody"
-        Me.PanelBody.Size = New System.Drawing.Size(800, 380)
+        Me.PanelBody.Size = New System.Drawing.Size(640, 400)
         '
         'PanelNumBoth
         '
@@ -147,7 +147,7 @@ Partial Public Class FilterForm
         Me.PanelNumBoth.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelNumBoth.Location = New System.Drawing.Point(0, 140)
         Me.PanelNumBoth.Name = "PanelNumBoth"
-        Me.PanelNumBoth.Size = New System.Drawing.Size(800, 70)
+        Me.PanelNumBoth.Size = New System.Drawing.Size(640, 70)
         '
         'PanelNum
         '
@@ -157,7 +157,7 @@ Partial Public Class FilterForm
         Me.PanelNum.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelNum.Location = New System.Drawing.Point(0, 0)
         Me.PanelNum.Name = "PanelNum"
-        Me.PanelNum.Size = New System.Drawing.Size(650, 70)
+        Me.PanelNum.Size = New System.Drawing.Size(490, 70)
         '
         'Label7
         '
@@ -176,7 +176,7 @@ Partial Public Class FilterForm
         Me.PanelNumW.Controls.Add(Me.LabelNum)
         Me.PanelNumW.Location = New System.Drawing.Point(161, 11)
         Me.PanelNumW.Name = "PanelNumW"
-        Me.PanelNumW.Size = New System.Drawing.Size(489, 44)
+        Me.PanelNumW.Size = New System.Drawing.Size(329, 44)
         '
         'LabelNum
         '
@@ -191,14 +191,15 @@ Partial Public Class FilterForm
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(650, 0)
+        Me.Panel1.Location = New System.Drawing.Point(490, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(150, 70)
         '
         'Label3
         '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(700, 285)
+        Me.Label3.Location = New System.Drawing.Point(540, 305)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(100, 27)
         Me.Label3.Text = "месяц"
@@ -206,8 +207,9 @@ Partial Public Class FilterForm
         '
         'Label4
         '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(430, 285)
+        Me.Label4.Location = New System.Drawing.Point(270, 305)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(100, 27)
         Me.Label4.Text = "день"
@@ -215,8 +217,9 @@ Partial Public Class FilterForm
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(270, 285)
+        Me.Label2.Location = New System.Drawing.Point(270, 305)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(100, 27)
         Me.Label2.Text = "месяц"
@@ -224,12 +227,117 @@ Partial Public Class FilterForm
         '
         'Label1
         '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(0, 285)
+        Me.Label1.Location = New System.Drawing.Point(0, 305)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 27)
         Me.Label1.Text = "день"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'ButtonDateStopDimMonth
+        '
+        Me.ButtonDateStopDimMonth.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDateStopDimMonth.FontSize = 36.0!
+        Me.ButtonDateStopDimMonth.Location = New System.Drawing.Point(540, 335)
+        Me.ButtonDateStopDimMonth.MyText = "▼"
+        Me.ButtonDateStopDimMonth.Name = "ButtonDateStopDimMonth"
+        Me.ButtonDateStopDimMonth.Size = New System.Drawing.Size(100, 65)
+        Me.ButtonDateStopDimMonth.TabIndex = 16
+        '
+        'ButtonDateStopAddMonth
+        '
+        Me.ButtonDateStopAddMonth.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDateStopAddMonth.FontSize = 32.0!
+        Me.ButtonDateStopAddMonth.Location = New System.Drawing.Point(540, 240)
+        Me.ButtonDateStopAddMonth.MyText = "▲"
+        Me.ButtonDateStopAddMonth.Name = "ButtonDateStopAddMonth"
+        Me.ButtonDateStopAddMonth.Size = New System.Drawing.Size(100, 65)
+        Me.ButtonDateStopAddMonth.TabIndex = 15
+        '
+        'ButtonDateStopDimDay
+        '
+        Me.ButtonDateStopDimDay.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDateStopDimDay.FontSize = 36.0!
+        Me.ButtonDateStopDimDay.Location = New System.Drawing.Point(270, 335)
+        Me.ButtonDateStopDimDay.MyText = "▼"
+        Me.ButtonDateStopDimDay.Name = "ButtonDateStopDimDay"
+        Me.ButtonDateStopDimDay.Size = New System.Drawing.Size(100, 65)
+        Me.ButtonDateStopDimDay.TabIndex = 14
+        '
+        'ButtonDateStopAddDay
+        '
+        Me.ButtonDateStopAddDay.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDateStopAddDay.FontSize = 32.0!
+        Me.ButtonDateStopAddDay.Location = New System.Drawing.Point(270, 240)
+        Me.ButtonDateStopAddDay.MyText = "▲"
+        Me.ButtonDateStopAddDay.Name = "ButtonDateStopAddDay"
+        Me.ButtonDateStopAddDay.Size = New System.Drawing.Size(100, 65)
+        Me.ButtonDateStopAddDay.TabIndex = 13
+        '
+        'ButtonDateStartDimMonth
+        '
+        Me.ButtonDateStartDimMonth.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDateStartDimMonth.FontSize = 36.0!
+        Me.ButtonDateStartDimMonth.Location = New System.Drawing.Point(270, 335)
+        Me.ButtonDateStartDimMonth.MyText = "▼"
+        Me.ButtonDateStartDimMonth.Name = "ButtonDateStartDimMonth"
+        Me.ButtonDateStartDimMonth.Size = New System.Drawing.Size(100, 65)
+        Me.ButtonDateStartDimMonth.TabIndex = 12
+        '
+        'ButtonDateStartAddMonth
+        '
+        Me.ButtonDateStartAddMonth.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDateStartAddMonth.FontSize = 32.0!
+        Me.ButtonDateStartAddMonth.Location = New System.Drawing.Point(270, 240)
+        Me.ButtonDateStartAddMonth.MyText = "▲"
+        Me.ButtonDateStartAddMonth.Name = "ButtonDateStartAddMonth"
+        Me.ButtonDateStartAddMonth.Size = New System.Drawing.Size(100, 65)
+        Me.ButtonDateStartAddMonth.TabIndex = 11
+        '
+        'ButtonDateStartDimDay
+        '
+        Me.ButtonDateStartDimDay.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDateStartDimDay.FontSize = 36.0!
+        Me.ButtonDateStartDimDay.Location = New System.Drawing.Point(0, 335)
+        Me.ButtonDateStartDimDay.MyText = "▼"
+        Me.ButtonDateStartDimDay.Name = "ButtonDateStartDimDay"
+        Me.ButtonDateStartDimDay.Size = New System.Drawing.Size(100, 65)
+        Me.ButtonDateStartDimDay.TabIndex = 10
+        '
+        'ButtonDateStartAddDay
+        '
+        Me.ButtonDateStartAddDay.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDateStartAddDay.FontSize = 32.0!
+        Me.ButtonDateStartAddDay.Location = New System.Drawing.Point(0, 240)
+        Me.ButtonDateStartAddDay.MyText = "▲"
+        Me.ButtonDateStartAddDay.Name = "ButtonDateStartAddDay"
+        Me.ButtonDateStartAddDay.Size = New System.Drawing.Size(100, 65)
+        Me.ButtonDateStartAddDay.TabIndex = 9
+        '
+        'DeviceValueDateStop
+        '
+        Me.DeviceValueDateStop.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DeviceValueDateStop.FontSize = 22.0!
+        Me.DeviceValueDateStop.Head = "до"
+        Me.DeviceValueDateStop.Location = New System.Drawing.Point(370, 267)
+        Me.DeviceValueDateStop.Measure = " "
+        Me.DeviceValueDateStop.Name = "DeviceValueDateStop"
+        Me.DeviceValueDateStop.Size = New System.Drawing.Size(170, 100)
+        Me.DeviceValueDateStop.TabIndex = 4
+        Me.DeviceValueDateStop.Value = "22.08.2022"
+        '
+        'DeviceValueDateStart
+        '
+        Me.DeviceValueDateStart.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.DeviceValueDateStart.FontSize = 22.0!
+        Me.DeviceValueDateStart.Head = "от"
+        Me.DeviceValueDateStart.Location = New System.Drawing.Point(100, 267)
+        Me.DeviceValueDateStart.Measure = " "
+        Me.DeviceValueDateStart.Name = "DeviceValueDateStart"
+        Me.DeviceValueDateStart.Size = New System.Drawing.Size(170, 100)
+        Me.DeviceValueDateStart.TabIndex = 3
+        Me.DeviceValueDateStart.Value = "22.08.2022"
         '
         'PanelNameBoth
         '
@@ -239,7 +347,7 @@ Partial Public Class FilterForm
         Me.PanelNameBoth.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelNameBoth.Location = New System.Drawing.Point(0, 70)
         Me.PanelNameBoth.Name = "PanelNameBoth"
-        Me.PanelNameBoth.Size = New System.Drawing.Size(800, 70)
+        Me.PanelNameBoth.Size = New System.Drawing.Size(640, 70)
         '
         'PanelName
         '
@@ -249,7 +357,7 @@ Partial Public Class FilterForm
         Me.PanelName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelName.Location = New System.Drawing.Point(0, 0)
         Me.PanelName.Name = "PanelName"
-        Me.PanelName.Size = New System.Drawing.Size(650, 70)
+        Me.PanelName.Size = New System.Drawing.Size(490, 70)
         '
         'Label6
         '
@@ -268,7 +376,7 @@ Partial Public Class FilterForm
         Me.PanelNameW.Controls.Add(Me.LabelName)
         Me.PanelNameW.Location = New System.Drawing.Point(161, 11)
         Me.PanelNameW.Name = "PanelNameW"
-        Me.PanelNameW.Size = New System.Drawing.Size(489, 44)
+        Me.PanelNameW.Size = New System.Drawing.Size(329, 44)
         '
         'LabelName
         '
@@ -279,6 +387,16 @@ Partial Public Class FilterForm
         Me.LabelName.Name = "LabelName"
         Me.LabelName.Size = New System.Drawing.Size(473, 28)
         '
+        'ButtonNewName
+        '
+        Me.ButtonNewName.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ButtonNewName.FontSize = 48.0!
+        Me.ButtonNewName.Location = New System.Drawing.Point(490, 0)
+        Me.ButtonNewName.MyText = "▼"
+        Me.ButtonNewName.Name = "ButtonNewName"
+        Me.ButtonNewName.Size = New System.Drawing.Size(150, 70)
+        Me.ButtonNewName.TabIndex = 6
+        '
         'PanelUserBoth
         '
         Me.PanelUserBoth.BackColor = System.Drawing.SystemColors.ControlLight
@@ -287,7 +405,7 @@ Partial Public Class FilterForm
         Me.PanelUserBoth.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelUserBoth.Location = New System.Drawing.Point(0, 0)
         Me.PanelUserBoth.Name = "PanelUserBoth"
-        Me.PanelUserBoth.Size = New System.Drawing.Size(800, 70)
+        Me.PanelUserBoth.Size = New System.Drawing.Size(640, 70)
         '
         'PanelUser
         '
@@ -297,7 +415,7 @@ Partial Public Class FilterForm
         Me.PanelUser.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelUser.Location = New System.Drawing.Point(0, 0)
         Me.PanelUser.Name = "PanelUser"
-        Me.PanelUser.Size = New System.Drawing.Size(650, 70)
+        Me.PanelUser.Size = New System.Drawing.Size(490, 70)
         '
         'Label5
         '
@@ -316,7 +434,7 @@ Partial Public Class FilterForm
         Me.PanelUserW.Controls.Add(Me.LabelUser)
         Me.PanelUserW.Location = New System.Drawing.Point(161, 11)
         Me.PanelUserW.Name = "PanelUserW"
-        Me.PanelUserW.Size = New System.Drawing.Size(489, 44)
+        Me.PanelUserW.Size = New System.Drawing.Size(329, 44)
         '
         'LabelUser
         '
@@ -326,117 +444,13 @@ Partial Public Class FilterForm
         Me.LabelUser.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold)
         Me.LabelUser.Location = New System.Drawing.Point(8, 8)
         Me.LabelUser.Name = "LabelUser"
-        Me.LabelUser.Size = New System.Drawing.Size(473, 28)
-        '
-        'ButtonDateStopDimMonth
-        '
-        Me.ButtonDateStopDimMonth.FontSize = 36.0!
-        Me.ButtonDateStopDimMonth.Location = New System.Drawing.Point(700, 315)
-        Me.ButtonDateStopDimMonth.MyText = "▼"
-        Me.ButtonDateStopDimMonth.Name = "ButtonDateStopDimMonth"
-        Me.ButtonDateStopDimMonth.Size = New System.Drawing.Size(100, 65)
-        Me.ButtonDateStopDimMonth.TabIndex = 16
-        '
-        'ButtonDateStopAddMonth
-        '
-        Me.ButtonDateStopAddMonth.FontSize = 32.0!
-        Me.ButtonDateStopAddMonth.Location = New System.Drawing.Point(700, 220)
-        Me.ButtonDateStopAddMonth.MyText = "▲"
-        Me.ButtonDateStopAddMonth.Name = "ButtonDateStopAddMonth"
-        Me.ButtonDateStopAddMonth.Size = New System.Drawing.Size(100, 65)
-        Me.ButtonDateStopAddMonth.TabIndex = 15
-        '
-        'ButtonDateStopDimDay
-        '
-        Me.ButtonDateStopDimDay.FontSize = 36.0!
-        Me.ButtonDateStopDimDay.Location = New System.Drawing.Point(430, 315)
-        Me.ButtonDateStopDimDay.MyText = "▼"
-        Me.ButtonDateStopDimDay.Name = "ButtonDateStopDimDay"
-        Me.ButtonDateStopDimDay.Size = New System.Drawing.Size(100, 65)
-        Me.ButtonDateStopDimDay.TabIndex = 14
-        '
-        'ButtonDateStopAddDay
-        '
-        Me.ButtonDateStopAddDay.FontSize = 32.0!
-        Me.ButtonDateStopAddDay.Location = New System.Drawing.Point(430, 220)
-        Me.ButtonDateStopAddDay.MyText = "▲"
-        Me.ButtonDateStopAddDay.Name = "ButtonDateStopAddDay"
-        Me.ButtonDateStopAddDay.Size = New System.Drawing.Size(100, 65)
-        Me.ButtonDateStopAddDay.TabIndex = 13
-        '
-        'ButtonDateStartDimMonth
-        '
-        Me.ButtonDateStartDimMonth.FontSize = 36.0!
-        Me.ButtonDateStartDimMonth.Location = New System.Drawing.Point(270, 315)
-        Me.ButtonDateStartDimMonth.MyText = "▼"
-        Me.ButtonDateStartDimMonth.Name = "ButtonDateStartDimMonth"
-        Me.ButtonDateStartDimMonth.Size = New System.Drawing.Size(100, 65)
-        Me.ButtonDateStartDimMonth.TabIndex = 12
-        '
-        'ButtonDateStartAddMonth
-        '
-        Me.ButtonDateStartAddMonth.FontSize = 32.0!
-        Me.ButtonDateStartAddMonth.Location = New System.Drawing.Point(270, 220)
-        Me.ButtonDateStartAddMonth.MyText = "▲"
-        Me.ButtonDateStartAddMonth.Name = "ButtonDateStartAddMonth"
-        Me.ButtonDateStartAddMonth.Size = New System.Drawing.Size(100, 65)
-        Me.ButtonDateStartAddMonth.TabIndex = 11
-        '
-        'ButtonDateStartDimDay
-        '
-        Me.ButtonDateStartDimDay.FontSize = 36.0!
-        Me.ButtonDateStartDimDay.Location = New System.Drawing.Point(0, 315)
-        Me.ButtonDateStartDimDay.MyText = "▼"
-        Me.ButtonDateStartDimDay.Name = "ButtonDateStartDimDay"
-        Me.ButtonDateStartDimDay.Size = New System.Drawing.Size(100, 65)
-        Me.ButtonDateStartDimDay.TabIndex = 10
-        '
-        'ButtonDateStartAddDay
-        '
-        Me.ButtonDateStartAddDay.FontSize = 32.0!
-        Me.ButtonDateStartAddDay.Location = New System.Drawing.Point(0, 220)
-        Me.ButtonDateStartAddDay.MyText = "▲"
-        Me.ButtonDateStartAddDay.Name = "ButtonDateStartAddDay"
-        Me.ButtonDateStartAddDay.Size = New System.Drawing.Size(100, 65)
-        Me.ButtonDateStartAddDay.TabIndex = 9
-        '
-        'DeviceValueDateStop
-        '
-        Me.DeviceValueDateStop.FontSize = 22.0!
-        Me.DeviceValueDateStop.Head = "до"
-        Me.DeviceValueDateStop.Location = New System.Drawing.Point(530, 247)
-        Me.DeviceValueDateStop.Measure = " "
-        Me.DeviceValueDateStop.Name = "DeviceValueDateStop"
-        Me.DeviceValueDateStop.Size = New System.Drawing.Size(170, 100)
-        Me.DeviceValueDateStop.TabIndex = 4
-        Me.DeviceValueDateStop.Value = "22.08.2022"
-        '
-        'DeviceValueDateStart
-        '
-        Me.DeviceValueDateStart.FontSize = 22.0!
-        Me.DeviceValueDateStart.Head = "от"
-        Me.DeviceValueDateStart.Location = New System.Drawing.Point(100, 247)
-        Me.DeviceValueDateStart.Measure = " "
-        Me.DeviceValueDateStart.Name = "DeviceValueDateStart"
-        Me.DeviceValueDateStart.Size = New System.Drawing.Size(170, 100)
-        Me.DeviceValueDateStart.TabIndex = 3
-        Me.DeviceValueDateStart.Value = "22.08.2022"
-        '
-        'ButtonNewName
-        '
-        Me.ButtonNewName.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ButtonNewName.FontSize = 48.0!
-        Me.ButtonNewName.Location = New System.Drawing.Point(650, 0)
-        Me.ButtonNewName.MyText = "▼"
-        Me.ButtonNewName.Name = "ButtonNewName"
-        Me.ButtonNewName.Size = New System.Drawing.Size(150, 70)
-        Me.ButtonNewName.TabIndex = 6
+        Me.LabelUser.Size = New System.Drawing.Size(313, 28)
         '
         'ButtonUser
         '
         Me.ButtonUser.Dock = System.Windows.Forms.DockStyle.Right
         Me.ButtonUser.FontSize = 48.0!
-        Me.ButtonUser.Location = New System.Drawing.Point(650, 0)
+        Me.ButtonUser.Location = New System.Drawing.Point(490, 0)
         Me.ButtonUser.MyText = "▼"
         Me.ButtonUser.Name = "ButtonUser"
         Me.ButtonUser.Size = New System.Drawing.Size(150, 70)
@@ -448,7 +462,7 @@ Partial Public Class FilterForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(800, 460)
+        Me.ClientSize = New System.Drawing.Size(640, 480)
         Me.ControlBox = False
         Me.Controls.Add(Me.PanelBody)
         Me.Controls.Add(Me.PanelHead)
@@ -457,6 +471,7 @@ Partial Public Class FilterForm
         Me.MinimizeBox = False
         Me.Name = "FilterForm"
         Me.Text = "Выбор"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelHead.ResumeLayout(False)
         Me.PanelBody.ResumeLayout(False)
         Me.PanelNumBoth.ResumeLayout(False)

@@ -74,6 +74,7 @@ Public Class SettingForm
 #Region "new"
 
     Private Sub start(ByRef _values As ArrayList, ByRef _names As String(), ByVal _types As ValueType(), ByVal head As String)
+        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         collVal = _values
         For Each i In _names
