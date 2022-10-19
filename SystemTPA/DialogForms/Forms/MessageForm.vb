@@ -6,7 +6,6 @@
                    Optional ByVal type As DialogForms.MsgType = DialogForms.MsgType.message, _
                    Optional ByVal cancelVisible As Boolean = False)
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         LabelBody.Text = message
         If Not cancelVisible Then
@@ -20,6 +19,10 @@
             Case DialogForms.MsgType.except
                 PictureBox1.Image = My.Resources.ResourceBMP.except
         End Select
+    End Sub
+
+    Private Sub Form_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        TPA.GAMEMODE_FORM(Me) = True
         DialogForms.WaitFormStop()
     End Sub
 

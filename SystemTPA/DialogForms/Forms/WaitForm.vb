@@ -5,11 +5,15 @@
         InitializeComponent()
 
         ' Добавьте все инициализирующие действия после вызова InitializeComponent().
-        TPA.GAMEMODE_FORM(Me)
         DialogResult = Windows.Forms.DialogResult.OK
     End Sub
 
+    Private Sub Form_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        TPA.GAMEMODE_FORM(Me) = True
+    End Sub
+
     Private Sub TimerWait_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerWait.Tick
+        If Not DialogForms.wf Then Close()
         Select Case num
             Case 0
                 PictureBox1.Image = My.Resources.ResourceWaitForm._00

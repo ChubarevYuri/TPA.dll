@@ -9,12 +9,15 @@
 
     Public Sub New(ByRef protocol As Report, Optional ByVal head As String = "Протокол")
         InitializeComponent()
-        PictureBoxCancel
         LabelHead.Text = head
         _protocol = protocol
         _picture = _protocol.Show
         PictureBoxProtocol.Size = _picture.Size
         PictureBoxProtocol.Image = _picture
+    End Sub
+
+    Private Sub Form_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        TPA.GAMEMODE_FORM(Me) = True
         DialogForms.WaitFormStop()
     End Sub
 

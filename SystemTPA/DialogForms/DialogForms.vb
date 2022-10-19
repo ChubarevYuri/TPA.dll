@@ -651,17 +651,18 @@
 
 #Region "wait"
 
-    Private wf As Boolean = False
+    Friend wf As Boolean = False
     Private WaitFormThread As Threading.Thread
+    Private WaitForm As WaitForm
     Private Sub WaitFormShow()
-        Dim f = New WaitForm
-        f.ShowDialog()
+        WaitForm = New WaitForm
+        WaitForm.ShowDialog()
     End Sub
 
     Public Sub WaitFormStart()
-        If wf Then
+        Do While wf
             WaitFormStop()
-        End If
+        Loop
         wf = True
         WaitFormThread = New Threading.Thread(New Threading.ThreadStart(AddressOf WaitFormShow))
         WaitFormThread.Priority = Threading.ThreadPriority.BelowNormal
@@ -669,10 +670,7 @@
     End Sub
 
     Public Sub WaitFormStop()
-        If wf Then
-            WaitFormThread.Abort()
-            wf = False
-        End If
+        wf = False
     End Sub
 
 #End Region

@@ -144,40 +144,16 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ini.vb" />
-    <Compile Include="Keyboards\Forms\KeyboardDoubleForm.designer.vb">
-      <DependentUpon>KeyboardDoubleForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Keyboards\Forms\KeyboardDoubleForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Keyboards\Forms\KeyboardIntegerForm.designer.vb">
-      <DependentUpon>KeyboardIntegerForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Keyboards\Forms\KeyboardIntegerForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Keyboards\Forms\KeyboardTextForm.designer.vb">
       <DependentUpon>KeyboardTextForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Keyboards\Forms\KeyboardTextForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Keyboards\Forms\KeyboardUDoubleForm.designer.vb">
-      <DependentUpon>KeyboardUDoubleForm.vb</DependentUpon>
+    <Compile Include="Keyboards\Forms\KeyboardDecimalForm.designer.vb">
+      <DependentUpon>KeyboardDecimalForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Keyboards\Forms\KeyboardUDoubleForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Keyboards\Forms\KeyboardUIntegerForm.designer.vb">
-      <DependentUpon>KeyboardUIntegerForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Keyboards\Forms\KeyboardUIntegerForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Keyboards\Forms\KeyboardFormSerialNum.designer.vb">
-      <DependentUpon>KeyboardFormSerialNum.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Keyboards\Forms\KeyboardFormSerialNum.vb">
+    <Compile Include="Keyboards\Forms\KeyboardDecimalForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Keyboards\Keyboard.vb" />
@@ -208,20 +184,8 @@
     <EmbeddedResource Include="DialogForms\Forms\MessageForm.resx">
       <DependentUpon>MessageForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Keyboards\Forms\KeyboardDoubleForm.resx">
-      <DependentUpon>KeyboardDoubleForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Keyboards\Forms\KeyboardIntegerForm.resx">
-      <DependentUpon>KeyboardIntegerForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Keyboards\Forms\KeyboardTextForm.resx">
       <DependentUpon>KeyboardTextForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Keyboards\Forms\KeyboardUDoubleForm.resx">
-      <DependentUpon>KeyboardUDoubleForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Keyboards\Forms\KeyboardUIntegerForm.resx">
-      <DependentUpon>KeyboardUIntegerForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -257,8 +221,8 @@
     <EmbeddedResource Include="DialogForms\Forms\WaitForm.resx">
       <DependentUpon>WaitForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Keyboards\Forms\KeyboardFormSerialNum.resx">
-      <DependentUpon>KeyboardFormSerialNum.vb</DependentUpon>
+    <EmbeddedResource Include="Keyboards\Forms\KeyboardDecimalForm.resx">
+      <DependentUpon>KeyboardDecimalForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ResourceBMP.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>

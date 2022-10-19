@@ -157,7 +157,7 @@ Partial Public Class FilterForm
         Me.PanelNum.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelNum.Location = New System.Drawing.Point(0, 0)
         Me.PanelNum.Name = "PanelNum"
-        Me.PanelNum.Size = New System.Drawing.Size(490, 70)
+        Me.PanelNum.Size = New System.Drawing.Size(520, 70)
         '
         'Label7
         '
@@ -176,7 +176,7 @@ Partial Public Class FilterForm
         Me.PanelNumW.Controls.Add(Me.LabelNum)
         Me.PanelNumW.Location = New System.Drawing.Point(161, 11)
         Me.PanelNumW.Name = "PanelNumW"
-        Me.PanelNumW.Size = New System.Drawing.Size(329, 44)
+        Me.PanelNumW.Size = New System.Drawing.Size(359, 44)
         '
         'LabelNum
         '
@@ -191,9 +191,9 @@ Partial Public Class FilterForm
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(490, 0)
+        Me.Panel1.Location = New System.Drawing.Point(520, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(150, 70)
+        Me.Panel1.Size = New System.Drawing.Size(120, 70)
         '
         'Label3
         '
@@ -357,7 +357,7 @@ Partial Public Class FilterForm
         Me.PanelName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelName.Location = New System.Drawing.Point(0, 0)
         Me.PanelName.Name = "PanelName"
-        Me.PanelName.Size = New System.Drawing.Size(490, 70)
+        Me.PanelName.Size = New System.Drawing.Size(520, 70)
         '
         'Label6
         '
@@ -376,7 +376,7 @@ Partial Public Class FilterForm
         Me.PanelNameW.Controls.Add(Me.LabelName)
         Me.PanelNameW.Location = New System.Drawing.Point(161, 11)
         Me.PanelNameW.Name = "PanelNameW"
-        Me.PanelNameW.Size = New System.Drawing.Size(329, 44)
+        Me.PanelNameW.Size = New System.Drawing.Size(359, 44)
         '
         'LabelName
         '
@@ -391,10 +391,10 @@ Partial Public Class FilterForm
         '
         Me.ButtonNewName.Dock = System.Windows.Forms.DockStyle.Right
         Me.ButtonNewName.FontSize = 48.0!
-        Me.ButtonNewName.Location = New System.Drawing.Point(490, 0)
+        Me.ButtonNewName.Location = New System.Drawing.Point(520, 0)
         Me.ButtonNewName.MyText = "▼"
         Me.ButtonNewName.Name = "ButtonNewName"
-        Me.ButtonNewName.Size = New System.Drawing.Size(150, 70)
+        Me.ButtonNewName.Size = New System.Drawing.Size(120, 70)
         Me.ButtonNewName.TabIndex = 6
         '
         'PanelUserBoth
@@ -415,7 +415,7 @@ Partial Public Class FilterForm
         Me.PanelUser.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelUser.Location = New System.Drawing.Point(0, 0)
         Me.PanelUser.Name = "PanelUser"
-        Me.PanelUser.Size = New System.Drawing.Size(490, 70)
+        Me.PanelUser.Size = New System.Drawing.Size(520, 70)
         '
         'Label5
         '
@@ -434,7 +434,7 @@ Partial Public Class FilterForm
         Me.PanelUserW.Controls.Add(Me.LabelUser)
         Me.PanelUserW.Location = New System.Drawing.Point(161, 11)
         Me.PanelUserW.Name = "PanelUserW"
-        Me.PanelUserW.Size = New System.Drawing.Size(329, 44)
+        Me.PanelUserW.Size = New System.Drawing.Size(359, 44)
         '
         'LabelUser
         '
@@ -444,16 +444,16 @@ Partial Public Class FilterForm
         Me.LabelUser.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold)
         Me.LabelUser.Location = New System.Drawing.Point(8, 8)
         Me.LabelUser.Name = "LabelUser"
-        Me.LabelUser.Size = New System.Drawing.Size(313, 28)
+        Me.LabelUser.Size = New System.Drawing.Size(343, 28)
         '
         'ButtonUser
         '
         Me.ButtonUser.Dock = System.Windows.Forms.DockStyle.Right
         Me.ButtonUser.FontSize = 48.0!
-        Me.ButtonUser.Location = New System.Drawing.Point(490, 0)
+        Me.ButtonUser.Location = New System.Drawing.Point(520, 0)
         Me.ButtonUser.MyText = "▼"
         Me.ButtonUser.Name = "ButtonUser"
-        Me.ButtonUser.Size = New System.Drawing.Size(150, 70)
+        Me.ButtonUser.Size = New System.Drawing.Size(120, 70)
         Me.ButtonUser.TabIndex = 5
         '
         'FilterForm

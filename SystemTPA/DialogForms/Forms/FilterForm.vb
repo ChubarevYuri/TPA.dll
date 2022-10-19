@@ -42,7 +42,6 @@
                    Optional ByVal time As String = "Time", _
                    Optional ByVal text As String = "заголовок")
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         _users = users
         _names = names
         _name = name
@@ -54,6 +53,10 @@
         DeviceValueDateStop.Value = _dateStop.ToString(dateformat)
         LabelHead.Text = head
         _file = file
+    End Sub
+
+    Private Sub FilterForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        TPA.GAMEMODE_FORM(Me) = True
         DialogForms.WaitFormStop()
     End Sub
 

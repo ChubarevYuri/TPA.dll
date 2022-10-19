@@ -2,6 +2,17 @@
 
 Public Class SettingForm
 
+    Private ReadOnly Property ElementsOnPage() As Integer
+        Get
+            Try
+                Dim val As Integer = Math.Min(7, Math.Max(1, Math.Floor(PanelBody.Height / 100)))
+                Return Math.Min(7, Math.Max(1, Math.Floor(PanelBody.Height / 100)))
+            Catch ex As Exception
+                Return 4
+            End Try
+        End Get
+    End Property
+
     Private _firstNum As Integer = 1
     Private Property firstNum() As Integer
         Get
@@ -74,7 +85,6 @@ Public Class SettingForm
 #Region "new"
 
     Private Sub start(ByRef _values As ArrayList, ByRef _names As String(), ByVal _types As ValueType(), ByVal head As String)
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         collVal = _values
         For Each i In _names
@@ -99,8 +109,6 @@ Public Class SettingForm
                 collType.Add(ValueType.text)
             End If
         Loop
-        visibleObj()
-        DialogForms.WaitFormStop()
     End Sub
 
 #Region "strings"
@@ -542,6 +550,12 @@ Public Class SettingForm
 
 #End Region
 
+    Private Sub Form_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        TPA.GAMEMODE_FORM(Me) = True
+        visibleObj()
+        DialogForms.WaitFormStop()
+    End Sub
+
     Private Sub PictureBoxCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxCancel.Click
         saveChanges = False
         DialogResult = Windows.Forms.DialogResult.Cancel
@@ -555,28 +569,48 @@ Public Class SettingForm
     End Sub
 
     Private Sub visibleObj()
+        Panel1.Height = PanelBody.Height / ElementsOnPage
+        Panel1bt.Height = (Panel1.Height - Panel1b.Height) / 2
+        Panel2.Height = PanelBody.Height / ElementsOnPage
+        Panel2bt.Height = (Panel2.Height - Panel2b.Height) / 2
+        Panel3.Height = PanelBody.Height / ElementsOnPage
+        Panel3bt.Height = (Panel3.Height - Panel3b.Height) / 2
+        Panel4.Height = PanelBody.Height / ElementsOnPage
+        Panel4bt.Height = (Panel4.Height - Panel4b.Height) / 2
+        Panel5.Height = PanelBody.Height / ElementsOnPage
+        Panel5bt.Height = (Panel5.Height - Panel5b.Height) / 2
+        Panel6.Height = PanelBody.Height / ElementsOnPage
+        Panel6bt.Height = (Panel6.Height - Panel6b.Height) / 2
+        Panel7.Height = PanelBody.Height / ElementsOnPage
+        Panel7bt.Height = (Panel7.Height - Panel7b.Height) / 2
         If firstNum < 2 Then
             PictureBoxUp.Visible = False
         Else
             PictureBoxUp.Visible = True
         End If
-        If collVal.Count - firstNum < 4 Then
+        If collVal.Count - firstNum < ElementsOnPage Then
             PictureBoxDown.Visible = False
         Else
             PictureBoxDown.Visible = True
         End If
-        Select Case collVal.Count - firstNum
+        Select Case Math.Min(ElementsOnPage - 1, collVal.Count - firstNum)
             Case -1
                 Panel1.Visible = False
                 Panel2.Visible = False
                 Panel3.Visible = False
                 Panel4.Visible = False
+                Panel5.Visible = False
+                Panel6.Visible = False
+                Panel7.Visible = False
             Case 0
                 Panel1.Visible = True
                 panel(Label1h, Label1b, PictureBox1, collName(firstNum - 1), collVal(firstNum - 1), collType(firstNum - 1))
                 Panel2.Visible = False
                 Panel3.Visible = False
                 Panel4.Visible = False
+                Panel5.Visible = False
+                Panel6.Visible = False
+                Panel7.Visible = False
             Case 1
                 Panel1.Visible = True
                 panel(Label1h, Label1b, PictureBox1, collName(firstNum - 1), collVal(firstNum - 1), collType(firstNum - 1))
@@ -584,6 +618,9 @@ Public Class SettingForm
                 panel(Label2h, Label2b, PictureBox2, collName(firstNum), collVal(firstNum), collType(firstNum))
                 Panel3.Visible = False
                 Panel4.Visible = False
+                Panel5.Visible = False
+                Panel6.Visible = False
+                Panel7.Visible = False
             Case 2
                 Panel1.Visible = True
                 panel(Label1h, Label1b, PictureBox1, collName(firstNum - 1), collVal(firstNum - 1), collType(firstNum - 1))
@@ -592,6 +629,48 @@ Public Class SettingForm
                 Panel3.Visible = True
                 panel(Label3h, Label3b, PictureBox3, collName(firstNum + 1), collVal(firstNum + 1), collType(firstNum + 1))
                 Panel4.Visible = False
+                Panel5.Visible = False
+                Panel6.Visible = False
+                Panel7.Visible = False
+            Case 3
+                Panel1.Visible = True
+                panel(Label1h, Label1b, PictureBox1, collName(firstNum - 1), collVal(firstNum - 1), collType(firstNum - 1))
+                Panel2.Visible = True
+                panel(Label2h, Label2b, PictureBox2, collName(firstNum), collVal(firstNum), collType(firstNum))
+                Panel3.Visible = True
+                panel(Label3h, Label3b, PictureBox3, collName(firstNum + 1), collVal(firstNum + 1), collType(firstNum + 1))
+                Panel4.Visible = True
+                panel(Label4h, Label4b, PictureBox4, collName(firstNum + 2), collVal(firstNum + 2), collType(firstNum + 2))
+                Panel5.Visible = False
+                Panel6.Visible = False
+                Panel7.Visible = False
+            Case 4
+                Panel1.Visible = True
+                panel(Label1h, Label1b, PictureBox1, collName(firstNum - 1), collVal(firstNum - 1), collType(firstNum - 1))
+                Panel2.Visible = True
+                panel(Label2h, Label2b, PictureBox2, collName(firstNum), collVal(firstNum), collType(firstNum))
+                Panel3.Visible = True
+                panel(Label3h, Label3b, PictureBox3, collName(firstNum + 1), collVal(firstNum + 1), collType(firstNum + 1))
+                Panel4.Visible = True
+                panel(Label4h, Label4b, PictureBox4, collName(firstNum + 2), collVal(firstNum + 2), collType(firstNum + 2))
+                Panel5.Visible = True
+                panel(Label5h, Label5b, PictureBox5, collName(firstNum + 3), collVal(firstNum + 3), collType(firstNum + 3))
+                Panel6.Visible = False
+                Panel7.Visible = False
+            Case 5
+                Panel1.Visible = True
+                panel(Label1h, Label1b, PictureBox1, collName(firstNum - 1), collVal(firstNum - 1), collType(firstNum - 1))
+                Panel2.Visible = True
+                panel(Label2h, Label2b, PictureBox2, collName(firstNum), collVal(firstNum), collType(firstNum))
+                Panel3.Visible = True
+                panel(Label3h, Label3b, PictureBox3, collName(firstNum + 1), collVal(firstNum + 1), collType(firstNum + 1))
+                Panel4.Visible = True
+                panel(Label4h, Label4b, PictureBox4, collName(firstNum + 2), collVal(firstNum + 2), collType(firstNum + 2))
+                Panel5.Visible = True
+                panel(Label5h, Label5b, PictureBox5, collName(firstNum + 3), collVal(firstNum + 3), collType(firstNum + 3))
+                Panel6.Visible = True
+                panel(Label6h, Label6b, PictureBox6, collName(firstNum + 4), collVal(firstNum + 4), collType(firstNum + 4))
+                Panel7.Visible = False
             Case Else
                 Panel1.Visible = True
                 panel(Label1h, Label1b, PictureBox1, collName(firstNum - 1), collVal(firstNum - 1), collType(firstNum - 1))
@@ -601,6 +680,12 @@ Public Class SettingForm
                 panel(Label3h, Label3b, PictureBox3, collName(firstNum + 1), collVal(firstNum + 1), collType(firstNum + 1))
                 Panel4.Visible = True
                 panel(Label4h, Label4b, PictureBox4, collName(firstNum + 2), collVal(firstNum + 2), collType(firstNum + 2))
+                Panel5.Visible = True
+                panel(Label5h, Label5b, PictureBox5, collName(firstNum + 3), collVal(firstNum + 3), collType(firstNum + 3))
+                Panel6.Visible = True
+                panel(Label6h, Label6b, PictureBox6, collName(firstNum + 4), collVal(firstNum + 4), collType(firstNum + 4))
+                Panel7.Visible = True
+                panel(Label7h, Label7b, PictureBox7, collName(firstNum + 5), collVal(firstNum + 5), collType(firstNum + 5))
         End Select
 
     End Sub
@@ -645,13 +730,21 @@ Public Class SettingForm
                     value = value
                 End Try
             Case ValueType.int
-                Keyboard.Int(value, name)
+                Dim a As Double = Val(value)
+                Keyboard.Int(a, name)
+                value = a
             Case ValueType.uint
-                Keyboard.UInt(value, name)
+                Dim a As Double = Val(value)
+                Keyboard.UInt(a, name)
+                value = a
             Case ValueType.real
-                Keyboard.Real(value, name)
+                Dim a As Double = Val(value)
+                Keyboard.Real(a, name)
+                value = a
             Case ValueType.ureal
-                Keyboard.UReal(value, name)
+                Dim a As Double = Val(value)
+                Keyboard.UReal(a, name)
+                value = a
             Case Else
                 Keyboard.Text(value, name)
         End Select
@@ -659,32 +752,47 @@ Public Class SettingForm
     End Function
 
     Private Sub PictureBoxUp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxUp.Click
-        firstNum -= 4
+        firstNum -= ElementsOnPage
         visibleObj()
     End Sub
 
     Private Sub PictureBoxDown_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxDown.Click
-        firstNum += 4
+        firstNum += ElementsOnPage
         visibleObj()
     End Sub
 
-    Private Sub Panel1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.Click, PictureBox1.Click
+    Private Sub Panel1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.Click, Panel1bb.Click, Panel1bt.Click, Panel1b.Click, Label1b.Click, PictureBox1.Click
         selectPanel(collVal(firstNum - 1), collType(firstNum - 1), collName(firstNum - 1))
         visibleObj()
     End Sub
 
-    Private Sub Panel2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel2.Click, PictureBox2.Click
+    Private Sub Panel2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel2.Click, Panel2bt.Click, Panel2bb.Click, Panel2b.Click, Label2b.Click, PictureBox2.Click
         selectPanel(collVal(firstNum), collType(firstNum), collName(firstNum))
         visibleObj()
     End Sub
 
-    Private Sub Panel3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel3.Click, PictureBox3.Click
+    Private Sub Panel3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel3.Click, Panel3bt.Click, Panel3bb.Click, Panel3b.Click, Label3b.Click, PictureBox3.Click
         selectPanel(collVal(firstNum + 1), collType(firstNum + 1), collName(firstNum + 1))
         visibleObj()
     End Sub
 
-    Private Sub Panel4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel4.Click, PictureBox4.Click
+    Private Sub Panel4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel4.Click, Panel4bt.Click, Panel4bb.Click, Panel4b.Click, Label4b.Click, PictureBox4.Click
         selectPanel(collVal(firstNum + 2), collType(firstNum + 2), collName(firstNum + 2))
+        visibleObj()
+    End Sub
+
+    Private Sub Panel5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel5.Click, Panel5bt.Click, Panel5bb.Click, Panel5b.Click, Label5b.Click, PictureBox5.Click
+        selectPanel(collVal(firstNum + 3), collType(firstNum + 3), collName(firstNum + 3))
+        visibleObj()
+    End Sub
+
+    Private Sub Panel6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel6.Click, Panel6bt.Click, Panel6bb.Click, Panel6b.Click, Label6b.Click, PictureBox6.Click
+        selectPanel(collVal(firstNum + 4), collType(firstNum + 4), collName(firstNum + 4))
+        visibleObj()
+    End Sub
+
+    Private Sub Panel7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel7.Click, Panel7bt.Click, Panel7bb.Click, Panel7b.Click, Label7b.Click, PictureBox7.Click
+        selectPanel(collVal(firstNum + 5), collType(firstNum + 5), collName(firstNum + 5))
         visibleObj()
     End Sub
 End Class

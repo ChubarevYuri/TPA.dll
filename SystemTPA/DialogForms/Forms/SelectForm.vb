@@ -1,6 +1,18 @@
 ﻿Imports System.Windows.Forms
 
 Public Class SelectForm
+
+    Private ReadOnly Property ElementsOnPage() As Integer
+        Get
+            Try
+                Dim val As Integer = Math.Min(7, Math.Max(1, Math.Floor(PanelBody.Height / 90)))
+                Return Math.Min(7, Math.Max(1, Math.Floor(PanelBody.Height / 90)))
+            Catch ex As Exception
+                Return 4
+            End Try
+        End Get
+    End Property
+
     Private _correctMode As Boolean = False
     Friend saveForm As Boolean = False
     Private _firstNum As Integer = 1
@@ -31,6 +43,8 @@ Public Class SelectForm
 
 #Region "new"
 
+    Private _lastPage As Boolean = False
+
     ''' <summary>
     ''' Сохраняет в result выбранное значение
     ''' </summary>
@@ -42,18 +56,10 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         coll = _coll
-        If lastPage Then
-            Dim minus As Integer = coll.Count Mod 4
-            If minus = 0 Then minus = 4
-            minus -= 1
-            firstNum = coll.Count - minus
-        End If
+        _lastPage = lastPage
         _correctMode = correctMode
-        visibleObj()
-        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -66,20 +72,12 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         For Each i In _coll
             coll.Add(i)
         Next
-        If lastPage Then
-            Dim minus As Integer = coll.Count Mod 4
-            If minus = 0 Then minus = 4
-            minus -= 1
-            firstNum = coll.Count - minus
-        End If
+        _lastPage = lastPage
         _correctMode = correctMode
-        visibleObj()
-        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -92,20 +90,12 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         For Each i In _coll
             coll.Add(i)
         Next
-        If lastPage Then
-            Dim minus As Integer = coll.Count Mod 4
-            If minus = 0 Then minus = 4
-            minus -= 1
-            firstNum = coll.Count - minus
-        End If
+        _lastPage = lastPage
         _correctMode = correctMode
-        visibleObj()
-        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -118,18 +108,10 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         coll.Add(_coll)
-        If lastPage Then
-            Dim minus As Integer = coll.Count Mod 4
-            If minus = 0 Then minus = 4
-            minus -= 1
-            firstNum = coll.Count - minus
-        End If
+        _lastPage = lastPage
         _correctMode = correctMode
-        visibleObj()
-        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -142,20 +124,12 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         For Each i In _coll
             coll.Add(i)
         Next
-        If lastPage Then
-            Dim minus As Integer = coll.Count Mod 4
-            If minus = 0 Then minus = 4
-            minus -= 1
-            firstNum = coll.Count - minus
-        End If
+        _lastPage = lastPage
         _correctMode = correctMode
-        visibleObj()
-        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -168,18 +142,10 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         coll.Add(_coll)
-        If lastPage Then
-            Dim minus As Integer = coll.Count Mod 4
-            If minus = 0 Then minus = 4
-            minus -= 1
-            firstNum = coll.Count - minus
-        End If
+        _lastPage = lastPage
         _correctMode = correctMode
-        visibleObj()
-        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -192,20 +158,12 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         For Each i In _coll
             coll.Add(i)
         Next
-        If lastPage Then
-            Dim minus As Integer = coll.Count Mod 4
-            If minus = 0 Then minus = 4
-            minus -= 1
-            firstNum = coll.Count - minus
-        End If
+        _lastPage = lastPage
         _correctMode = correctMode
-        visibleObj()
-        DialogForms.WaitFormStop()
     End Sub
     ''' <summary>
     ''' Сохраняет в result выбранное значение
@@ -218,21 +176,25 @@ Public Class SelectForm
                    Optional ByVal correctMode As Boolean = False, _
                    Optional ByVal lastPage As Boolean = False)
         InitializeComponent()
-        TPA.GAMEMODE_FORM(Me)
         LabelHead.Text = head
         coll.Add(_coll)
-        If lastPage Then
-            Dim minus As Integer = coll.Count Mod 4
-            If minus = 0 Then minus = 4
-            minus -= 1
-            firstNum = coll.Count - minus
-        End If
+        _lastPage = lastPage
         _correctMode = correctMode
-        visibleObj()
-        DialogForms.WaitFormStop()
     End Sub
 
 #End Region
+
+    Private Sub Form_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        TPA.GAMEMODE_FORM(Me) = True
+        If _lastPage Then
+            Dim minus As Integer = coll.Count Mod ElementsOnPage
+            If minus = 0 Then minus = ElementsOnPage
+            minus -= 1
+            firstNum = coll.Count - minus
+        End If
+        visibleObj()
+        DialogForms.WaitFormStop()
+    End Sub
 
     Private Sub PictureBoxCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxCancel.Click
         DialogResult = Windows.Forms.DialogResult.Cancel
@@ -255,6 +217,13 @@ Public Class SelectForm
     End Sub
 
     Private Sub visibleObj()
+        Button1.Height = PanelBody.Height / ElementsOnPage
+        Button2.Height = PanelBody.Height / ElementsOnPage
+        Button3.Height = PanelBody.Height / ElementsOnPage
+        Button4.Height = PanelBody.Height / ElementsOnPage
+        Button5.Height = PanelBody.Height / ElementsOnPage
+        Button6.Height = PanelBody.Height / ElementsOnPage
+        Button7.Height = PanelBody.Height / ElementsOnPage
         If _correctMode Then
             PictureBoxOk.Visible = True
         Else
@@ -267,127 +236,104 @@ Public Class SelectForm
         Else
             PictureBoxUp.Visible = True
         End If
-        If coll.Count - firstNum < 4 Then
+        If coll.Count - firstNum < ElementsOnPage Then
             PictureBoxDown.Visible = False
         Else
             PictureBoxDown.Visible = True
         End If
-        Select Case coll.Count - firstNum
+        Select Case Math.Min(ElementsOnPage - 1, coll.Count - firstNum)
             Case -1
-                Panel1.Visible = False
-                Panel1b.Visible = False
-                Panel1l.Visible = False
-                Panel1r.Visible = False
-                Panel1t.Visible = False
-                Panel2.Visible = False
-                Panel2b.Visible = False
-                Panel2l.Visible = False
-                Panel2r.Visible = False
-                Panel2t.Visible = False
-                Panel3.Visible = False
-                Panel3b.Visible = False
-                Panel3l.Visible = False
-                Panel3r.Visible = False
-                Panel3t.Visible = False
-                Panel4.Visible = False
-                Panel4b.Visible = False
-                Panel4l.Visible = False
-                Panel4r.Visible = False
-                Panel4t.Visible = False
+                Button1.Visible = False
+                Button2.Visible = False
+                Button3.Visible = False
+                Button4.Visible = False
+                Button5.Visible = False
+                Button6.Visible = False
+                Button7.Visible = False
             Case 0
-                Panel1.Visible = True
-                Label1.Text = coll(firstNum - 1)
-                Panel1b.Visible = True
-                Panel1l.Visible = True
-                Panel1r.Visible = True
-                Panel1t.Visible = True
-                Panel2.Visible = False
-                Panel2b.Visible = False
-                Panel2l.Visible = False
-                Panel2r.Visible = False
-                Panel2t.Visible = False
-                Panel3.Visible = False
-                Panel3b.Visible = False
-                Panel3l.Visible = False
-                Panel3r.Visible = False
-                Panel3t.Visible = False
-                Panel4.Visible = False
-                Panel4b.Visible = False
-                Panel4l.Visible = False
-                Panel4r.Visible = False
-                Panel4t.Visible = False
+                Button1.Visible = True
+                Button1.Text = coll(firstNum - 1)
+                Button2.Visible = False
+                Button3.Visible = False
+                Button4.Visible = False
+                Button5.Visible = False
+                Button6.Visible = False
+                Button7.Visible = False
             Case 1
-                Panel1.Visible = True
-                Label1.Text = coll.Item(firstNum - 1)
-                Panel1b.Visible = True
-                Panel1l.Visible = True
-                Panel1r.Visible = True
-                Panel1t.Visible = True
-                Panel2.Visible = True
-                Label2.Text = coll.Item(firstNum)
-                Panel2b.Visible = True
-                Panel2l.Visible = True
-                Panel2r.Visible = True
-                Panel2t.Visible = True
-                Panel3.Visible = False
-                Panel3b.Visible = False
-                Panel3l.Visible = False
-                Panel3r.Visible = False
-                Panel3t.Visible = False
-                Panel4.Visible = False
-                Panel4b.Visible = False
-                Panel4l.Visible = False
-                Panel4r.Visible = False
-                Panel4t.Visible = False
+                Button1.Visible = True
+                Button1.Text = coll.Item(firstNum - 1)
+                Button2.Visible = True
+                Button2.Text = coll.Item(firstNum)
+                Button3.Visible = False
+                Button4.Visible = False
+                Button5.Visible = False
+                Button6.Visible = False
+                Button7.Visible = False
             Case 2
-                Panel1.Visible = True
-                Label1.Text = coll(firstNum - 1)
-                Panel1b.Visible = True
-                Panel1l.Visible = True
-                Panel1r.Visible = True
-                Panel1t.Visible = True
-                Panel2.Visible = True
-                Label2.Text = coll.Item(firstNum)
-                Panel2b.Visible = True
-                Panel2l.Visible = True
-                Panel2r.Visible = True
-                Panel2t.Visible = True
-                Panel3.Visible = True
-                Label3.Text = coll.Item(firstNum + 1)
-                Panel3b.Visible = True
-                Panel3l.Visible = True
-                Panel3r.Visible = True
-                Panel3t.Visible = True
-                Panel4.Visible = False
-                Panel4b.Visible = False
-                Panel4l.Visible = False
-                Panel4r.Visible = False
-                Panel4t.Visible = False
+                Button1.Visible = True
+                Button1.Text = coll(firstNum - 1)
+                Button2.Visible = True
+                Button2.Text = coll.Item(firstNum)
+                Button3.Visible = True
+                Button3.Text = coll.Item(firstNum + 1)
+                Button4.Visible = False
+                Button5.Visible = False
+                Button6.Visible = False
+                Button7.Visible = False
+            Case 3
+                Button1.Visible = True
+                Button1.Text = coll(firstNum - 1)
+                Button2.Visible = True
+                Button2.Text = coll.Item(firstNum)
+                Button3.Visible = True
+                Button3.Text = coll.Item(firstNum + 1)
+                Button4.Visible = True
+                Button4.Text = coll.Item(firstNum + 2)
+                Button5.Visible = False
+                Button6.Visible = False
+                Button7.Visible = False
+            Case 4
+                Button1.Visible = True
+                Button1.Text = coll(firstNum - 1)
+                Button2.Visible = True
+                Button2.Text = coll.Item(firstNum)
+                Button3.Visible = True
+                Button3.Text = coll.Item(firstNum + 1)
+                Button4.Visible = True
+                Button4.Text = coll.Item(firstNum + 2)
+                Button5.Visible = True
+                Button5.Text = coll.Item(firstNum + 3)
+                Button6.Visible = False
+                Button7.Visible = False
+            Case 5
+                Button1.Visible = True
+                Button1.Text = coll(firstNum - 1)
+                Button2.Visible = True
+                Button2.Text = coll.Item(firstNum)
+                Button3.Visible = True
+                Button3.Text = coll.Item(firstNum + 1)
+                Button4.Visible = True
+                Button4.Text = coll.Item(firstNum + 2)
+                Button5.Visible = True
+                Button5.Text = coll.Item(firstNum + 3)
+                Button6.Visible = True
+                Button6.Text = coll.Item(firstNum + 4)
+                Button7.Visible = False
             Case Else
-                Panel1.Visible = True
-                Label1.Text = coll(firstNum - 1)
-                Panel1b.Visible = True
-                Panel1l.Visible = True
-                Panel1r.Visible = True
-                Panel1t.Visible = True
-                Panel2.Visible = True
-                Label2.Text = coll.Item(firstNum)
-                Panel2b.Visible = True
-                Panel2l.Visible = True
-                Panel2r.Visible = True
-                Panel2t.Visible = True
-                Panel3.Visible = True
-                Label3.Text = coll.Item(firstNum + 1)
-                Panel3b.Visible = True
-                Panel3l.Visible = True
-                Panel3r.Visible = True
-                Panel3t.Visible = True
-                Panel4.Visible = True
-                Label4.Text = coll.Item(firstNum + 2)
-                Panel4b.Visible = True
-                Panel4l.Visible = True
-                Panel4r.Visible = True
-                Panel4t.Visible = True
+                Button1.Visible = True
+                Button1.Text = coll(firstNum - 1)
+                Button2.Visible = True
+                Button2.Text = coll.Item(firstNum)
+                Button3.Visible = True
+                Button3.Text = coll.Item(firstNum + 1)
+                Button4.Visible = True
+                Button4.Text = coll.Item(firstNum + 2)
+                Button5.Visible = True
+                Button5.Text = coll.Item(firstNum + 3)
+                Button6.Visible = True
+                Button6.Text = coll.Item(firstNum + 4)
+                Button7.Visible = True
+                Button7.Text = coll.Item(firstNum + 5)
         End Select
         If _correctMode Then
             If _result = Nothing Then
@@ -397,26 +343,29 @@ Public Class SelectForm
                 PictureBoxDel.Enabled = True
                 PictureBoxDel.Image = My.Resources.ResourceBMP.delEnabled
             End If
-            Panel1.BackColor = Drawing.Color.FromArgb(223, 223, 223)
-            Panel2.BackColor = Drawing.Color.FromArgb(223, 223, 223)
-            Panel3.BackColor = Drawing.Color.FromArgb(223, 223, 223)
-            Panel4.BackColor = Drawing.Color.FromArgb(223, 223, 223)
+            Button1.BackColor = Drawing.Color.FromArgb(223, 223, 223)
+            Button2.BackColor = Drawing.Color.FromArgb(223, 223, 223)
+            Button3.BackColor = Drawing.Color.FromArgb(223, 223, 223)
+            Button4.BackColor = Drawing.Color.FromArgb(223, 223, 223)
+            Button5.BackColor = Drawing.Color.FromArgb(223, 223, 223)
+            Button6.BackColor = Drawing.Color.FromArgb(223, 223, 223)
+            Button7.BackColor = Drawing.Color.FromArgb(223, 223, 223)
         End If
     End Sub
 
     Private Sub PictureBoxUpDown_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBoxUp.Click, PictureBoxDown.Click
         If DirectCast(sender, PictureBox).Name.EndsWith("Up") Then
-            firstNum -= 4
+            firstNum -= ElementsOnPage
         Else
-            firstNum += 4
+            firstNum += ElementsOnPage
         End If
         _result = Nothing
         visibleObj()
     End Sub
 
-    Private Sub Panel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.Click, Panel2.Click, Panel3.Click, Panel4.Click
-        _result = coll(_firstNum - 2 + Convert.ToInt32(DirectCast(sender, Panel).Name.Last.ToString))
-        If DirectCast(sender, Panel).BackColor = Drawing.Color.Silver Then
+    Private Sub Panel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click, Button2.Click, Button3.Click, Button4.Click, Button5.Click, Button6.Click, Button7.Click
+        _result = coll(_firstNum - 2 + Convert.ToInt32(DirectCast(sender, Button).Name.Last.ToString))
+        If DirectCast(sender, Button).BackColor = Drawing.Color.Silver Then
             If _correctMode Then
                 DialogResult = Windows.Forms.DialogResult.Yes
             Else
@@ -425,7 +374,7 @@ Public Class SelectForm
             Close()
         Else
             visibleObj()
-            DirectCast(sender, Panel).BackColor = Drawing.Color.Silver
+            DirectCast(sender, Button).BackColor = Drawing.Color.Silver
             If Not _correctMode Then DialogResult = Windows.Forms.DialogResult.OK
         End If
     End Sub

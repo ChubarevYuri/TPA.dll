@@ -98,6 +98,8 @@ Partial Public Class KeyboardTextForm
         '
         'LabelText
         '
+        Me.LabelText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelText.BackColor = System.Drawing.Color.White
         Me.LabelText.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
         Me.LabelText.Location = New System.Drawing.Point(3, 3)
@@ -113,6 +115,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonTilda.Name = "ButtonTilda"
         Me.ButtonTilda.Size = New System.Drawing.Size(45, 45)
         Me.ButtonTilda.TabIndex = 56
+        Me.ButtonTilda.TabStop = False
         '
         'Button1
         '
@@ -122,6 +125,7 @@ Partial Public Class KeyboardTextForm
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(45, 45)
         Me.Button1.TabIndex = 1
+        Me.Button1.TabStop = False
         '
         'Button2
         '
@@ -131,6 +135,7 @@ Partial Public Class KeyboardTextForm
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(45, 45)
         Me.Button2.TabIndex = 2
+        Me.Button2.TabStop = False
         '
         'Button3
         '
@@ -140,6 +145,7 @@ Partial Public Class KeyboardTextForm
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(45, 45)
         Me.Button3.TabIndex = 3
+        Me.Button3.TabStop = False
         '
         'Button5
         '
@@ -149,6 +155,7 @@ Partial Public Class KeyboardTextForm
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(45, 45)
         Me.Button5.TabIndex = 5
+        Me.Button5.TabStop = False
         '
         'Button6
         '
@@ -158,6 +165,7 @@ Partial Public Class KeyboardTextForm
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(45, 45)
         Me.Button6.TabIndex = 6
+        Me.Button6.TabStop = False
         '
         'Button7
         '
@@ -167,6 +175,7 @@ Partial Public Class KeyboardTextForm
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(45, 45)
         Me.Button7.TabIndex = 7
+        Me.Button7.TabStop = False
         '
         'Button8
         '
@@ -176,6 +185,7 @@ Partial Public Class KeyboardTextForm
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(45, 45)
         Me.Button8.TabIndex = 8
+        Me.Button8.TabStop = False
         '
         'Button9
         '
@@ -185,6 +195,7 @@ Partial Public Class KeyboardTextForm
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(45, 45)
         Me.Button9.TabIndex = 9
+        Me.Button9.TabStop = False
         '
         'Button4
         '
@@ -194,6 +205,7 @@ Partial Public Class KeyboardTextForm
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(45, 45)
         Me.Button4.TabIndex = 4
+        Me.Button4.TabStop = False
         '
         'Button0
         '
@@ -203,6 +215,7 @@ Partial Public Class KeyboardTextForm
         Me.Button0.Name = "Button0"
         Me.Button0.Size = New System.Drawing.Size(45, 45)
         Me.Button0.TabIndex = 10
+        Me.Button0.TabStop = False
         '
         'ButtonCh12
         '
@@ -212,6 +225,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh12.Name = "ButtonCh12"
         Me.ButtonCh12.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh12.TabIndex = 11
+        Me.ButtonCh12.TabStop = False
         '
         'ButtonCh13
         '
@@ -221,15 +235,19 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh13.Name = "ButtonCh13"
         Me.ButtonCh13.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh13.TabIndex = 12
+        Me.ButtonCh13.TabStop = False
         '
         'ButtonBackspace
         '
+        Me.ButtonBackspace.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonBackspace.BackColor = System.Drawing.Color.LightGray
         Me.ButtonBackspace.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonBackspace.Location = New System.Drawing.Point(666, 106)
         Me.ButtonBackspace.Name = "ButtonBackspace"
         Me.ButtonBackspace.Size = New System.Drawing.Size(97, 45)
         Me.ButtonBackspace.TabIndex = 55
+        Me.ButtonBackspace.TabStop = False
         '
         'ButtonQ
         '
@@ -239,6 +257,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonQ.Name = "ButtonQ"
         Me.ButtonQ.Size = New System.Drawing.Size(45, 45)
         Me.ButtonQ.TabIndex = 14
+        Me.ButtonQ.TabStop = False
         '
         'ButtonW
         '
@@ -248,6 +267,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonW.Name = "ButtonW"
         Me.ButtonW.Size = New System.Drawing.Size(45, 45)
         Me.ButtonW.TabIndex = 15
+        Me.ButtonW.TabStop = False
         '
         'ButtonE
         '
@@ -257,6 +277,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonE.Name = "ButtonE"
         Me.ButtonE.Size = New System.Drawing.Size(45, 45)
         Me.ButtonE.TabIndex = 16
+        Me.ButtonE.TabStop = False
         '
         'ButtonR
         '
@@ -266,6 +287,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonR.Name = "ButtonR"
         Me.ButtonR.Size = New System.Drawing.Size(45, 45)
         Me.ButtonR.TabIndex = 17
+        Me.ButtonR.TabStop = False
         '
         'ButtonT
         '
@@ -275,6 +297,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonT.Name = "ButtonT"
         Me.ButtonT.Size = New System.Drawing.Size(45, 45)
         Me.ButtonT.TabIndex = 18
+        Me.ButtonT.TabStop = False
         '
         'ButtonY
         '
@@ -284,6 +307,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonY.Name = "ButtonY"
         Me.ButtonY.Size = New System.Drawing.Size(45, 45)
         Me.ButtonY.TabIndex = 19
+        Me.ButtonY.TabStop = False
         '
         'ButtonU
         '
@@ -293,6 +317,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonU.Name = "ButtonU"
         Me.ButtonU.Size = New System.Drawing.Size(45, 45)
         Me.ButtonU.TabIndex = 20
+        Me.ButtonU.TabStop = False
         '
         'ButtonI
         '
@@ -302,6 +327,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonI.Name = "ButtonI"
         Me.ButtonI.Size = New System.Drawing.Size(45, 45)
         Me.ButtonI.TabIndex = 21
+        Me.ButtonI.TabStop = False
         '
         'ButtonO
         '
@@ -311,6 +337,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonO.Name = "ButtonO"
         Me.ButtonO.Size = New System.Drawing.Size(45, 45)
         Me.ButtonO.TabIndex = 22
+        Me.ButtonO.TabStop = False
         '
         'ButtonP
         '
@@ -320,6 +347,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonP.Name = "ButtonP"
         Me.ButtonP.Size = New System.Drawing.Size(45, 45)
         Me.ButtonP.TabIndex = 23
+        Me.ButtonP.TabStop = False
         '
         'ButtonSkS
         '
@@ -329,6 +357,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonSkS.Name = "ButtonSkS"
         Me.ButtonSkS.Size = New System.Drawing.Size(45, 45)
         Me.ButtonSkS.TabIndex = 24
+        Me.ButtonSkS.TabStop = False
         '
         'ButtonSkE
         '
@@ -338,15 +367,19 @@ Partial Public Class KeyboardTextForm
         Me.ButtonSkE.Name = "ButtonSkE"
         Me.ButtonSkE.Size = New System.Drawing.Size(45, 45)
         Me.ButtonSkE.TabIndex = 25
+        Me.ButtonSkE.TabStop = False
         '
         'ButtonSlash
         '
+        Me.ButtonSlash.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonSlash.BackColor = System.Drawing.Color.LightGray
         Me.ButtonSlash.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonSlash.Location = New System.Drawing.Point(686, 164)
         Me.ButtonSlash.Name = "ButtonSlash"
         Me.ButtonSlash.Size = New System.Drawing.Size(77, 45)
         Me.ButtonSlash.TabIndex = 26
+        Me.ButtonSlash.TabStop = False
         '
         'ButtonSlashB
         '
@@ -356,6 +389,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonSlashB.Name = "ButtonSlashB"
         Me.ButtonSlashB.Size = New System.Drawing.Size(65, 45)
         Me.ButtonSlashB.TabIndex = 13
+        Me.ButtonSlashB.TabStop = False
         '
         'ButtonA
         '
@@ -365,6 +399,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonA.Name = "ButtonA"
         Me.ButtonA.Size = New System.Drawing.Size(45, 45)
         Me.ButtonA.TabIndex = 27
+        Me.ButtonA.TabStop = False
         '
         'ButtonS
         '
@@ -374,6 +409,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonS.Name = "ButtonS"
         Me.ButtonS.Size = New System.Drawing.Size(45, 45)
         Me.ButtonS.TabIndex = 28
+        Me.ButtonS.TabStop = False
         '
         'ButtonD
         '
@@ -383,6 +419,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonD.Name = "ButtonD"
         Me.ButtonD.Size = New System.Drawing.Size(45, 45)
         Me.ButtonD.TabIndex = 29
+        Me.ButtonD.TabStop = False
         '
         'ButtonF
         '
@@ -392,6 +429,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonF.Name = "ButtonF"
         Me.ButtonF.Size = New System.Drawing.Size(45, 45)
         Me.ButtonF.TabIndex = 30
+        Me.ButtonF.TabStop = False
         '
         'ButtonG
         '
@@ -401,6 +439,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonG.Name = "ButtonG"
         Me.ButtonG.Size = New System.Drawing.Size(45, 45)
         Me.ButtonG.TabIndex = 31
+        Me.ButtonG.TabStop = False
         '
         'ButtonH
         '
@@ -410,6 +449,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonH.Name = "ButtonH"
         Me.ButtonH.Size = New System.Drawing.Size(45, 45)
         Me.ButtonH.TabIndex = 32
+        Me.ButtonH.TabStop = False
         '
         'ButtonJ
         '
@@ -419,6 +459,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonJ.Name = "ButtonJ"
         Me.ButtonJ.Size = New System.Drawing.Size(45, 45)
         Me.ButtonJ.TabIndex = 33
+        Me.ButtonJ.TabStop = False
         '
         'ButtonK
         '
@@ -428,6 +469,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonK.Name = "ButtonK"
         Me.ButtonK.Size = New System.Drawing.Size(45, 45)
         Me.ButtonK.TabIndex = 34
+        Me.ButtonK.TabStop = False
         '
         'ButtonL
         '
@@ -437,6 +479,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonL.Name = "ButtonL"
         Me.ButtonL.Size = New System.Drawing.Size(45, 45)
         Me.ButtonL.TabIndex = 35
+        Me.ButtonL.TabStop = False
         '
         'ButtonDoublepoint
         '
@@ -446,6 +489,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonDoublepoint.Name = "ButtonDoublepoint"
         Me.ButtonDoublepoint.Size = New System.Drawing.Size(45, 45)
         Me.ButtonDoublepoint.TabIndex = 36
+        Me.ButtonDoublepoint.TabStop = False
         '
         'ButtonKav
         '
@@ -455,9 +499,12 @@ Partial Public Class KeyboardTextForm
         Me.ButtonKav.Name = "ButtonKav"
         Me.ButtonKav.Size = New System.Drawing.Size(45, 45)
         Me.ButtonKav.TabIndex = 37
+        Me.ButtonKav.TabStop = False
         '
         'ButtonEnter
         '
+        Me.ButtonEnter.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonEnter.BackColor = System.Drawing.Color.LightGray
         Me.ButtonEnter.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.ButtonEnter.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
@@ -465,6 +512,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonEnter.Name = "ButtonEnter"
         Me.ButtonEnter.Size = New System.Drawing.Size(108, 45)
         Me.ButtonEnter.TabIndex = 54
+        Me.ButtonEnter.TabStop = False
         '
         'ButtonCaps
         '
@@ -474,6 +522,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCaps.Name = "ButtonCaps"
         Me.ButtonCaps.Size = New System.Drawing.Size(85, 45)
         Me.ButtonCaps.TabIndex = 51
+        Me.ButtonCaps.TabStop = False
         '
         'ButtonZ
         '
@@ -483,6 +532,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonZ.Name = "ButtonZ"
         Me.ButtonZ.Size = New System.Drawing.Size(45, 45)
         Me.ButtonZ.TabIndex = 38
+        Me.ButtonZ.TabStop = False
         '
         'ButtonX
         '
@@ -492,6 +542,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonX.Name = "ButtonX"
         Me.ButtonX.Size = New System.Drawing.Size(45, 45)
         Me.ButtonX.TabIndex = 39
+        Me.ButtonX.TabStop = False
         '
         'ButtonC
         '
@@ -501,6 +552,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonC.Name = "ButtonC"
         Me.ButtonC.Size = New System.Drawing.Size(45, 45)
         Me.ButtonC.TabIndex = 40
+        Me.ButtonC.TabStop = False
         '
         'ButtonV
         '
@@ -510,6 +562,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonV.Name = "ButtonV"
         Me.ButtonV.Size = New System.Drawing.Size(45, 45)
         Me.ButtonV.TabIndex = 41
+        Me.ButtonV.TabStop = False
         '
         'ButtonB
         '
@@ -519,6 +572,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonB.Name = "ButtonB"
         Me.ButtonB.Size = New System.Drawing.Size(45, 45)
         Me.ButtonB.TabIndex = 42
+        Me.ButtonB.TabStop = False
         '
         'ButtonN
         '
@@ -528,6 +582,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonN.Name = "ButtonN"
         Me.ButtonN.Size = New System.Drawing.Size(45, 45)
         Me.ButtonN.TabIndex = 43
+        Me.ButtonN.TabStop = False
         '
         'ButtonM
         '
@@ -537,6 +592,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonM.Name = "ButtonM"
         Me.ButtonM.Size = New System.Drawing.Size(45, 45)
         Me.ButtonM.TabIndex = 44
+        Me.ButtonM.TabStop = False
         '
         'ButtonZap
         '
@@ -546,6 +602,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonZap.Name = "ButtonZap"
         Me.ButtonZap.Size = New System.Drawing.Size(45, 45)
         Me.ButtonZap.TabIndex = 45
+        Me.ButtonZap.TabStop = False
         '
         'ButtonPoint
         '
@@ -555,6 +612,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonPoint.Name = "ButtonPoint"
         Me.ButtonPoint.Size = New System.Drawing.Size(45, 45)
         Me.ButtonPoint.TabIndex = 46
+        Me.ButtonPoint.TabStop = False
         '
         'ButtonQuestion
         '
@@ -564,15 +622,19 @@ Partial Public Class KeyboardTextForm
         Me.ButtonQuestion.Name = "ButtonQuestion"
         Me.ButtonQuestion.Size = New System.Drawing.Size(45, 45)
         Me.ButtonQuestion.TabIndex = 47
+        Me.ButtonQuestion.TabStop = False
         '
         'ButtonShiftR
         '
+        Me.ButtonShiftR.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonShiftR.BackColor = System.Drawing.Color.LightGray
         Me.ButtonShiftR.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonShiftR.Location = New System.Drawing.Point(675, 280)
         Me.ButtonShiftR.Name = "ButtonShiftR"
         Me.ButtonShiftR.Size = New System.Drawing.Size(88, 45)
         Me.ButtonShiftR.TabIndex = 50
+        Me.ButtonShiftR.TabStop = False
         '
         'ButtonShiftL
         '
@@ -582,33 +644,44 @@ Partial Public Class KeyboardTextForm
         Me.ButtonShiftL.Name = "ButtonShiftL"
         Me.ButtonShiftL.Size = New System.Drawing.Size(105, 45)
         Me.ButtonShiftL.TabIndex = 49
+        Me.ButtonShiftL.TabStop = False
         '
         'ButtonSpace
         '
+        Me.ButtonSpace.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ButtonSpace.BackColor = System.Drawing.Color.LightGray
         Me.ButtonSpace.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonSpace.Location = New System.Drawing.Point(134, 338)
         Me.ButtonSpace.Name = "ButtonSpace"
         Me.ButtonSpace.Size = New System.Drawing.Size(402, 45)
         Me.ButtonSpace.TabIndex = 48
+        Me.ButtonSpace.TabStop = False
         '
         'ButtonLangR
         '
+        Me.ButtonLangR.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonLangR.BackColor = System.Drawing.Color.LightGray
         Me.ButtonLangR.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonLangR.Location = New System.Drawing.Point(593, 338)
         Me.ButtonLangR.Name = "ButtonLangR"
         Me.ButtonLangR.Size = New System.Drawing.Size(170, 45)
         Me.ButtonLangR.TabIndex = 53
+        Me.ButtonLangR.TabStop = False
         '
         'ButtonLangL
         '
+        Me.ButtonLangL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ButtonLangL.BackColor = System.Drawing.Color.LightGray
         Me.ButtonLangL.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonLangL.Location = New System.Drawing.Point(3, 338)
         Me.ButtonLangL.Name = "ButtonLangL"
         Me.ButtonLangL.Size = New System.Drawing.Size(125, 45)
         Me.ButtonLangL.TabIndex = 52
+        Me.ButtonLangL.TabStop = False
         '
         'LabelHead
         '
@@ -617,7 +690,7 @@ Partial Public Class KeyboardTextForm
         Me.LabelHead.Font = New System.Drawing.Font("Arial", 26.0!, System.Drawing.FontStyle.Bold)
         Me.LabelHead.Location = New System.Drawing.Point(20, 20)
         Me.LabelHead.Name = "LabelHead"
-        Me.LabelHead.Size = New System.Drawing.Size(617, 40)
+        Me.LabelHead.Size = New System.Drawing.Size(600, 40)
         Me.LabelHead.Text = "head"
         Me.LabelHead.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
@@ -630,6 +703,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonEsc.Name = "ButtonEsc"
         Me.ButtonEsc.Size = New System.Drawing.Size(76, 45)
         Me.ButtonEsc.TabIndex = 58
+        Me.ButtonEsc.TabStop = False
         '
         'ButtonCh1
         '
@@ -639,6 +713,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh1.Name = "ButtonCh1"
         Me.ButtonCh1.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh1.TabIndex = 59
+        Me.ButtonCh1.TabStop = False
         '
         'ButtonCh2
         '
@@ -648,6 +723,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh2.Name = "ButtonCh2"
         Me.ButtonCh2.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh2.TabIndex = 60
+        Me.ButtonCh2.TabStop = False
         '
         'ButtonCh3
         '
@@ -657,6 +733,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh3.Name = "ButtonCh3"
         Me.ButtonCh3.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh3.TabIndex = 61
+        Me.ButtonCh3.TabStop = False
         '
         'ButtonCh4
         '
@@ -666,6 +743,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh4.Name = "ButtonCh4"
         Me.ButtonCh4.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh4.TabIndex = 62
+        Me.ButtonCh4.TabStop = False
         '
         'ButtonCh5
         '
@@ -675,6 +753,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh5.Name = "ButtonCh5"
         Me.ButtonCh5.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh5.TabIndex = 63
+        Me.ButtonCh5.TabStop = False
         '
         'ButtonCh6
         '
@@ -684,6 +763,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh6.Name = "ButtonCh6"
         Me.ButtonCh6.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh6.TabIndex = 64
+        Me.ButtonCh6.TabStop = False
         '
         'ButtonCh7
         '
@@ -693,6 +773,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh7.Name = "ButtonCh7"
         Me.ButtonCh7.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh7.TabIndex = 65
+        Me.ButtonCh7.TabStop = False
         '
         'ButtonCh8
         '
@@ -702,6 +783,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh8.Name = "ButtonCh8"
         Me.ButtonCh8.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh8.TabIndex = 66
+        Me.ButtonCh8.TabStop = False
         '
         'ButtonCh9
         '
@@ -711,6 +793,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh9.Name = "ButtonCh9"
         Me.ButtonCh9.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh9.TabIndex = 67
+        Me.ButtonCh9.TabStop = False
         '
         'ButtonCh10
         '
@@ -720,6 +803,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh10.Name = "ButtonCh10"
         Me.ButtonCh10.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh10.TabIndex = 68
+        Me.ButtonCh10.TabStop = False
         '
         'ButtonCh11
         '
@@ -729,24 +813,31 @@ Partial Public Class KeyboardTextForm
         Me.ButtonCh11.Name = "ButtonCh11"
         Me.ButtonCh11.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh11.TabIndex = 69
+        Me.ButtonCh11.TabStop = False
         '
         'ButtonClear
         '
+        Me.ButtonClear.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonClear.BackColor = System.Drawing.Color.LightGray
         Me.ButtonClear.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonClear.Location = New System.Drawing.Point(646, 48)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(117, 45)
         Me.ButtonClear.TabIndex = 70
+        Me.ButtonClear.TabStop = False
         '
         'ButtonCh14
         '
+        Me.ButtonCh14.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.ButtonCh14.BackColor = System.Drawing.Color.LightGray
         Me.ButtonCh14.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold)
         Me.ButtonCh14.Location = New System.Drawing.Point(542, 338)
         Me.ButtonCh14.Name = "ButtonCh14"
         Me.ButtonCh14.Size = New System.Drawing.Size(45, 45)
         Me.ButtonCh14.TabIndex = 71
+        Me.ButtonCh14.TabStop = False
         '
         'ButtonPr
         '
@@ -756,6 +847,7 @@ Partial Public Class KeyboardTextForm
         Me.ButtonPr.Name = "ButtonPr"
         Me.ButtonPr.Size = New System.Drawing.Size(45, 45)
         Me.ButtonPr.TabIndex = 72
+        Me.ButtonPr.TabStop = False
         '
         'Panel1
         '
@@ -832,7 +924,7 @@ Partial Public Class KeyboardTextForm
         Me.Panel1.Controls.Add(Me.ButtonL)
         Me.Panel1.Controls.Add(Me.ButtonJ)
         Me.Panel1.Controls.Add(Me.ButtonK)
-        Me.Panel1.Location = New System.Drawing.Point(-54, 85)
+        Me.Panel1.Location = New System.Drawing.Point(-63, 77)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(766, 386)
         '
@@ -841,11 +933,12 @@ Partial Public Class KeyboardTextForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(657, 497)
+        Me.ClientSize = New System.Drawing.Size(640, 480)
         Me.ControlBox = False
         Me.Controls.Add(Me.LabelHead)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "KeyboardTextForm"

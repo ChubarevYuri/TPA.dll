@@ -2,11 +2,11 @@
 Imports System.Windows.Forms
 
 Public Class KeyboardTextForm
-    Friend language As Integer = 3
+    Friend language As Integer = 2
     Private _passwordMode As Boolean = False
     Private _result As String = ""
     Private _startText As String = ""
-    Private _isShift As Boolean = True
+    Private _isShift As Boolean = False
     Private _textLenght As Integer = 0
     Public Property result() As String
         Get
@@ -103,7 +103,7 @@ Public Class KeyboardTextForm
     Public Sub New(ByRef value As String, _
                    Optional ByRef head As String = "", _
                    Optional ByRef startRU As Boolean = True)
-        If Not startRU Then language = 1
+        If Not startRU Then language = 0
         _startText = value
         _result = value
         ' Этот вызов необходим конструктору форм Windows.
@@ -111,7 +111,6 @@ Public Class KeyboardTextForm
 
         ' Добавьте все инициализирующие действия после вызова InitializeComponent().
 
-        TPA.GAMEMODE_FORM(Me)
         LabelText.Text = value
         LabelHead.Text = head
         keysText()
@@ -120,7 +119,6 @@ Public Class KeyboardTextForm
         Else
             _isShift = True
         End If
-        DialogForms.WaitFormStop()
     End Sub
 
     ''' <summary>
@@ -141,10 +139,17 @@ Public Class KeyboardTextForm
         Else
             _isShift = True
         End If
+
+    End Sub
+
+    Private Sub KeyboardTextForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        TPA.GAMEMODE_FORM(Me) = True
         DialogForms.WaitFormStop()
+        ButtonEnter.Focus()
     End Sub
 
     Private Sub VisibleText()
+        ButtonEnter.Focus()
         _textLenght = _result.Length
         If _passwordMode Then
             LabelText.Text = StrDup(_textLenght, "*")
@@ -154,6 +159,7 @@ Public Class KeyboardTextForm
     End Sub
 
     Private Sub keysText()
+        ButtonEnter.Focus()
         ButtonEsc.Text = keyText(0, language)
         ButtonCaps.Text = keyText(1, language)
         ButtonShiftL.Text = keyText(2, language)
@@ -262,7 +268,6 @@ Public Class KeyboardTextForm
         Select Case language
             Case 0
                 language = 1
-
             Case 1
                 language = 0
             Case 2
@@ -330,5 +335,255 @@ Public Class KeyboardTextForm
     Private Sub KeyboardTextForm_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Resize
         Panel1.Left = (Me.Width - Panel1.Width) / 2
         Panel1.Top = (Me.Height - Panel1.Height - LabelHead.Top - LabelHead.Height) / 2 + LabelHead.Top + LabelHead.Height
+    End Sub
+
+    Private kbLangChangeEnable As Boolean = True
+    Private AltOrCtrl As Boolean = False
+    Private CapsEnabled As Boolean = True
+
+    Private Sub KeyboardTextForm_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        Dim KeyValue = e.KeyValue
+        Dim KeyData = e.KeyData
+        Dim KeyCode = e.KeyCode
+        If (e.KeyValue = Keys.Escape) Then ButtonEsc_Click(Nothing, Nothing)
+        If (e.KeyValue = Keys.Back Or e.KeyValue = Keys.Delete) Then ButtonBackspace_Click(Nothing, Nothing)
+        If (e.KeyValue = Keys.ShiftKey And Not _isShift) Then ButtonShift_Click(Nothing, Nothing)
+        If (e.KeyValue = Keys.Menu Or e.KeyValue = Keys.ControlKey) Then AltOrCtrl = True
+        If (AltOrCtrl And _isShift And (ButtonLangL.Visible Or ButtonLangR.Visible) And kbLangChangeEnable) Then
+            kbLangChangeEnable = False
+            ButtonLang_Click(Nothing, Nothing)
+        End If
+        If (e.KeyValue = Keys.Capital And CapsEnabled) Then
+            CapsEnabled = False
+            ButtonCaps_Click(ButtonCaps, Nothing)
+        End If
+
+        If (e.KeyValue = Keys.Space) Then _result &= " "
+        If (e.KeyValue = Keys.NumPad0) Then _result &= "0"
+        If (e.KeyValue = Keys.NumPad1) Then _result &= "1"
+        If (e.KeyValue = Keys.NumPad2) Then _result &= "2"
+        If (e.KeyValue = Keys.NumPad3) Then _result &= "3"
+        If (e.KeyValue = Keys.NumPad4) Then _result &= "4"
+        If (e.KeyValue = Keys.NumPad5) Then _result &= "5"
+        If (e.KeyValue = Keys.NumPad6) Then _result &= "6"
+        If (e.KeyValue = Keys.NumPad7) Then _result &= "7"
+        If (e.KeyValue = Keys.NumPad8) Then _result &= "8"
+        If (e.KeyValue = Keys.NumPad9) Then _result &= "9"
+        If (e.KeyValue = Keys.Add) Then _result &= "+"
+        If (e.KeyValue = Keys.Subtract) Then _result &= "-"
+        If (e.KeyValue = Keys.Multiply) Then _result &= "*"
+        If (e.KeyValue = Keys.Divide) Then _result &= "/"
+
+        If (e.KeyValue = Keys.Q) Then _result &= keyText(32, language)
+        If (e.KeyValue = Keys.W) Then _result &= keyText(33, language)
+        If (e.KeyValue = Keys.E) Then _result &= keyText(34, language)
+        If (e.KeyValue = Keys.R) Then _result &= keyText(35, language)
+        If (e.KeyValue = Keys.T) Then _result &= keyText(36, language)
+        If (e.KeyValue = Keys.Y) Then _result &= keyText(37, language)
+        If (e.KeyValue = Keys.U) Then _result &= keyText(38, language)
+        If (e.KeyValue = Keys.I) Then _result &= keyText(39, language)
+        If (e.KeyValue = Keys.O) Then _result &= keyText(40, language)
+        If (e.KeyValue = Keys.P) Then _result &= keyText(41, language)
+        If (e.KeyValue = Keys.A) Then _result &= keyText(46, language)
+        If (e.KeyValue = Keys.S) Then _result &= keyText(47, language)
+        If (e.KeyValue = Keys.D) Then _result &= keyText(48, language)
+        If (e.KeyValue = Keys.F) Then _result &= keyText(49, language)
+        If (e.KeyValue = Keys.G) Then _result &= keyText(50, language)
+        If (e.KeyValue = Keys.H) Then _result &= keyText(51, language)
+        If (e.KeyValue = Keys.J) Then _result &= keyText(52, language)
+        If (e.KeyValue = Keys.K) Then _result &= keyText(53, language)
+        If (e.KeyValue = Keys.L) Then _result &= keyText(54, language)
+        If (e.KeyValue = Keys.Z) Then _result &= keyText(57, language)
+        If (e.KeyValue = Keys.X) Then _result &= keyText(58, language)
+        If (e.KeyValue = Keys.C) Then _result &= keyText(59, language)
+        If (e.KeyValue = Keys.V) Then _result &= keyText(60, language)
+        If (e.KeyValue = Keys.B) Then _result &= keyText(61, language)
+        If (e.KeyValue = Keys.N) Then _result &= keyText(62, language)
+        If (e.KeyValue = Keys.M) Then _result &= keyText(63, language)
+
+        If (e.KeyValue = Keys.D1) Then
+            If (Not _isShift) Then
+                _result &= "1"
+            Else
+                _result &= "!"
+            End If
+        End If
+        If (e.KeyValue = Keys.D2) Then
+            If (Not _isShift) Then
+                _result &= "2"
+            Else
+                If (language < 2) Then
+                    _result &= "@"
+                Else
+                    _result &= "'"
+                End If
+            End If
+        End If
+        If (e.KeyValue = Keys.D3) Then
+            If (Not _isShift) Then
+                _result &= "3"
+            Else
+                If (language < 2) Then
+                    _result &= "#"
+                Else
+                    _result &= "№"
+                End If
+            End If
+        End If
+        If (e.KeyValue = Keys.D4) Then
+            If (Not _isShift) Then
+                _result &= "4"
+            Else
+                If (language < 2) Then
+                    _result &= "$"
+                Else
+                    _result &= ";"
+                End If
+            End If
+        End If
+        If (e.KeyValue = Keys.D5) Then
+            If (Not _isShift) Then
+                _result &= "5"
+            Else
+                _result &= "%"
+            End If
+        End If
+        If (e.KeyValue = Keys.D6) Then
+            If (Not _isShift) Then
+                _result &= "6"
+            Else
+                If (language < 2) Then
+                    _result &= "^"
+                Else
+                    _result &= ":"
+                End If
+            End If
+        End If
+        If (e.KeyValue = Keys.D7) Then
+            If (Not _isShift) Then
+                _result &= "7"
+            Else
+                If (language < 2) Then
+                    _result &= "&"
+                Else
+                    _result &= "?"
+                End If
+            End If
+        End If
+        If (e.KeyValue = Keys.D8) Then
+            If (Not _isShift) Then
+                _result &= "8"
+            Else
+                _result &= "*"
+            End If
+        End If
+        If (e.KeyValue = Keys.D9) Then
+            If (Not _isShift) Then
+                _result &= "9"
+            Else
+                _result &= "("
+            End If
+        End If
+        If (e.KeyValue = Keys.D0) Then
+            If (Not _isShift) Then
+                _result &= "0"
+            Else
+                _result &= ")"
+            End If
+        End If
+        If (e.KeyValue = 189) Then
+            If (Not _isShift) Then
+                _result &= "-"
+            Else
+                _result &= "_"
+            End If
+        End If
+        If (e.KeyValue = 187) Then
+            If (Not _isShift) Then
+                _result &= "="
+            Else
+                _result &= "+"
+            End If
+        End If
+
+        If (e.KeyValue = 192) Then
+            If (language < 2) Then
+                _result &= If(Not _isShift, "`", "~")
+            Else
+                _result &= keyText(68, language)
+            End If
+        End If
+        If (e.KeyValue = 219) Then
+            If (language < 2) Then
+                _result &= If(Not _isShift, "[", "{")
+            Else
+                _result &= keyText(42, language)
+            End If
+        End If
+        If (e.KeyValue = 221) Then
+            If (language < 2) Then
+                _result &= If(Not _isShift, "]", "}")
+            Else
+                _result &= keyText(43, language)
+            End If
+        End If
+        If (e.KeyValue = 186) Then
+            If (language < 2) Then
+                _result &= If(Not _isShift, ";", ":")
+            Else
+                _result &= keyText(55, language)
+            End If
+        End If
+        If (e.KeyValue = 222) Then
+            If (language < 2) Then
+                _result &= If(Not _isShift, "'", "'")
+            Else
+                _result &= keyText(56, language)
+            End If
+        End If
+        If (e.KeyValue = 220) Then
+            If (language < 2) Then
+                _result &= If(Not _isShift, "\", "|")
+            Else
+                _result &= If(Not _isShift, "\", "/")
+            End If
+        End If
+        If (e.KeyValue = 188) Then
+            If (language < 2) Then
+                _result &= If(Not _isShift, ",", "<")
+            Else
+                _result &= keyText(64, language)
+            End If
+        End If
+        If (e.KeyValue = 190) Then
+            If (language < 2) Then
+                _result &= If(Not _isShift, ".", ">")
+            Else
+                _result &= keyText(65, language)
+            End If
+        End If
+        If (e.KeyValue = 191) Then
+            If (language < 2) Then
+                _result &= If(Not _isShift, "/", "?")
+            Else
+                _result &= If(Not _isShift, ".", ",")
+            End If
+        End If
+
+            VisibleText()
+    End Sub
+
+    Private Sub KeyboardTextForm_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
+        ButtonEnter.Focus()
+        If (e.KeyValue = Keys.ShiftKey And _isShift) Then ButtonShift_Click(Nothing, Nothing)
+        If (e.KeyValue = Keys.Menu Or e.KeyValue = Keys.ControlKey) Then AltOrCtrl = False
+        If ((Not AltOrCtrl Or Not _isShift) And Not kbLangChangeEnable) Then
+            kbLangChangeEnable = True
+        End If
+        If (e.KeyValue = Keys.Capital And Not CapsEnabled) Then CapsEnabled = True
+    End Sub
+
+    Private Sub KeyboardTextForm_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
+        Dim a As Char = e.KeyChar
     End Sub
 End Class

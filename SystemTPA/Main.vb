@@ -49,9 +49,148 @@ Public Module Main
         End Get
         Set(ByVal value As Boolean)
             If value <> _TaskBarShow Then
-                Dim hid As Integer = FindWindow("HHTaskBar", "")
-                ShowWindow(hid, If(value, SW_SHOW, SW_HIDE))
-                EnableWindow(hid, value)
+                Try
+                    Dim hid As Integer = FindWindow("HHTaskBar", "")
+                    ShowWindow(hid, If(value, SW_SHOW, SW_HIDE))
+                    EnableWindow(hid, value)
+                    _TaskBarShow = Not _TaskBarShow
+                Catch ex As Exception
+
+                End Try
+            End If
+        End Set
+    End Property
+
+    Private Structure _form
+        Dim TopMost As Boolean
+        Dim ControlBox As Boolean
+        Dim MaximizeBox As Boolean
+        Dim MinimizeBox As Boolean
+        Dim FormBorderStyle As System.Windows.Forms.FormBorderStyle
+        Dim WindowState As System.Windows.Forms.FormWindowState
+        Dim Width As Integer
+        Dim Height As Integer
+        Dim Left As Integer
+        Dim Top As Integer
+    End Structure
+
+    Private forms As Dictionary(Of String, _form) = New Dictionary(Of String, _form)
+
+    ''' <summary>
+    ''' Отображение формы на весь экран без меню пуск
+    ''' </summary>
+    ''' <param name="f"></param>
+    ''' <remarks></remarks>
+    Public Property GAMEMODE_FORM(ByVal f As Form, _
+                                  ByVal maxWidth As Integer, _
+                                  ByVal maxHeight As Integer) As Boolean
+        Get
+            Return f.TopMost = True _
+            And f.ControlBox = False _
+            And f.MaximizeBox = False _
+            And f.MinimizeBox = False _
+            And f.FormBorderStyle = FormBorderStyle.None _
+            And f.WindowState = FormWindowState.Normal _
+            And f.Left = (Screen.PrimaryScreen.Bounds.Width - f.Width) / 2 _
+            And f.Top = (Screen.PrimaryScreen.Bounds.Height - f.Height) / 2
+        End Get
+        Set(ByVal value As Boolean)
+            If (value) Then
+                Dim _f As _form
+                _f.TopMost = f.TopMost
+                _f.ControlBox = f.ControlBox
+                _f.MaximizeBox = f.MaximizeBox
+                _f.MinimizeBox = f.MinimizeBox
+                _f.FormBorderStyle = f.FormBorderStyle
+                _f.WindowState = f.WindowState
+                _f.Width = f.Width
+                _f.Height = f.Height
+                _f.Left = f.Left
+                _f.Top = f.Top
+                forms(f.Name) = _f
+
+                If maxWidth < 1 Then maxWidth = 1
+                If maxHeight < 1 Then maxWidth = 1
+                Try
+                    TaskBarShow = False
+                Catch ex As Exception
+
+                End Try
+                Try
+                    f.TopMost = True
+                Catch ex As Exception
+
+                End Try
+                f.ControlBox = False
+                f.MaximizeBox = False
+                f.MinimizeBox = False
+                f.FormBorderStyle = FormBorderStyle.None
+                f.WindowState = FormWindowState.Normal
+                f.Width = If(Screen.PrimaryScreen.Bounds.Width < maxWidth, Screen.PrimaryScreen.Bounds.Width, maxWidth)
+                f.Height = If(Screen.PrimaryScreen.Bounds.Height < maxHeight, Screen.PrimaryScreen.Bounds.Height, maxHeight)
+                f.Left = (Screen.PrimaryScreen.Bounds.Width - f.Width) / 2
+                f.Top = (Screen.PrimaryScreen.Bounds.Height - f.Height) / 2
+            Else
+                Try
+                    TaskBarShow = True
+                Catch ex As Exception
+
+                End Try
+                Try
+                    f.TopMost = forms(f.Name).TopMost
+                Catch ex As Exception
+                    f.TopMost = False
+                End Try
+                Try
+                    f.ControlBox = forms(f.Name).ControlBox
+                Catch ex As Exception
+                    f.ControlBox = False
+                End Try
+                Try
+                    f.MaximizeBox = forms(f.Name).MaximizeBox
+                Catch ex As Exception
+                    f.MaximizeBox = False
+                End Try
+                Try
+                    f.MinimizeBox = forms(f.Name).MinimizeBox
+                Catch ex As Exception
+                    f.MinimizeBox = False
+                End Try
+                Try
+                    f.FormBorderStyle = forms(f.Name).FormBorderStyle
+                Catch ex As Exception
+                    f.FormBorderStyle = FormBorderStyle.None
+                End Try
+                Try
+                    f.WindowState = forms(f.Name).WindowState
+                Catch ex As Exception
+                    f.WindowState = FormWindowState.Maximized
+                End Try
+                Try
+                    f.Width = forms(f.Name).Width
+                Catch ex As Exception
+                    f.Width = If(Screen.PrimaryScreen.Bounds.Width < maxWidth, Screen.PrimaryScreen.Bounds.Width, maxWidth)
+                End Try
+                Try
+                    f.Height = forms(f.Name).Height
+                Catch ex As Exception
+                    f.Height = If(Screen.PrimaryScreen.Bounds.Height < maxHeight, Screen.PrimaryScreen.Bounds.Height, maxHeight)
+                End Try
+                Try
+                    f.Left = forms(f.Name).Left
+                Catch ex As Exception
+                    f.Left = (Screen.PrimaryScreen.Bounds.Width - f.Width) / 2
+                End Try
+                Try
+                    f.Top = forms(f.Name).Top
+                Catch ex As Exception
+                    f.Top = (Screen.PrimaryScreen.Bounds.Height - f.Height) / 2
+                End Try
+                Try
+                    forms.Remove(f.Name)
+                Catch ex As Exception
+
+                End Try
             End If
         End Set
     End Property
@@ -61,36 +200,14 @@ Public Module Main
     ''' </summary>
     ''' <param name="f"></param>
     ''' <remarks></remarks>
-    Public Function GAMEMODE_FORM(ByVal f As Form, _
-                                  ByVal maxWidth As Integer, _
-                                  ByVal maxHeight As Integer) As Boolean
-        Try
-            If maxWidth < 1 Then maxWidth = 1
-            If maxHeight < 1 Then maxWidth = 1
-            TaskBarShow = False
-            f.ControlBox = False
-            f.MaximizeBox = False
-            f.MinimizeBox = False
-            f.FormBorderStyle = FormBorderStyle.None
-            f.WindowState = FormWindowState.Normal
-            f.Width = If(Screen.PrimaryScreen.Bounds.Width < maxWidth, Screen.PrimaryScreen.Bounds.Width, maxWidth)
-            f.Height = If(Screen.PrimaryScreen.Bounds.Height < maxHeight, Screen.PrimaryScreen.Bounds.Height, maxHeight)
-            f.Left = (Screen.PrimaryScreen.Bounds.Width - f.Width) / 2
-            f.Top = (Screen.PrimaryScreen.Bounds.Height - f.Height) / 2
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
-
-    ''' <summary>
-    ''' Отображение формы на весь экран без меню пуск
-    ''' </summary>
-    ''' <param name="f"></param>
-    ''' <remarks></remarks>
-    Public Function GAMEMODE_FORM(ByVal f As Form) As Boolean
-        Return GAMEMODE_FORM(f, Integer.MaxValue, Integer.MaxValue)
-    End Function
+    Public Property GAMEMODE_FORM(ByVal f As Form) As Boolean
+        Get
+            Return GAMEMODE_FORM(f, Integer.MaxValue, Integer.MaxValue)
+        End Get
+        Set(ByVal value As Boolean)
+            GAMEMODE_FORM(f, Integer.MaxValue, Integer.MaxValue) = value
+        End Set
+    End Property
 
 End Module
 
